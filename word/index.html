@@ -16,9 +16,10 @@
 
     <!-- 🖼 Open Graph (SNS 공유 미리보기) -->
     <meta property="og:title" content="Restart English - Today's Word">
-    <meta property="og:description" content="Expand your vocabulary with today's word!">
+    <meta property="og:description" id="og-description" content="Expand your vocabulary with today's word!">
     <meta property="og:image" content="https://restartenglish.github.io/preview.png">
-    <meta property="og:url" content="https://restartenglish.github.io/word.html">
+    <meta property="og:url" id="og-url" content="https://restartenglish.github.io/word/">
+
 </head>
 <body>
     <div class="container">
@@ -35,6 +36,7 @@
                 <button onclick="loadRandom()">🎲 Random</button>
                 <button onclick="loadNext()">➡️ Next</button>
                 <button onclick="share()">📤 Share</button>
+                <button onclick="copyToClipboard()">🔗 Copy Link</button>
             </div>
         </div>
 
@@ -44,6 +46,7 @@
     <script>
         let words = [];
         let voices = [];
+        let currentWord = "";
 
         function loadVoices() {
             voices = speechSynthesis.getVoices();
@@ -55,40 +58,35 @@
                 const response = await fetch("../data/word.txt");
                 const text = await response.text();
                 words = text.split("\n").filter(w => w.trim() !== "");
-                
-                const today = new Date();
-                const index = today.getUTCFullYear() * 100 + today.getUTCDate();
-                displayWord(index % words.length);
+
+                const urlParams = new URLSearchParams(window.location.search);
+                const wordFromUrl = urlParams.get("word");
+
+                if (wordFromUrl && words.includes(wordFromUrl)) {
+                    displayWord(wordFromUrl);
+                } else {
+                    const today = new Date();
+                    const index = today.getUTCFullYear() * 100 + today.getUTCDate();
+                    displayWord(words[index % words.length]);
+                }
             } catch (error) {
                 document.getElementById("content").innerText = "Error loading word.";
             }
         }
 
-        async function displayWord(index) {
-            const word = words[index];
+        function displayWord(word) {
+            currentWord = word;
             document.getElementById("content").innerText = word;
-            
-            try {
-                const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
-                const data = await response.json();
-                
-                document.getElementById("definition").innerText = "Meaning: " + (data[0]?.meanings[0]?.definitions[0]?.definition || "No definition found.");
-                
-                const phoneticUS = data.find(d => d.phonetics.some(p => p.audio.includes("us")));
-                const phoneticUK = data.find(d => d.phonetics.some(p => p.audio.includes("uk")));
-                
-                document.getElementById("phonetic-us").innerText = "🇺🇸 " + (phoneticUS?.phonetics.find(p => p.text)?.text || "N/A");
-                document.getElementById("phonetic-uk").innerText = "🇬🇧 " + (phoneticUK?.phonetics.find(p => p.text)?.text || "N/A");
-            } catch {
-                document.getElementById("definition").innerText = "Meaning: No definition found.";
-                document.getElementById("phonetic-us").innerText = "🇺🇸 N/A";
-                document.getElementById("phonetic-uk").innerText = "🇬🇧 N/A";
-            }
+            updateMetaTags(word);
+        }
+
+        function updateMetaTags(word) {
+            document.getElementById("og-description").setAttribute("content", `Today's Word: ${word}`);
+            document.getElementById("og-url").setAttribute("content", `https://restartenglish.github.io/word/?word=${word}`);
         }
 
         function speakWord(lang) {
-            const word = document.getElementById("content").innerText;
-            const utterance = new SpeechSynthesisUtterance(word);
+            const utterance = new SpeechSynthesisUtterance(currentWord);
 
             if (lang === "en-US") {
                 utterance.voice = voices.find(v => v.lang === "en-US" && v.name.includes("Google")) || voices.find(v => v.lang === "en-US");
@@ -103,25 +101,37 @@
 
         function loadRandom() {
             const randomIndex = Math.floor(Math.random() * words.length);
-            displayWord(randomIndex);
+            displayWord(words[randomIndex]);
         }
 
         function loadNext() {
-            let index = words.indexOf(document.getElementById("content").innerText);
+            let index = words.indexOf(currentWord);
             index = (index + 1) % words.length;
-            displayWord(index);
+            displayWord(words[index]);
         }
 
         function share() {
-            const word = document.getElementById("content").innerText;
-            const url = window.location.href;
-            const text = `Today's Word: ${word} - Learn more at ${url}`;
-
+            const url = `https://restartenglish.github.io/word/?word=${currentWord}`;
             if (navigator.share) {
-                navigator.share({ title: "Restart English", text, url });
+                navigator.share({
+                    title: "Today's Word - Restart English",
+                    text: `Today's Word: ${currentWord}`,
+                    url
+                });
             } else {
-                prompt("Copy this link:", url);
+                copyToClipboard(url);
+                alert("Link copied to clipboard!");
             }
+        }
+
+        function copyToClipboard(url = `https://restartenglish.github.io/word/?word=${currentWord}`) {
+            const tempInput = document.createElement("input");
+            tempInput.value = url;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            alert("Link copied!");
         }
 
         loadContent();
