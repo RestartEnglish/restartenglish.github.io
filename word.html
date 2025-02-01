@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today's Word</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background-color: #fff3cd; }
+        h1 { color: #856404; }
+        #content { font-size: 24px; margin-top: 20px; font-weight: bold; }
+        .home { margin-top: 20px; display: inline-block; background: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
+        .home:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>Today's Word</h1>
+    <div id="content">Loading...</div>
+    <a class="home" href="index.html">Back to Home</a>
+
+    <script>
+        async function loadContent() {
+            try {
+                const response = await fetch("data/word.txt");
+                const text = await response.text();
+                const words = text.split("\n").filter(w => w.trim() !== "");
+                const today = new Date();
+                const index = today.getUTCFullYear() * 100 + today.getUTCDate();
+                document.getElementById("content").innerText = words[index % words.length];
+            } catch (error) {
+                document.getElementById("content").innerText = "Error loading content.";
+            }
+        }
+        loadContent();
+    </script>
+</body>
+</html>
