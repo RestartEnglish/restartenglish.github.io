@@ -20,10 +20,14 @@
                 const text = await response.text();
                 const questions = text.split("\n").filter(q => q.trim() !== ""); 
                 
+                // 🌍 모든 국가에서 같은 질문이 보이도록 UTC(세계 표준 시간) 사용
                 const today = new Date();
-                const index = today.getFullYear() * 100 + today.getDate();  // 날짜 기반으로 매일 변경
-                const questionIndex = index % questions.length;  // 배열 길이만큼 나누기
-                
+                const year = today.getUTCFullYear();
+                const month = today.getUTCMonth() + 1;  // JavaScript에서 0부터 시작하므로 +1
+                const day = today.getUTCDate();
+                const dateSeed = year * 10000 + month * 100 + day;  // YYYYMMDD 형식의 숫자 생성
+
+                const questionIndex = dateSeed % questions.length;  // 날짜 기반으로 같은 질문 보이기
                 document.getElementById("question").innerText = questions[questionIndex];
             } catch (error) {
                 document.getElementById("question").innerText = "Error loading question.";
