@@ -12,22 +12,25 @@
     <meta property="og:description" content="Expand your vocabulary with today's word!">
     <meta property="og:image" content="https://restartenglish.github.io/preview.png">
     <meta property="og:url" content="https://restartenglish.github.io/word.html">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Restart English - Today's Word">
-    <meta name="twitter:description" content="Expand your vocabulary with today's word!">
-    <meta name="twitter:image" content="https://restartenglish.github.io/preview.png">
 </head>
 <body>
-    <h1>Today's Word</h1>
-    <div id="content">Loading...</div>
-    <p id="definition">Meaning: Loading...</p>
-    <p id="phonetic">Pronunciation: Loading...</p>
-    
-    <button onclick="speakWord()">🔊 Listen</button>
-    <button onclick="loadRandom()">🔄 Random</button>
-    <button onclick="loadNext()">➡️ Next</button>
-    <button onclick="share()">📤 Share</button>
-    <a class="home" href="index.html">🏠 Back to Home</a>
+    <div class="container">
+        <h1>📖 Today's Word</h1>
+        
+        <div class="word-card">
+            <h2 id="content">Loading...</h2>
+            <p id="phonetic" class="small">Pronunciation: Loading...</p>
+            <p id="definition" class="definition">Meaning: Loading...</p>
+            <div class="button-group">
+                <button onclick="speakWord()">🔊 Listen</button>
+                <button onclick="loadRandom()">🎲 Random</button>
+                <button onclick="loadNext()">➡️ Next</button>
+                <button onclick="share()">📤 Share</button>
+            </div>
+        </div>
+
+        <a class="home" href="index.html">🏠 Back to Home</a>
+    </div>
 
     <script>
         let words = [];
