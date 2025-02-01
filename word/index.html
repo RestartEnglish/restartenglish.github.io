@@ -33,10 +33,10 @@
             </p>
             <p id="definition" class="definition">Meaning: Loading...</p>
             <div class="button-group">
+                <button id="shareBtn" onclick="share()">📤 Share</button>
+                <button id="copyBtn" onclick="copyToClipboard()">🔗 Copy Link</button>
                 <button onclick="loadRandom()">🎲 Random</button>
                 <button onclick="loadNext()">➡️ Next</button>
-                <button onclick="share()">📤 Share</button>
-                <button onclick="copyToClipboard()">🔗 Copy Link</button>
             </div>
         </div>
 
@@ -47,6 +47,12 @@
         let words = [];
         let voices = [];
         let currentWord = "";
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            document.getElementById("shareBtn").style.display = isMobile ? "inline-block" : "none";
+            document.getElementById("copyBtn").style.display = isMobile ? "none" : "inline-block";
+        });
 
         function loadVoices() {
             voices = speechSynthesis.getVoices();
@@ -117,21 +123,17 @@
                     title: "Today's Word - Restart English",
                     text: `Today's Word: ${currentWord}`,
                     url
-                });
-            } else {
-                copyToClipboard(url);
-                alert("Link copied to clipboard!");
+                }).catch(err => console.error("Share failed:", err));
             }
         }
 
-        function copyToClipboard(url = `https://restartenglish.github.io/word/?word=${currentWord}`) {
-            const tempInput = document.createElement("input");
-            tempInput.value = url;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand("copy");
-            document.body.removeChild(tempInput);
-            alert("Link copied!");
+        function copyToClipboard() {
+            const url = `https://restartenglish.github.io/word/?word=${currentWord}`;
+            navigator.clipboard.writeText(url).then(() => {
+                alert("🔗 Link copied to clipboard!");
+            }).catch(err => {
+                console.error("Copy failed:", err);
+            });
         }
 
         loadContent();
