@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today's Word</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../favicon.ico">
+
+    <!-- Open Graph (미리보기) -->
+    <meta property="og:title" content="Restart English - Today's Word">
+    <meta property="og:description" content="Expand your vocabulary with today's word!">
+    <meta property="og:image" content="https://restartenglish.github.io/preview.png">
+    <meta property="og:url" content="https://restartenglish.github.io/word.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Restart English - Today's Word">
+    <meta name="twitter:description" content="Expand your vocabulary with today's word!">
+    <meta name="twitter:image" content="https://restartenglish.github.io/preview.png">
+</head>
+<body>
+    <h1>Today's Word</h1>
+    <div id="content">Loading...</div>
+    <p id="definition">Meaning: Loading...</p>
+    <p id="phonetic">Pronunciation: Loading...</p>
+    
+    <button onclick="speakWord()">🔊 Listen</button>
+    <button onclick="loadRandom()">🔄 Random</button>
+    <button onclick="loadNext()">➡️ Next</button>
+    <button onclick="share()">📤 Share</button>
+    <a class="home" href="index.html">🏠 Back to Home</a>
+
+    <script>
+        let words = [];
+
+        async function loadContent() {
+            try {
+                const response = await fetch("data/word.txt");
+                const text = await response.text();
+                words = text.split("\n").filter(w => w.trim() !== "");
+                
+                const today = new Date();
+                const index = today.getUTCFullYear() * 100 + today.getUTCDate();
+                displayWord(index % words.length);
+            } catch (error) {
+                document.getElementById("content").innerText = "Error loading word.";
+            }
+        }
+
+        async function displayWord(index) {
+            const word = words[index];
+            document.getElementById("content").innerText = word;
+            
+            try {
+                const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
+                const data = await response.json();
+                
+                document.getElementById("definition").innerText = "Meaning: " + (data[0]?.meanings[0]?.definitions[0]?.definition || "No definition found.");
+                document.getElementById("phonetic").innerText = "Pronunciation: " + (data[0]?.phonetic || "N/A");
+            } catch {
+                document.getElementById("definition").innerText = "Meaning: No definition found.";
+                document.getElementById("phonetic").innerText = "Pronunciation: N/A";
+            }
+        }
+
+        function speakWord() {
+            const word = document.getElementById("content").innerText;
+            const utterance = new SpeechSynthesisUtterance(word);
+            speechSynthesis.speak(utterance);
+        }
+
+        function loadRandom() {
+            const randomIndex = Math.floor(Math.random() * words.length);
+            displayWord(randomIndex);
+        }
+
+        function loadNext() {
+            let index = words.indexOf(document.getElementById("content").innerText);
+            index = (index + 1) % words.length;
+            displayWord(index);
+        }
+
+        function share() {
+            const word = document.getElementById("content").innerText;
+            const url = window.location.href;
+            const text = `Today's Word: ${word} - Learn more at ${url}`;
+
+            if (navigator.share) {
+                navigator.share({ title: "Restart English", text, url });
+            } else {
+                prompt("Copy this link:", url);
+            }
+        }
+
+        loadContent();
+    </script>
+</body>
+</html>
