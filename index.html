@@ -4,57 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restart English</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            color: #333;
-            font-size: 2em;
-        }
-        p {
-            font-size: 1.2em;
-            color: #555;
-        }
-        .menu {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
-        }
-        .menu a {
-            text-decoration: none;
-            background: #007bff;
-            color: white;
-            padding: 15px 25px;
-            border-radius: 8px;
-            font-size: 1.2em;
-            transition: 0.3s;
-            text-align: center;
-            flex: 1 1 200px; /* 버튼 크기 조절 */
-        }
-        .menu a:hover {
-            background: #0056b3;
-        }
-        @media (max-width: 600px) {
-            h1 { font-size: 1.5em; }
-            .menu a { font-size: 1em; padding: 12px 20px; }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
+
+    <!-- Open Graph (미리보기) -->
+    <meta property="og:title" content="Restart English - Learn Something New Every Day!">
+    <meta property="og:description" content="Improve your English with daily words, expressions, quotes, and topics!">
+    <meta property="og:image" content="https://restartenglish.github.io/preview.png">
+    <meta property="og:url" content="https://restartenglish.github.io/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Restart English">
+    <meta name="twitter:description" content="Improve your English with daily words, expressions, quotes, and topics!">
+    <meta name="twitter:image" content="https://restartenglish.github.io/preview.png">
 </head>
 <body>
     <h1>Welcome to Restart English</h1>
     <p>Choose a category to improve your English!</p>
     
+    <!-- 네비게이션 메뉴 -->
     <div class="menu">
-        <a href="word.html">Today's Word</a>
-        <a href="expression.html">Today's Expression</a>
-        <a href="quote.html">Today's Quote</a>
-        <a href="topic.html">Today's Topic</a>
+        <a href="word.html">📖 Today's Word</a>
+        <a href="expression.html">🗣️ Today's Expression</a>
+        <a href="quote.html">💡 Today's Quote</a>
+        <a href="topic.html">🎤 Today's Topic</a>
     </div>
+
+    <!-- 🔍 검색 기능 -->
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Search a word...">
+        <button onclick="searchContent()">🔍 Search</button>
+        <p id="search-result"></p>
+    </div>
+
+    <!-- 🔗 SNS 링크 -->
+    <div class="social-links">
+        <a href="https://cafe.naver.com/yourcafe" target="_blank">
+            <img src="icons/naver.png" alt="Naver Cafe">
+        </a>
+        <a href="https://www.youtube.com/yourchannel" target="_blank">
+            <img src="icons/youtube.png" alt="YouTube">
+        </a>
+        <a href="https://open.kakao.com/o/yourchat" target="_blank">
+            <img src="icons/kakao.png" alt="Kakao Chat">
+        </a>
+    </div>
+
+    <script src="search.js"></script>
 </body>
 </html>
