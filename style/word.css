@@ -13,6 +13,10 @@
     -ms-user-select: none;
 }
 
+body, .word-card {
+    -webkit-touch-callout: none; /* iOS/Android 복사 메뉴 비활성화 */
+}
+
 h1 {
     color: #007bff;
     font-size: 2em;
