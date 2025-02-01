@@ -4,14 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Today's Word</title>
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="icon" href="../favicon.ico">
-
-    <!-- Open Graph (미리보기) -->
-    <meta property="og:title" content="Restart English - Today's Word">
-    <meta property="og:description" content="Expand your vocabulary with today's word!">
-    <meta property="og:image" content="https://restartenglish.github.io/preview.png">
-    <meta property="og:url" content="https://restartenglish.github.io/word.html">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
 </head>
 <body>
     <div class="container">
@@ -22,7 +16,8 @@
             <p id="phonetic" class="small">Pronunciation: Loading...</p>
             <p id="definition" class="definition">Meaning: Loading...</p>
             <div class="button-group">
-                <button onclick="speakWord()">🔊 Listen</button>
+                <button onclick="speakWord('en-US')">🔊 US</button>
+                <button onclick="speakWord('en-GB')">🔊 UK</button>
                 <button onclick="loadRandom()">🎲 Random</button>
                 <button onclick="loadNext()">➡️ Next</button>
                 <button onclick="share()">📤 Share</button>
@@ -37,7 +32,7 @@
 
         async function loadContent() {
             try {
-                const response = await fetch("../data/word.txt");
+                const response = await fetch("data/word.txt");
                 const text = await response.text();
                 words = text.split("\n").filter(w => w.trim() !== "");
                 
@@ -64,11 +59,11 @@
                 document.getElementById("phonetic").innerText = "Pronunciation: N/A";
             }
         }
-        
-        function speakWord() {
+
+        function speakWord(lang) {
             const word = document.getElementById("content").innerText;
             const utterance = new SpeechSynthesisUtterance(word);
-            utterance.lang = "en-US";  // 🌍 강제로 영어(미국식)로 설정
+            utterance.lang = lang;  // ✅ "en-US" (미국식) or "en-GB" (영국식)
             speechSynthesis.speak(utterance);
         }
 
