@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today's Quote</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f8d7da;
+        }
+        h1 {
+            color: #721c24;
+            font-size: 2em;
+        }
+        #content {
+            font-size: 1.5em;
+            margin-top: 20px;
+            font-style: italic;
+            color: #333;
+        }
+        .home {
+            display: inline-block;
+            margin-top: 30px;
+            background: #007bff;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            transition: 0.3s;
+        }
+        .home:hover {
+            background: #0056b3;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.5em; }
+            #content { font-size: 1.2em; }
+            .home { font-size: 1em; padding: 12px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Today's Quote</h1>
+    <div id="content">Loading...</div>
+    <a class="home" href="index.html">Back to Home</a>
+
+    <script>
+        async function loadContent() {
+            try {
+                const response = await fetch("data/quote.txt");
+                const text = await response.text();
+                const quotes = text.split("\n").filter(q => q.trim() !== "");
+                const today = new Date();
+                const index = today.getUTCFullYear() * 100 + today.getUTCDate();
+                document.getElementById("content").innerText = quotes[index % quotes.length];
+            } catch (error) {
+               
