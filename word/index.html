@@ -4,24 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Today's Word</title>
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- 기본 Favicon -->
-    <link rel="icon" href="../favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="../word.css">
     
-    <!-- 다양한 크기의 Favicon 지원 -->
+    <!-- 🌐 Favicon 설정 -->
+    <link rel="icon" href="../favicon/favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
-    
-    <!-- Android & Chrome Icons -->
-    <link rel="icon" type="image/png" sizes="192x192" href="../favicon/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="../favicon/android-chrome-512x512.png">
-    
-    <!-- Apple iOS Touch Icon -->
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    
-    <!-- Web App Manifest (PWA 지원) -->
-    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="../favicon/apple-touch-icon.png">
+    <link rel="manifest" href="../favicon/site.webmanifest">
 
     <!-- 🖼 Open Graph (SNS 공유 미리보기) -->
     <meta property="og:title" content="Restart English - Today's Word">
@@ -35,11 +26,12 @@
         
         <div class="word-card">
             <h2 id="content">Loading...</h2>
-            <p id="phonetic" class="small">Pronunciation: Loading...</p>
+            <p class="phonetic-container">
+                <span id="phonetic-us" class="phonetic" onclick="speakWord('en-US')">🇺🇸 Loading...</span>
+                <span id="phonetic-uk" class="phonetic" onclick="speakWord('en-GB')">🇬🇧 Loading...</span>
+            </p>
             <p id="definition" class="definition">Meaning: Loading...</p>
             <div class="button-group">
-                <button onclick="speakWord('en-US')">🔊 US</button>
-                <button onclick="speakWord('en-GB')">🔊 UK</button>
                 <button onclick="loadRandom()">🎲 Random</button>
                 <button onclick="loadNext()">➡️ Next</button>
                 <button onclick="share()">📤 Share</button>
@@ -53,12 +45,9 @@
         let words = [];
         let voices = [];
 
-        // 🌍 사용 가능한 음성 목록 가져오기 (일부 브라우저는 비동기 로딩)
         function loadVoices() {
             voices = speechSynthesis.getVoices();
         }
-
-        // 🛠 음성이 로드될 때 이벤트 추가
         speechSynthesis.onvoiceschanged = loadVoices;
 
         async function loadContent() {
@@ -84,10 +73,16 @@
                 const data = await response.json();
                 
                 document.getElementById("definition").innerText = "Meaning: " + (data[0]?.meanings[0]?.definitions[0]?.definition || "No definition found.");
-                document.getElementById("phonetic").innerText = "Pronunciation: " + (data[0]?.phonetic || "N/A");
+                
+                const phoneticUS = data.find(d => d.phonetics.some(p => p.audio.includes("us")));
+                const phoneticUK = data.find(d => d.phonetics.some(p => p.audio.includes("uk")));
+                
+                document.getElementById("phonetic-us").innerText = "🇺🇸 " + (phoneticUS?.phonetics.find(p => p.text)?.text || "N/A");
+                document.getElementById("phonetic-uk").innerText = "🇬🇧 " + (phoneticUK?.phonetics.find(p => p.text)?.text || "N/A");
             } catch {
                 document.getElementById("definition").innerText = "Meaning: No definition found.";
-                document.getElementById("phonetic").innerText = "Pronunciation: N/A";
+                document.getElementById("phonetic-us").innerText = "🇺🇸 N/A";
+                document.getElementById("phonetic-uk").innerText = "🇬🇧 N/A";
             }
         }
 
@@ -95,28 +90,15 @@
             const word = document.getElementById("content").innerText;
             const utterance = new SpeechSynthesisUtterance(word);
 
-            // 🇺🇸 미국식 발음 지정
             if (lang === "en-US") {
                 utterance.voice = voices.find(v => v.lang === "en-US" && v.name.includes("Google")) || voices.find(v => v.lang === "en-US");
             }
-            
-            // 🇬🇧 영국식 발음 지정
             if (lang === "en-GB") {
                 utterance.voice = voices.find(v => v.lang === "en-GB" && v.name.includes("Google")) || voices.find(v => v.lang === "en-GB");
             }
 
-            utterance.lang = lang; // 언어 설정
-
-            // 🎯 카카오톡 인앱 브라우저 호환 문제 해결
-            utterance.onstart = () => console.log("Speech started");
-            utterance.onend = () => console.log("Speech ended");
-
-            try {
-                speechSynthesis.speak(utterance);
-            } catch (e) {
-                console.log("TTS blocked, retrying...");
-                setTimeout(() => speechSynthesis.speak(utterance), 500);
-            }
+            utterance.lang = lang;
+            speechSynthesis.speak(utterance);
         }
 
         function loadRandom() {
