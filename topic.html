@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today's Topic</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #d4edda;
+        }
+        h1 {
+            color: #155724;
+            font-size: 2em;
+        }
+        #content {
+            font-size: 1.8em;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        .home {
+            display: inline-block;
+            margin-top: 30px;
+            background: #007bff;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            transition: 0.3s;
+        }
+        .home:hover {
+            background: #0056b3;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.5em; }
+            #content { font-size: 1.5em; }
+            .home { font-size: 1em; padding: 12px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Today's Topic</h1>
+    <div id="content">Loading...</div>
+    <a class="home" href="index.html">Back to Home</a>
+
+    <script>
+        async function loadContent() {
+            try {
+                const response = await fetch("data/topic.txt");
+                const text = await response.text();
+                const topics = text.split("\n").filter(t => t.trim() !== "");
+                const today = new Date();
+                const index = today.getUTCFullYear() * 100 + today.getUTCDate();
+                document.getElementById("content").innerText = topics[index % topics.length];
+            } catch (error) {
+                document.getElementById("content").innerText = "Error loading content.";
+            }
+        }
+        loadContent();
+    </script>
+</body>
+</html>
