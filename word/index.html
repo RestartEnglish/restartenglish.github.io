@@ -24,6 +24,12 @@
     <link rel="manifest" href="site.webmanifest">
 
 </head>
+    <!-- 🖼 Open Graph (SNS 공유 미리보기) -->
+    <meta property="og:title" content="Restart English - Today's Word">
+    <meta property="og:description" content="Expand your vocabulary with today's word!">
+    <meta property="og:image" content="https://restartenglish.github.io/preview.png">
+    <meta property="og:url" content="https://restartenglish.github.io/word.html">
+</head>
 <body>
     <div class="container">
         <h1>📖 Today's Word</h1>
@@ -80,7 +86,7 @@
         function speakWord(lang) {
             const word = document.getElementById("content").innerText;
             const utterance = new SpeechSynthesisUtterance(word);
-            utterance.lang = lang;  // ✅ "en-US" (미국식) or "en-GB" (영국식)
+            utterance.lang = lang;  // 🇺🇸 en-US (미국식), 🇬🇧 en-GB (영국식)
             speechSynthesis.speak(utterance);
         }
 
