@@ -1,66 +1,101 @@
+/* 전체 페이지 스타일 */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
     padding: 50px;
-    background-color: #f4f4f4;
+    background-color: #f8f9fa;
 }
+
+/* 컨테이너 스타일 */
+.container {
+    max-width: 500px;
+    margin: auto;
+}
+
+/* 카드 스타일 */
+.word-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+.word-card:hover {
+    transform: scale(1.02);
+}
+
+/* 제목 스타일 */
 h1 {
-    color: #333;
+    color: #007bff;
     font-size: 2em;
+    margin-bottom: 15px;
 }
-p {
+
+/* 단어 스타일 */
+h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin: 10px 0;
+}
+
+/* 발음 & 뜻 스타일 */
+.small {
     font-size: 1.2em;
     color: #555;
 }
-.menu {
+
+.definition {
+    font-size: 1.3em;
+    color: #222;
+    font-weight: bold;
+}
+
+/* 버튼 스타일 */
+.button-group {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
-    margin-top: 30px;
+    gap: 10px;
+    margin-top: 15px;
 }
-.menu a {
-    text-decoration: none;
-    background: #007bff;
-    color: white;
-    padding: 15px 25px;
-    border-radius: 8px;
-    font-size: 1.2em;
-    transition: 0.3s;
-    text-align: center;
-    flex: 1 1 200px;
-}
-.menu a:hover {
-    background: #0056b3;
-}
-.social-links {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-.social-links img {
-    width: 50px;
-    height: 50px;
-    transition: 0.3s;
-}
-.social-links img:hover {
-    transform: scale(1.1);
-}
-.search-container {
-    margin-top: 30px;
-}
-#search {
-    padding: 10px;
-    width: 200px;
-    font-size: 1em;
-}
+
 button {
-    padding: 10px;
+    padding: 10px 15px;
     font-size: 1em;
     cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background: #007bff;
+    color: white;
+    transition: 0.3s;
 }
+
+button:hover {
+    background: #0056b3;
+}
+
+/* 홈 버튼 스타일 */
+.home {
+    display: inline-block;
+    margin-top: 20px;
+    background: #28a745;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+}
+
+.home:hover {
+    background: #218838;
+}
+
+/* 반응형 스타일 */
 @media (max-width: 600px) {
     h1 { font-size: 1.5em; }
-    .menu a { font-size: 1em; padding: 12px 20px; }
+    h2 { font-size: 2em; }
+    .definition { font-size: 1.2em; }
+    button { font-size: 1em; padding: 8px 12px; }
 }
