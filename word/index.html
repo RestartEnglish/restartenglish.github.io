@@ -51,6 +51,15 @@
 
     <script>
         let words = [];
+        let voices = [];
+
+        // 🌍 사용 가능한 음성 목록 가져오기 (일부 브라우저는 비동기 로딩)
+        function loadVoices() {
+            voices = speechSynthesis.getVoices();
+        }
+
+        // 🛠 음성이 로드될 때 이벤트 추가
+        speechSynthesis.onvoiceschanged = loadVoices;
 
         async function loadContent() {
             try {
@@ -85,7 +94,18 @@
         function speakWord(lang) {
             const word = document.getElementById("content").innerText;
             const utterance = new SpeechSynthesisUtterance(word);
-            utterance.lang = lang;  // 🇺🇸 en-US (미국식), 🇬🇧 en-GB (영국식)
+
+            // 🇺🇸 미국식 발음 지정
+            if (lang === "en-US") {
+                utterance.voice = voices.find(v => v.lang === "en-US" && v.name.includes("Google")) || voices.find(v => v.lang === "en-US");
+            }
+            
+            // 🇬🇧 영국식 발음 지정
+            if (lang === "en-GB") {
+                utterance.voice = voices.find(v => v.lang === "en-GB" && v.name.includes("Google")) || voices.find(v => v.lang === "en-GB");
+            }
+
+            utterance.lang = lang; // 언어 설정
 
             // 🎯 카카오톡 인앱 브라우저 호환 문제 해결
             utterance.onstart = () => console.log("Speech started");
