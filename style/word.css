@@ -6,6 +6,13 @@
     margin: 20px 0;
 }
 
+.word-card {
+    user-select: none;  /* 텍스트 선택 방지 */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
 h1 {
     color: #007bff;
     font-size: 2em;
