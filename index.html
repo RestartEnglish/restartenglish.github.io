@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily English Question</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        #question { font-size: 24px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Today's Question</h1>
+    <div id="question">Loading...</div>
+
+    <script>
+        async function loadQuestion() {
+            try {
+                const response = await fetch("questions.txt");  // TXT 파일에서 질문 불러오기
+                const text = await response.text();
+                const questions = text.split("\n").filter(q => q.trim() !== ""); 
+                
+                const today = new Date();
+                const index = today.getFullYear() * 100 + today.getDate();  // 날짜 기반으로 매일 변경
+                const questionIndex = index % questions.length;  // 배열 길이만큼 나누기
+                
+                document.getElementById("question").innerText = questions[questionIndex];
+            } catch (error) {
+                document.getElementById("question").innerText = "Error loading question.";
+            }
+        }
+
+        loadQuestion();
+    </script>
+</body>
+</html>
