@@ -5,11 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Today's Word</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background-color: #fff3cd; }
-        h1 { color: #856404; }
-        #content { font-size: 24px; margin-top: 20px; font-weight: bold; }
-        .home { margin-top: 20px; display: inline-block; background: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
-        .home:hover { background: #0056b3; }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #fff3cd;
+        }
+        h1 {
+            color: #856404;
+            font-size: 2em;
+        }
+        #content {
+            font-size: 1.8em;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        .home {
+            display: inline-block;
+            margin-top: 30px;
+            background: #007bff;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            transition: 0.3s;
+        }
+        .home:hover {
+            background: #0056b3;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.5em; }
+            #content { font-size: 1.5em; }
+            .home { font-size: 1em; padding: 12px 20px; }
+        }
     </style>
 </head>
 <body>
