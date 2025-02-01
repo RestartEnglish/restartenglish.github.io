@@ -86,7 +86,17 @@
             const word = document.getElementById("content").innerText;
             const utterance = new SpeechSynthesisUtterance(word);
             utterance.lang = lang;  // 🇺🇸 en-US (미국식), 🇬🇧 en-GB (영국식)
-            speechSynthesis.speak(utterance);
+
+            // 🎯 카카오톡 인앱 브라우저 호환 문제 해결
+            utterance.onstart = () => console.log("Speech started");
+            utterance.onend = () => console.log("Speech ended");
+
+            try {
+                speechSynthesis.speak(utterance);
+            } catch (e) {
+                console.log("TTS blocked, retrying...");
+                setTimeout(() => speechSynthesis.speak(utterance), 500);
+            }
         }
 
         function loadRandom() {
