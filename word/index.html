@@ -64,10 +64,11 @@
                 document.getElementById("phonetic").innerText = "Pronunciation: N/A";
             }
         }
-
+        
         function speakWord() {
             const word = document.getElementById("content").innerText;
             const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = "en-US";  // 🌍 강제로 영어(미국식)로 설정
             speechSynthesis.speak(utterance);
         }
 
