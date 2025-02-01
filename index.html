@@ -5,11 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restart English</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background-color: #f4f4f4; }
-        h1 { color: #333; }
-        .menu { display: flex; justify-content: center; gap: 20px; margin-top: 30px; }
-        .menu a { text-decoration: none; background: #007bff; color: white; padding: 15px 25px; border-radius: 5px; font-size: 18px; }
-        .menu a:hover { background: #0056b3; }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+            font-size: 2em;
+        }
+        p {
+            font-size: 1.2em;
+            color: #555;
+        }
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .menu a {
+            text-decoration: none;
+            background: #007bff;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-size: 1.2em;
+            transition: 0.3s;
+            text-align: center;
+            flex: 1 1 200px; /* 버튼 크기 조절 */
+        }
+        .menu a:hover {
+            background: #0056b3;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.5em; }
+            .menu a { font-size: 1em; padding: 12px 20px; }
+        }
     </style>
 </head>
 <body>
