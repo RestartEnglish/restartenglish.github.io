@@ -101,22 +101,6 @@
             transform: scale(1.05);
             box-shadow: 0 5px 12px rgba(255, 165, 0, 0.8);
         }
-        @media (max-width: 600px) {
-            #question {
-                font-size: 2rem;
-            }
-            .big-text {
-                font-size: 2.5rem;
-            }
-            button {
-                font-size: 1rem;
-                padding: 6px 12px;
-            }
-            .progress-bar {
-                width: 150px;
-                height: 12px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -150,38 +134,32 @@
                 .catch(error => console.error('질문을 불러오는 중 오류 발생:', error));
         }
 
-        function speakText(text) {
-            speechSynthesis.cancel();
-            let utterance = new SpeechSynthesisUtterance(text);
-            utterance.lang = 'en-US';
-            speechSynthesis.speak(utterance);
+        function startTimer() {
+            clearInterval(timerInterval);
+            let timerDiv = document.getElementById("timer");
+            let progressBar = document.getElementById("progress");
+            timerDiv.textContent = answerTime;
+            progressBar.style.width = "100%";
+            let remainingTime = answerTime;
+            timerInterval = setInterval(() => {
+                remainingTime--;
+                timerDiv.textContent = remainingTime;
+                progressBar.style.width = (remainingTime / answerTime) * 100 + "%";
+                if (remainingTime <= 0) {
+                    clearInterval(timerInterval);
+                    if (soundEnabled) alarmSound.play();
+                }
+            }, 1000);
         }
 
-        function startRoulette() {
-            let questionDiv = document.getElementById("question");
-            questionDiv.classList.remove("big-text");
-            questionDiv.classList.add("rolling");
-            
-            if (questions.length === 0) {
-                questionDiv.textContent = "질문을 불러오는 중...";
-                return;
-            }
-            
-            let rollingTime = 2000;
-            rollingInterval = setInterval(() => {
-                let randomIndex = Math.floor(Math.random() * questions.length);
-                questionDiv.textContent = questions[randomIndex];
-            }, 100);
-            
-            setTimeout(() => {
-                clearInterval(rollingInterval);
-                let finalIndex = Math.floor(Math.random() * questions.length);
-                questionDiv.textContent = questions[finalIndex];
-                questionDiv.classList.remove("rolling");
-                questionDiv.classList.add("big-text");
-                speakText(questions[finalIndex]);
-                resetTimer();
-            }, rollingTime);
+        function resetTimer() {
+            answerTime = 30;
+            startTimer();
+        }
+
+        function adjustTime(value) {
+            answerTime = Math.max(5, answerTime + value);
+            document.getElementById("timer").textContent = answerTime;
         }
         loadQuestions();
     </script>
