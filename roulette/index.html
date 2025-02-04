@@ -15,6 +15,7 @@
             color: white;
             font-family: 'Noto Sans KR', sans-serif;
             text-align: center;
+            user-select: none;
         }
         #roulette {
             font-size: 2rem;
@@ -34,13 +35,20 @@
         }
         #question {
             font-size: 3rem;
-            transition: transform 0.3s ease-in-out;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
             text-align: center;
             max-width: 90%;
             word-wrap: break-word;
+            cursor: pointer;
+        }
+        .rolling {
+            animation: rollingEffect 0.2s linear infinite;
+        }
+        @keyframes rollingEffect {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
         }
         .big-text {
             font-size: 4rem;
@@ -94,7 +102,7 @@
 </head>
 <body>
     <div id="roulette">
-        <div id="question">준비가 되었으면, 버튼을 눌러 주세요</div>
+        <div id="question" onclick="speakText(this.textContent)">준비가 되었으면, 버튼을 눌러 주세요</div>
     </div>
     <button onclick="startRoulette()">🎰 질문 뽑기</button>
     <div class="timer-container">
@@ -127,46 +135,39 @@
             speechSynthesis.cancel();
             let utterance = new SpeechSynthesisUtterance(text);
             utterance.lang = 'en-US';
-            utterance.onend = function() {
-                setTimeout(() => { if (soundEnabled) beepSound.play(); }, 2000);
-                startTimer();
-            };
             speechSynthesis.speak(utterance);
         }
 
         function startRoulette() {
             let questionDiv = document.getElementById("question");
             questionDiv.classList.remove("big-text");
+            questionDiv.classList.add("rolling");
             
             if (questions.length === 0) {
                 questionDiv.textContent = "질문을 불러오는 중...";
                 return;
             }
             
-            clearInterval(rollingInterval);
-            let finalIndex = Math.floor(Math.random() * questions.length);
-            questionDiv.textContent = questions[finalIndex];
-            questionDiv.classList.add("big-text");
-            speakText(questions[finalIndex]);
+            let rollingTime = 2000;
+            rollingInterval = setInterval(() => {
+                let randomIndex = Math.floor(Math.random() * questions.length);
+                questionDiv.textContent = questions[randomIndex];
+            }, 100);
+            
+            setTimeout(() => {
+                clearInterval(rollingInterval);
+                let finalIndex = Math.floor(Math.random() * questions.length);
+                questionDiv.textContent = questions[finalIndex];
+                questionDiv.classList.remove("rolling");
+                questionDiv.classList.add("big-text");
+                speakText(questions[finalIndex]);
+                resetTimer();
+            }, rollingTime);
         }
 
-        function startTimer() {
-            clearInterval(timerInterval);
-            let timerDiv = document.getElementById("timer");
-            let progressBar = document.getElementById("progress");
-            timerDiv.textContent = answerTime;
-            progressBar.style.width = "100%";
-
-            let remainingTime = answerTime;
-            timerInterval = setInterval(() => {
-                remainingTime--;
-                timerDiv.textContent = remainingTime;
-                progressBar.style.width = (remainingTime / answerTime) * 100 + "%";
-                if (remainingTime <= 0) {
-                    clearInterval(timerInterval);
-                    if (soundEnabled) alarmSound.play();
-                }
-            }, 1000);
+        function resetTimer() {
+            answerTime = 30;
+            startTimer();
         }
 
         function adjustTime(value) {
