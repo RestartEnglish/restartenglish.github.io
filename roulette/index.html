@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랜덤 질문 룰렛</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #roulette {
+            font-size: 2rem;
+            height: 100px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid white;
+            width: 80%;
+            max-width: 600px;
+            background-color: #222;
+            margin-bottom: 20px;
+        }
+        #question {
+            animation: rolling 0.1s linear infinite;
+        }
+        @keyframes rolling {
+            from { transform: translateY(0); }
+            to { transform: translateY(-100%); }
+        }
+        .big-text {
+            font-size: 3rem;
+            color: yellow;
+        }
+        button {
+            font-size: 1.5rem;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            background-color: gold;
+            color: black;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="roulette">
+        <div id="question">질문을 불러오는 중...</div>
+    </div>
+    <button onclick="startRoulette()">질문 뽑기</button>
+
+    <script>
+        let questions = [];
+        let rollingInterval;
+        let audio = new Audio('https://www.myinstants.com/media/sounds/slot-machine-spin.mp3');
+
+        function loadQuestions() {
+            fetch('questions.txt')
+                .then(response => response.text())
+                .then(text => {
+                    questions = text.split('\n').map(q => q.trim()).filter(q => q);
+                })
+                .catch(error => console.error('질문을 불러오는 중 오류 발생:', error));
+        }
+
+        function startRoulette() {
+            let questionDiv = document.getElementById("question");
+            questionDiv.classList.remove("big-text");
+            
+            if (questions.length === 0) {
+                questionDiv.textContent = "질문을 불러오는 중...";
+                return;
+            }
+            
+            clearInterval(rollingInterval);
+            audio.play();
+            rollingInterval = setInterval(() => {
+                let randomIndex = Math.floor(Math.random() * questions.length);
+                questionDiv.textContent = questions[randomIndex];
+            }, 100);
+            
+            setTimeout(() => {
+                clearInterval(rollingInterval);
+                let finalIndex = Math.floor(Math.random() * questions.length);
+                questionDiv.textContent = questions[finalIndex];
+                questionDiv.classList.add("big-text");
+            }, 3000);
+        }
+
+        loadQuestions();
+    </script>
+</body>
+</html>
