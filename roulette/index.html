@@ -47,6 +47,16 @@
             color: #ffcc00;
             font-weight: bold;
         }
+        .timer-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        #timer {
+            font-size: 2rem;
+            color: #ff9900;
+        }
         button {
             font-size: 2rem;
             padding: 15px 30px;
@@ -82,12 +92,21 @@
         <div id="question">준비가 되었으면, 버튼을 눌러 주세요</div>
     </div>
     <button onclick="startRoulette()">🎰 질문 뽑기</button>
+    <div class="timer-container">
+        <button onclick="adjustTime(-5)">➖</button>
+        <span id="timer">30</span>초
+        <button onclick="adjustTime(5)">➕</button>
+    </div>
+    <button onclick="toggleSound()">🔈 효과음 끄기</button>
 
     <script>
         let questions = [];
         let rollingInterval;
-        let audio = new Audio();
-        audio.src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAwF0AAIC7AAACABAAZGF0YQAAAAA=';
+        let timerInterval;
+        let answerTime = 30;
+        let soundEnabled = true;
+        let beepSound = new Audio('https://www.soundjay.com/button/beep-07.wav');
+        let alarmSound = new Audio('https://www.soundjay.com/button/beep-09.wav');
 
         function loadQuestions() {
             fetch('questions.txt')
@@ -108,32 +127,50 @@
             }
             
             clearInterval(rollingInterval);
-            audio.play();
-            
-            let duration = 3000;
+            let duration = 2000;
             let intervalTime = 50;
             let count = 0;
-            let currentOffset = 0;
             
             rollingInterval = setInterval(() => {
                 let randomIndex = Math.floor(Math.random() * questions.length);
                 questionDiv.textContent = questions[randomIndex];
-                questionDiv.style.transform = `translateY(${currentOffset}px)`;
                 count++;
                 
-                if (count > 20) {
-                    intervalTime += 30;
-                    currentOffset += 5;
-                }
-                
+                if (count > 20) intervalTime += 30;
                 if (intervalTime > 500) {
                     clearInterval(rollingInterval);
                     let finalIndex = Math.floor(Math.random() * questions.length);
                     questionDiv.textContent = questions[finalIndex];
                     questionDiv.classList.add("big-text");
-                    questionDiv.style.transform = "translateY(-50%)";
+                    setTimeout(() => { if (soundEnabled) beepSound.play(); }, 2000);
+                    startTimer();
                 }
             }, intervalTime);
+        }
+
+        function startTimer() {
+            clearInterval(timerInterval);
+            let timerDiv = document.getElementById("timer");
+            timerDiv.textContent = answerTime;
+            timerInterval = setInterval(() => {
+                let timeLeft = parseInt(timerDiv.textContent);
+                if (timeLeft > 0) {
+                    timerDiv.textContent = timeLeft - 1;
+                } else {
+                    clearInterval(timerInterval);
+                    if (soundEnabled) alarmSound.play();
+                }
+            }, 1000);
+        }
+
+        function adjustTime(value) {
+            answerTime = Math.max(5, answerTime + value);
+            document.getElementById("timer").textContent = answerTime;
+        }
+
+        function toggleSound() {
+            soundEnabled = !soundEnabled;
+            document.querySelector("button[onclick='toggleSound()']").textContent = soundEnabled ? "🔈 효과음 끄기" : "🔇 효과음 켜기";
         }
 
         loadQuestions();
