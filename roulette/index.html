@@ -45,7 +45,7 @@
             cursor: pointer;
         }
         .rolling {
-            animation: rollingEffect 0.05s linear infinite;
+            animation: rollingEffect 0.1s linear infinite;
         }
         @keyframes rollingEffect {
             0% { transform: translateY(0); }
@@ -55,49 +55,6 @@
             font-size: 3rem;
             color: #ffcc00;
             font-weight: bold;
-        }
-        .timer-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-top: 20px;
-            font-size: 1.5rem;
-        }
-        #timer {
-            font-size: 2rem;
-            color: #ff9900;
-            font-weight: bold;
-            min-width: 50px;
-        }
-        .progress-bar {
-            width: 200px;
-            height: 20px;
-            background: #444;
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-        }
-        .progress {
-            height: 100%;
-            width: 100%;
-            background: linear-gradient(90deg, #ffcc00, #ff5500);
-            transition: width 1s linear;
-        }
-        button {
-            font-size: 1.5rem;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            background: linear-gradient(135deg, #ffcc00, #ff9900);
-            color: black;
-            font-weight: bold;
-            border-radius: 20px;
-            box-shadow: 0 4px 10px rgba(255, 165, 0, 0.6);
-            transition: transform 0.2s;
-        }
-        button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 15px rgba(255, 165, 0, 0.8);
         }
     </style>
 </head>
@@ -131,6 +88,34 @@
                 .catch(error => console.error('질문을 불러오는 중 오류 발생:', error));
         }
 
+        function startRoulette() {
+            let questionDiv = document.getElementById("question");
+            questionDiv.classList.remove("big-text");
+            questionDiv.classList.add("rolling");
+            
+            if (questions.length === 0) {
+                questionDiv.textContent = "질문을 불러오는 중...";
+                return;
+            }
+            
+            let rollingTime = 2000;
+            rollingInterval = setInterval(() => {
+                let randomIndex = Math.floor(Math.random() * questions.length);
+                questionDiv.textContent = questions[randomIndex];
+            }, 100);
+            
+            setTimeout(() => {
+                clearInterval(rollingInterval);
+                let finalIndex = Math.floor(Math.random() * questions.length);
+                questionDiv.textContent = questions[finalIndex];
+                questionDiv.classList.remove("rolling");
+                questionDiv.classList.add("big-text");
+                speakText(questions[finalIndex]);
+                setTimeout(() => { if (soundEnabled) beepSound.play(); }, 2000);
+                resetTimer();
+            }, rollingTime);
+        }
+
         function startTimer() {
             clearInterval(timerInterval);
             let timerDiv = document.getElementById("timer");
@@ -158,6 +143,19 @@
             answerTime = Math.max(5, answerTime + value);
             document.getElementById("timer").textContent = answerTime;
         }
+
+        function speakText(text) {
+            speechSynthesis.cancel();
+            let utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            speechSynthesis.speak(utterance);
+        }
+
+        function toggleSound() {
+            soundEnabled = !soundEnabled;
+            document.querySelector("button[onclick='toggleSound()']").textContent = soundEnabled ? "🔈 효과음 끄기" : "🔇 효과음 켜기";
+        }
+
         loadQuestions();
     </script>
 </body>
