@@ -58,6 +58,22 @@
             color: #ffcc00;
             font-weight: bold;
         }
+        button {
+            font-size: 1.5rem;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            background: linear-gradient(135deg, #ffcc00, #ff9900);
+            color: black;
+            font-weight: bold;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(255, 165, 0, 0.6);
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(255, 165, 0, 0.8);
+        }
         @media (max-width: 600px) {
             #question {
                 font-size: 2rem;
@@ -90,9 +106,7 @@
         let timerInterval;
         let answerTime = 30;
         let soundEnabled = true;
-        let beepSound = new Audio('https://www.soundjay.com/button/beep-07.wav');
-        let alarmSound = new Audio('https://www.soundjay.com/button/beep-09.wav');
-
+        
         function loadQuestions() {
             fetch('questions.txt')
                 .then(response => response.text())
@@ -125,44 +139,23 @@
                 questionDiv.classList.remove("rolling");
                 questionDiv.classList.add("big-text");
                 speakText(questions[finalIndex]);
-                setTimeout(() => { if (soundEnabled) beepSound.play(); }, 2000);
+                setTimeout(() => { 
+                    if (soundEnabled) playBeep();
+                }, 2000);
                 resetTimer();
             }, rollingTime);
         }
 
-        function startTimer() {
-            clearInterval(timerInterval);
-            let timerDiv = document.getElementById("timer");
-            let progressBar = document.getElementById("progress");
-            timerDiv.textContent = answerTime;
-            progressBar.style.width = "100%";
-            let remainingTime = answerTime;
-            timerInterval = setInterval(() => {
-                remainingTime--;
-                timerDiv.textContent = remainingTime;
-                progressBar.style.width = (remainingTime / answerTime) * 100 + "%";
-                if (remainingTime <= 0) {
-                    clearInterval(timerInterval);
-                    if (soundEnabled) alarmSound.play();
-                }
-            }, 1000);
-        }
-
-        function resetTimer() {
-            answerTime = 30;
-            startTimer();
-        }
-
-        function adjustTime(value) {
-            answerTime = Math.max(5, answerTime + value);
-            document.getElementById("timer").textContent = answerTime;
-        }
-
-        function speakText(text) {
-            speechSynthesis.cancel();
-            let utterance = new SpeechSynthesisUtterance(text);
-            utterance.lang = 'en-US';
-            speechSynthesis.speak(utterance);
+        function playBeep() {
+            const context = new (window.AudioContext || window.webkitAudioContext)();
+            const oscillator = context.createOscillator();
+            oscillator.type = "sine";
+            oscillator.frequency.setValueAtTime(1000, context.currentTime);
+            oscillator.connect(context.destination);
+            oscillator.start();
+            setTimeout(() => {
+                oscillator.stop();
+            }, 200);
         }
 
         function toggleSound() {
