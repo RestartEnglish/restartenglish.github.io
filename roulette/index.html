@@ -126,7 +126,7 @@
         function speakText(text) {
             speechSynthesis.cancel();
             let utterance = new SpeechSynthesisUtterance(text);
-            utterance.lang = 'ko-KR';
+            utterance.lang = 'en-US';
             utterance.onend = function() {
                 setTimeout(() => { if (soundEnabled) beepSound.play(); }, 2000);
                 startTimer();
