@@ -18,31 +18,38 @@
         }
         #roulette {
             font-size: 2rem;
-            height: 120px;
+            height: 150px;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 15px;
-            width: 80%;
-            max-width: 600px;
+            width: 90%;
+            max-width: 700px;
             background-color: #292929;
             box-shadow: 0 4px 10px rgba(255, 215, 0, 0.5);
             margin-bottom: 30px;
             padding: 20px;
+            position: relative;
         }
         #question {
-            font-size: 1.8rem;
-            transition: all 0.3s ease-in-out;
+            font-size: 3rem;
+            transition: transform 0.3s ease-in-out;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            max-width: 90%;
+            word-wrap: break-word;
         }
         .big-text {
-            font-size: 2.5rem;
+            font-size: 4rem;
             color: #ffcc00;
             font-weight: bold;
         }
         button {
-            font-size: 1.5rem;
-            padding: 12px 25px;
+            font-size: 2rem;
+            padding: 15px 30px;
             border: none;
             cursor: pointer;
             background: linear-gradient(135deg, #ffcc00, #ff9900);
@@ -56,6 +63,18 @@
             transform: scale(1.05);
             box-shadow: 0 6px 15px rgba(255, 165, 0, 0.8);
         }
+        @media (max-width: 768px) {
+            #question {
+                font-size: 2rem;
+            }
+            .big-text {
+                font-size: 2.5rem;
+            }
+            button {
+                font-size: 1.5rem;
+                padding: 12px 25px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -67,7 +86,8 @@
     <script>
         let questions = [];
         let rollingInterval;
-        let audio = new Audio('https://www.myinstants.com/media/sounds/slot-machine-spin.mp3');
+        let audio = new Audio();
+        audio.src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAwF0AAIC7AAACABAAZGF0YQAAAAA=';
 
         function loadQuestions() {
             fetch('questions.txt')
@@ -90,17 +110,20 @@
             clearInterval(rollingInterval);
             audio.play();
             
-            let duration = 2000;
+            let duration = 3000;
             let intervalTime = 50;
             let count = 0;
+            let currentOffset = 0;
             
             rollingInterval = setInterval(() => {
                 let randomIndex = Math.floor(Math.random() * questions.length);
                 questionDiv.textContent = questions[randomIndex];
+                questionDiv.style.transform = `translateY(${currentOffset}px)`;
                 count++;
                 
                 if (count > 20) {
-                    intervalTime += 20;
+                    intervalTime += 30;
+                    currentOffset += 5;
                 }
                 
                 if (intervalTime > 500) {
@@ -108,6 +131,7 @@
                     let finalIndex = Math.floor(Math.random() * questions.length);
                     questionDiv.textContent = questions[finalIndex];
                     questionDiv.classList.add("big-text");
+                    questionDiv.style.transform = "translateY(-50%)";
                 }
             }, intervalTime);
         }
