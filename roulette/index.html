@@ -100,6 +100,7 @@
         <button onclick="adjustTime(5)">➕</button>
     </div>
     <button onclick="toggleSound()">🔈 효과음 끄기</button>
+    
     <script>
         let questions = [];
         let rollingInterval;
@@ -114,6 +115,14 @@
                     questions = text.split('\n').map(q => q.trim()).filter(q => q);
                 })
                 .catch(error => console.error('질문을 불러오는 중 오류 발생:', error));
+        }
+
+        function speakText(text) {
+            if (!text || text.trim() === "") return;
+            speechSynthesis.cancel();
+            let utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            speechSynthesis.speak(utterance);
         }
 
         function startRoulette() {
@@ -139,28 +148,22 @@
                 questionDiv.classList.remove("rolling");
                 questionDiv.classList.add("big-text");
                 speakText(questions[finalIndex]);
-                setTimeout(() => { 
-                    if (soundEnabled) playBeep();
-                }, 2000);
+                setTimeout(() => { if (soundEnabled) playBeep(); }, 2000);
                 resetTimer();
             }, rollingTime);
         }
 
-        function playBeep() {
-            const context = new (window.AudioContext || window.webkitAudioContext)();
-            const oscillator = context.createOscillator();
-            oscillator.type = "sine";
-            oscillator.frequency.setValueAtTime(1000, context.currentTime);
-            oscillator.connect(context.destination);
-            oscillator.start();
-            setTimeout(() => {
-                oscillator.stop();
-            }, 200);
-        }
-
-        function toggleSound() {
-            soundEnabled = !soundEnabled;
-            document.querySelector("button[onclick='toggleSound()']").textContent = soundEnabled ? "🔈 효과음 끄기" : "🔇 효과음 켜기";
+        function resetTimer() {
+            clearInterval(timerInterval);
+            answerTime = 30;
+            document.getElementById("timer").textContent = answerTime;
+            timerInterval = setInterval(() => {
+                answerTime--;
+                document.getElementById("timer").textContent = answerTime;
+                if (answerTime <= 0) {
+                    clearInterval(timerInterval);
+                }
+            }, 1000);
         }
 
         loadQuestions();
