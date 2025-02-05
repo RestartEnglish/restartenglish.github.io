@@ -107,6 +107,7 @@
         let timerInterval;
         let answerTime = 30;
         let soundEnabled = true;
+        let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
         
         function loadQuestions() {
             fetch('questions.txt')
@@ -151,6 +152,17 @@
                 setTimeout(() => { if (soundEnabled) playBeep(); }, 2000);
                 resetTimer();
             }, rollingTime);
+        }
+
+        function playBeep() {
+            audioCtx.resume().then(() => {
+                let oscillator = audioCtx.createOscillator();
+                oscillator.type = "sine";
+                oscillator.frequency.setValueAtTime(1000, audioCtx.currentTime);
+                oscillator.connect(audioCtx.destination);
+                oscillator.start();
+                setTimeout(() => oscillator.stop(), 200);
+            });
         }
 
         function resetTimer() {
