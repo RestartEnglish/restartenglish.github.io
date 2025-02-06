@@ -136,11 +136,11 @@
                 return;
             }
             
-            let rollingTime = 2000;
+            let rollingTime = 500;
             rollingInterval = setInterval(() => {
                 let randomIndex = Math.floor(Math.random() * questions.length);
                 questionDiv.textContent = questions[randomIndex];
-            }, 100);
+            }, 50);
             
             setTimeout(() => {
                 clearInterval(rollingInterval);
