@@ -98,3 +98,1284 @@ What do you think about trying new foods?
 How do you usually spend your weekends?
 Do you know how to fix a flat tire?
 Is there a skill you want to learn this year?
+How is the weather today?
+Do you like rainy days?
+What is your favorite season?
+Do you like hot or cold weather?
+What do you do on snowy days?
+Is the weather in your city nice?
+Have you ever seen a big storm?
+Do you think the weather is changing?
+What do you like to do on sunny days?
+Where do you want to go in summer?
+What is your hobby?
+How did you start your hobby?
+Do you like doing hobbies inside or outside?
+What new hobby do you want to try?
+Do you collect anything?
+Have you ever stopped doing a hobby?
+How often do you do your hobby?
+Do you like making things?
+What is the most fun thing you made?
+Do you like hobbies alone or with friends?
+What is your favorite food?
+Can you cook?
+What is the best food you have eaten?
+Do you like sweet or salty snacks?
+What food do you eat a lot?
+Do you like trying new food?
+What food is famous in your country?
+Do you like spicy food?
+Have you cooked for many people?
+What food makes you happy?
+Do you exercise?
+What exercise do you like?
+Do you like exercising alone or with friends?
+How do you stay healthy?
+Have you tried yoga or stretching?
+What sport do you like?
+Do you watch sports?
+How do you relax after a hard day?
+Do you sleep well?
+Do you drink enough water?
+What is the best place you have traveled to?
+Do you like the beach or the mountains?
+Where do you want to travel?
+Have you traveled alone?
+What is the longest trip you took?
+Do you like road trips?
+What is a good travel tip?
+Did you ever have a bad trip?
+Where is your dream travel place?
+Do you like visiting old places?
+What is your favorite school subject?
+Do you study alone or with friends?
+Who was your best teacher?
+What is something interesting you learned?
+How do you study for tests?
+Do you think school is useful?
+What subject is hard for you?
+Do you like online classes?
+Have you studied something for fun?
+Do you like learning new things?
+What music do you like?
+Can you play an instrument?
+What was the last song you listened to?
+Do you like movies or TV shows more?
+What is the best movie you watched?
+Do you watch movies from other countries?
+What TV show do you like?
+Do you like watching movies at home or in a theater?
+What song makes you happy?
+Have you been to a concert?
+Do you use social media?
+Do you think social media is good or bad?
+What is your favorite phone app?
+Do you like texting or calling?
+How much time do you spend online?
+Have you taken a break from social media?
+Do you think technology helps people?
+What is one thing you can’t live without?
+Do you like real books or e-books?
+Have you studied online?
+What do you do every day?
+Do you like mornings or nights?
+What is the first thing you do in the morning?
+What do you do on weekends?
+Do you make a plan for your day?
+What is a perfect day for you?
+Do you like a busy schedule?
+How do you go to school or work?
+What small thing makes you happy?
+Do you like being busy or relaxing?
+Who is someone you admire?
+How do you make new friends?
+Do you like many friends or a few close friends?
+What do you look for in a friend?
+How do you stay in touch with friends?
+What is the best advice you got?
+Have you helped a stranger?
+How do you solve problems with others?
+What makes a good listener?
+Do you believe in love at first sight?
+Do you like shopping?
+Where do you buy clothes?
+What kind of clothes do you like?
+Do you like shopping online or in stores?
+Have you ever found a great deal?
+How do you decide what to buy?
+What is the most expensive thing you bought?
+Do you follow fashion trends?
+What is your favorite brand?
+Do you like formal or casual clothes?
+Do you like working in a team or alone?
+What is your dream job?
+How do you deal with stress at work?
+Have you had a part-time job?
+Do you like working from home?
+What was your best job?
+How do you prepare for job interviews?
+What makes you work hard?
+What is a good place to work?
+Do you want to start a business?
+What would you do if you won the lottery?
+Do you like saving or spending money?
+What is something you regret buying?
+How do you manage your money?
+Have you made a big money decision?
+Do you think money buys happiness?
+What is the best money advice you got?
+Do you use cash or a card more?
+How do you split the bill with friends?
+What kind of books do you like?
+Do you like stories or real-life books?
+What was the last book you read?
+Do you like listening to books?
+Have you read a book twice?
+What book do you recommend?
+Do you like short books or long books?
+What book changed your thinking?
+Do you like going to bookstores?
+Have you ever written a story?
+Do you like surprises?
+What is the best gift you got?
+Do you like giving gifts?
+How do you show love to others?
+How do you celebrate birthdays?
+Do you like big parties or small ones?
+What is your favorite holiday?
+Have you ever planned a surprise?
+Do you like handmade gifts?
+What is the most special gift you gave?
+Do you believe in fate or free will?
+What is something you always wanted to do?
+What is your biggest fear?
+What makes you happy?
+What is success to you?
+What is something you wish people knew about you?
+What is the best life lesson you learned?
+What do you want to do in five years?
+If you could have dinner with anyone, who would it be?
+What is your biggest dream?
+How do you want people to remember you?
+What is one thing you are thankful for today?
+What time do you go to bed?
+What do you usually eat for lunch?
+What is your favorite fruit?
+What do you do when someone doesn’t listen to you?
+How do you ask for help when you need it?
+What is a nice way to tell someone you don’t agree?
+What do you say when you want to join a game?
+How do you fix a problem with a friend?
+What is something you can do to make a new student feel welcome?
+How do you ask someone to play with you?
+What do you do when someone says something mean to you?
+What can you do when you don’t like what someone is doing?
+How do you feel when someone listens to you carefully?
+What is your favorite fast food?
+What is your favorite restaurant?
+What do you do when you feel bored?
+What is your favorite mobile game?
+What is your favorite color?
+Have you ever had a pet?
+What animal do you like the most?
+What is your favorite holiday?
+How do you celebrate New Year?
+What do you do on your birthday?
+Have you ever been to the beach?
+Have you ever gone camping?
+Have you ever been on a boat?
+Have you ever stayed in a hotel?
+If you could visit any place in the world, where would you go?
+If you could be any animal for one day, what would you be?
+What would you do if you found a magic lamp?
+If you could live in a storybook, which one would it be?
+What kind of house would you build if you could make anything?
+If you had a pet dragon, what would you name it?
+What would you do if you could fly?
+If you could create a new holiday, what would it be?
+What would happen if toys could talk?
+If you could design a new playground, what would it have?
+How do you go to work or school?
+Can you ride a bike?
+What do you do when it rains?
+Can you draw?
+Have you ever tried pottery?
+What was your favorite cartoon as a child?
+What is your favorite comedy movie?
+Have you ever watched a scary movie?
+What is your favorite song?
+Have you ever been on a train?
+How do you usually react when someone criticizes you?
+What do you do when you have a disagreement with a close friend?
+How do you stay calm when someone is arguing with you?
+What is one thing that helps you resolve conflicts peacefully?
+How do you express your feelings without hurting others?
+What do you do when you feel misunderstood?
+How do you handle a situation where someone is angry at you?
+What is something you can say to make a tense situation better?
+How do you apologize when you realize you made a mistake?
+What do you do when you feel frustrated with someone?
+How do you let go of negative emotions after an argument?
+What is one way to build better relationships after a conflict?
+How do you handle a situation where you and a friend have different opinions?
+What do you say when someone hurts your feelings?
+How do you respond when someone refuses to listen to your side?
+What do you do when you feel emotionally overwhelmed?
+How do you stop yourself from saying something you might regret?
+What is one way to rebuild trust after a disagreement?
+How do you usually react when someone blames you unfairly?
+What do you do when you want to forgive someone but still feel hurt?
+Can you play the piano?
+What is one thing you do every day that makes you happy?
+How do you usually express gratitude?
+What is a small daily habit that improves your mood?
+What do you do when you need an energy boost?
+How do you practice mindfulness in your daily life?
+What is one thing you look forward to every day?
+How do you stay optimistic during difficult times?
+What is something simple that makes life beautiful?
+How do you help others feel happier?
+What is one way to bring more joy into your life?
+How do you usually express appreciation for others?
+What do you do to keep a positive attitude even when things go wrong?
+How do you handle unexpected changes in life?
+What is something that always makes you laugh?
+How do you create a peaceful environment for yourself?
+What is a positive habit that you want to develop?
+How do you remind yourself to stay present in the moment?
+What is one activity that helps you feel truly happy?
+How do you surround yourself with positivity?
+What is one act of kindness that made a big impact on you?
+What language do you want to learn?
+What do you like to do with your family?
+How do you help your family at home?
+What is something kind you can do for a friend?
+What do you do when a friend feels sad?
+How do you show love to your family?
+What is something fun you have done with your family?
+What do you and your best friend like to do together?
+What makes someone a good friend?
+How do you feel when you make a new friend?
+What is something you can say to cheer up a friend?
+Have you ever been to another country?
+What do you do when you wake up in the morning?
+How do you get ready for school?
+What do you like to do after school?
+What is your favorite part of the day?
+What do you do when you feel bored?
+How do you like to spend your weekends?
+What do you do when it is raining outside?
+What is your favorite thing to do at the playground?
+What is something you do before going to bed?
+What is something you do every day that makes you happy?
+Are you shy or outgoing?
+What is one thing you like about yourself?
+How do you remind yourself of your strengths?
+What do you do when you feel insecure?
+How do you practice self-love in your daily life?
+What is one thing that always makes you feel proud of yourself?
+How do you handle situations where you compare yourself to others?
+What do you say to yourself when you feel like giving up?
+How do you build confidence in something you’re not good at?
+What is one thing you do to feel more positive about yourself?
+How do you react when someone compliments you?
+What is one past achievement that still makes you happy?
+How do you deal with self-doubt?
+What is something small that makes you feel successful?
+How do you usually celebrate your own progress?
+What is one way to develop a more positive mindset?
+How do you handle failure in a way that helps you grow?
+What do you do when you feel like you’re not good enough?
+What is one thing that always boosts your self-confidence?
+How do you practice gratitude for yourself?
+What is one habit that helps you feel more self-assured?
+What color clothes do you wear the most?
+What do you always do in the morning?
+How do you spend your evenings?
+What do you do when you feel a little sad?
+How do you make yourself feel better on a bad day?
+What is one thing that always makes you happy?
+What is something nice someone has done for you?
+How do you show kindness to other people?
+What is a small thing that makes your day better?
+How do you start talking to a new person?
+What do you usually talk about with new people?
+What is one good thing you like in a person?
+How do you usually help others?
+What is something you really love doing?
+What do you do when you feel a little nervous?
+How do you get ready for an important day?
+What is something you do before a big meeting?
+How do you keep going when something is hard?
+What do you do to stay focused?
+What do you do when you have too much work?
+How do you plan your time every day?
+What do you do to keep things in order?
+How do you plan your week?
+What do you do when you have too much to do?
+How do you balance work and free time?
+What is one habit that helps you work better?
+What is something you want to do better every day?
+How do you prepare for an important decision?
+What do you do when you have to choose something hard?
+How do you stay calm in a stressful time?
+What is one way you deal with pressure?
+What do you do when you need to relax?
+How do you like to spend your weekends?
+What is something fun you did last weekend?
+What is your favorite way to spend a Saturday?
+What do you usually do on Sunday mornings?
+What is your favorite way to spend a day off?
+How do you spend time with your family?
+What is one fun thing your family does?
+What do you do when you visit family?
+What do you love about your family?
+How do you celebrate special days?
+What is your favorite way to enjoy your birthday?
+What is something you always do on holidays?
+What is one fun memory from a holiday?
+What is something fun you do in the winter?
+What do you do when it is really hot outside?
+What do you like to do on rainy days?
+How do you dress when it is cold?
+What is your favorite outfit for summer?
+What do you wear when you relax at home?
+What is one thing you wear a lot?
+How do you decide what to wear?
+What do you wear when going out with friends?
+What is one thing you do to stay healthy?
+How do you move your body every day?
+What do you do to keep your body strong?
+How do you take care of your skin?
+What is your favorite way to relax after a long day?
+What do you do to sleep better?
+How do you feel after a good night's sleep?
+What is something you like to do before bed?
+How do you get ready for a busy day?
+What do you always do in the morning?
+What do you like to eat for breakfast?
+What is your favorite meal of the day?
+How do you decide what to eat?
+What is something you like to cook?
+What is one food you can eat every day?
+What is your favorite snack?
+What is something you always buy at the store?
+How do you choose where to eat?
+Where do you like to eat with friends?
+What is one restaurant you really like?
+What is something you like to order at a restaurant?
+What is your favorite drink?
+How do you like your coffee or tea?
+What is one sweet food you really like?
+How do you like to spend time in a café?
+What do you enjoy about visiting a café?
+What is your favorite book, and why?
+How do you choose books to read?
+What is a book that changed your thinking?
+What kind of books do you like best?
+What is one story that really made you think?
+How do you find time to read?
+What do you like about reading?
+What was the last book you read?
+What is your favorite way to enjoy a book?
+What do you like about watching movies?
+How do you pick a movie to watch?
+What is one movie you can watch again and again?
+Who is your favorite actor or actress?
+How do you feel after watching a great movie?
+What is your favorite movie song?
+What TV show are you watching now?
+How do you like to spend your free time?
+What is a hobby you have done for a long time?
+How do you spend time alone?
+What is one skill you really want to learn?
+What is your favorite soup?
+What is one personal goal you are currently working on?
+How do you stay motivated when working toward a long-term goal?
+What is a habit that has helped you improve your life?
+How do you usually track your progress on a goal?
+What do you do when you feel unmotivated?
+How do you push yourself to try new things?
+What is one lesson you learned from a past challenge?
+How do you usually reward yourself after achieving a goal?
+What is something you have worked really hard for?
+How do you build discipline to stay consistent with your goals?
+What do you say to yourself when things don’t go as planned?
+How do you find inspiration when you feel stuck?
+What is something that keeps you moving forward every day?
+How do you handle setbacks without losing motivation?
+What is one thing you can do today to improve your future?
+How do you find meaning in the work you do?
+What is one strategy that helps you stay focused?
+How do you usually overcome procrastination?
+What is something you remind yourself of when facing difficulties?
+How do you make sure you are growing as a person every day?
+Have you ever eaten sushi?
+What is the best food in your country?
+What is something you are really good at?
+What is one thing you want to get better at?
+What is something that makes you feel proud?
+How do you feel when you try something new?
+What is something that makes you unique?
+If you could have any superpower, what would it be?
+What is something that makes you laugh a lot?
+What is the best thing about being you?
+How do you feel when you help someone?
+What is something you want to learn?
+What is your favorite drink?
+Do you like trying new restaurants?
+Have you ever cooked for someone else?
+Do you like reading books?
+What book are you reading now?
+What do you do when you wake up earlier than usual?
+How do you spend a quiet morning at home?
+What is the first thing you do when you start your day?
+How do you feel when you wake up on a rainy day?
+What do you like to do when you have no plans for the day?
+How do you decide what to wear in the morning?
+What do you do when you feel cold in the morning?
+How do you prepare for a long day ahead?
+What is something that makes your morning better?
+How do you spend your time while commuting?
+What do you do when you arrive somewhere early?
+How do you like to start a conversation with someone new?
+What do you usually do when waiting for someone?
+What is something you enjoy doing while traveling alone?
+How do you decide where to sit in a café or restaurant?
+What do you do when trying a new restaurant for the first time?
+How do you choose what to eat when looking at a menu?
+What is your go-to meal when you don’t know what to eat?
+How do you feel when you try a new dish for the first time?
+What do you usually do after finishing a big meal?
+How do you spend your time when eating alone?
+What do you do when you accidentally order too much food?
+How do you decide when it’s time to leave a place?
+What do you do when you forget something important at home?
+How do you usually react when someone gives you a compliment?
+What do you do when you run into an old friend?
+How do you introduce yourself to new people?
+What do you usually talk about when meeting someone for the first time?
+How do you politely end a conversation when you need to leave?
+What do you do when you feel awkward in a group?
+How do you handle situations where you don’t know what to say?
+What is something you do to make a good first impression?
+How do you feel when someone remembers something small about you?
+What do you do when you forget someone's name?
+How do you react when someone unexpectedly helps you?
+What do you do when you want to thank someone sincerely?
+How do you usually respond when someone apologizes to you?
+What do you do when you make a small mistake in public?
+How do you handle a situation where you need to apologize?
+What do you do when you realize you left something behind?
+How do you deal with a situation where you get lost?
+What do you do when you hear good news from a friend?
+How do you celebrate small achievements in your daily life?
+What do you do when you feel really proud of yourself?
+How do you react when you receive an unexpected gift?
+What is something you do when you feel lucky?
+How do you usually spend your time when waiting in line?
+What do you do when you finish your tasks earlier than expected?
+How do you handle a situation where you have too many things to do?
+What do you do when you feel overwhelmed by responsibilities?
+How do you stay calm when things don’t go as planned?
+What is something you do when you feel really stressed?
+How do you motivate yourself when you don’t feel like doing anything?
+What do you do when you feel unmotivated?
+How do you reward yourself after working hard?
+What do you do when you suddenly get a lot of free time?
+How do you feel when you complete a difficult task?
+What do you do when you need a break but can’t take one?
+How do you handle situations where you have to wait a long time?
+What do you do when you feel impatient?
+How do you react when someone gives you unexpected advice?
+What do you do when you hear a really funny joke?
+How do you handle situations where you laugh at the wrong time?
+What do you do when you feel nervous before an important event?
+How do you stay confident when trying something new?
+What do you do when you have to speak in front of a group?
+How do you prepare for a big decision?
+What do you do when you don’t know how to make a choice?
+How do you usually react when someone asks for your opinion?
+What do you do when someone disagrees with you?
+How do you handle a situation where you and a friend have different opinions?
+What do you do when you feel unsure about something?
+How do you handle a situation where you don’t understand something?
+What do you do when you need to ask for help?
+How do you feel when you help someone and they really appreciate it?
+What do you do when you realize you were wrong about something?
+How do you usually react when learning something surprising?
+What do you do when you find out exciting news?
+How do you share good news with others?
+What do you do when you receive an unexpected message?
+How do you feel when you get a kind message from someone?
+What do you do when you hear a song you really like?
+How do you react when you hear a song from your childhood?
+What do you do when you find a new hobby you enjoy?
+How do you decide whether to start a new hobby?
+What do you do when you realize you no longer enjoy a hobby?
+How do you handle situations where you feel uninspired?
+What do you do when you see something that reminds you of a good memory?
+How do you keep track of memories that are important to you?
+What do you do when you find an old picture of yourself?
+How do you react when someone shares a funny memory about you?
+What do you do when you suddenly remember something important?
+How do you handle a situation where you forget an important date?
+What do you do when you feel nostalgic?
+How do you like to end your day before going to sleep?
+What do you do when you can’t sleep at night?
+How do you usually feel at the end of a long day?
+What do you do when you have a really good dream?
+How do you react when you wake up and feel fully rested?
+Have you ever visited a famous place?
+What is the best way to start your day?
+How do you prepare for a busy morning?
+What do you do when you wake up feeling tired?
+What is one thing you always do before leaving home?
+How do you usually spend your lunch break?
+What do you do when you have a sudden change in plans?
+How do you make the most of your free time?
+What helps you stay focused when you have a lot to do?
+How do you balance work and personal life?
+What do you usually do after finishing a big task?
+What is one small thing that makes your daily life easier?
+How do you usually organize your tasks for the day?
+What is one habit that helps you stay productive?
+How do you keep track of important things you need to do?
+What do you do when you feel overwhelmed?
+How do you relax when you have had a stressful day?
+What is something that always makes you feel better?
+How do you deal with unexpected problems?
+What is one thing that helps you stay positive?
+How do you prepare for a special occasion?
+What is one thing you always do on weekends?
+How do you usually spend a quiet Sunday?
+What do you like to do when you have no plans?
+How do you usually get ready for a trip?
+What is one travel destination you want to visit?
+How do you usually decide where to travel next?
+What do you always bring with you when traveling?
+What do you enjoy the most about traveling?
+What is the best trip you have ever taken?
+How do you make the most of your time in a new place?
+What is one travel experience you will never forget?
+How do you usually prepare for long flights or car rides?
+What is something you like to do when visiting a new country?
+How do you capture memories while traveling?
+What is something you always buy when you visit a new place?
+How do you plan your travel budget?
+What is one thing that makes a trip more enjoyable?
+How do you deal with unexpected problems while traveling?
+What is one cultural experience you would love to try?
+What is something new you learned from traveling?
+How do you usually spend time with your family?
+What is a fun tradition your family has?
+How do you celebrate special occasions with your family?
+What is one thing you love about your family?
+How do you usually help your family at home?
+What is something you and your family always do together?
+How do you handle disagreements in your family?
+What is one piece of advice from your parents that you remember?
+How do you stay connected with family members who live far away?
+What is one thing you and your siblings like to do together?
+How do you usually spend time with your grandparents?
+What is a valuable lesson you learned from a family member?
+How do you support your family when they need help?
+What is something you admire about your parents?
+How do you usually express appreciation to your family?
+What is one way to build strong family relationships?
+How do you usually spend time with your best friend?
+Have you ever been to an amusement park?
+Have you ever had a picnic?
+What is your favorite flower?
+Have you ever grown your own food?
+Have you ever planted a tree?
+Have you ever found something interesting?
+What time do you wake up?
+What time do you sleep?
+Did you play a lot as a child?
+Have you ever been to a haunted house?
+Have you ever solved a mystery?
+What do you usually do when you feel tired?
+How do you usually start your day?
+What do you do when you have a lot of free time?
+How do you spend a lazy afternoon?
+What is one thing you do every weekend?
+What do you do when you wake up late?
+How do you get ready in the morning?
+What is one habit that helps you feel good every day?
+How do you like to spend your lunch break?
+What is something you always take when you go outside?
+How do you prepare for a trip?
+What is something you always put in your bag?
+How do you choose a place to visit?
+What do you like to do when you travel?
+What do you usually eat when you are on vacation?
+What is the best trip you have ever been on?
+What is one thing you love about traveling?
+How do you like to take pictures when traveling?
+What is one place you really want to visit?
+How do you prepare for long trips?
+What do you usually do on long flights?
+What do you do when you have to wait for a long time?
+What do you usually do in the car?
+How do you like to travel—by car, bus, train, or plane?
+What do you do when you visit a new city?
+How do you find good restaurants when traveling?
+What is the best food you have ever tried in another country?
+What do you like to buy when you travel?
+What is one thing you always do before going on a trip?
+How do you like to spend your evenings at home?
+What do you usually do before bedtime?
+What is something you always do before sleeping?
+How do you feel when you wake up early?
+What do you usually do on a quiet morning?
+How do you like to start your day on weekends?
+What do you do when you have a busy morning?
+How do you make your mornings better?
+What is something that makes you excited in the morning?
+What do you usually do after lunch?
+What is your favorite way to relax in the afternoon?
+What do you do when you feel sleepy during the day?
+How do you usually plan your day?
+What is something you always do after work or school?
+How do you like to rest after a long day?
+What is your favorite way to spend a peaceful evening?
+What do you do when you have extra time at home?
+How do you decide what to do on weekends?
+What is your favorite way to enjoy your free time?
+What is something you like to do when you stay home?
+How do you like to relax on a Sunday?
+What is your favorite thing to do at night?
+What do you do when you can't sleep?
+What is your favorite way to spend time alone?
+How do you like to enjoy a quiet day?
+What is one thing that helps you feel calm?
+What is something you do when you feel stressed?
+How do you relax after a busy day?
+What is something you do to feel happy?
+How do you usually handle a stressful situation?
+What is one way you take care of yourself?
+What is something you do to stay healthy?
+What do you do when you feel tired during the day?
+How do you keep your energy high during the day?
+What do you do when you feel bored?
+How do you keep yourself entertained at home?
+What is something fun you like to do with friends?
+How do you like to spend time with your family?
+What is something you always do with your friends?
+What do you usually do when you go out with friends?
+What is one fun thing you want to do with your friends?
+How do you usually celebrate special occasions?
+What is one tradition you have in your family?
+What is something fun you did last weekend?
+What do you usually do on a holiday?
+How do you like to celebrate your birthday?
+What is something you always do on holidays?
+How do you prepare for a special day?
+What is one of your happiest memories?
+How do you usually remember good times?
+What is something you like to do when you meet new people?
+How do you usually start a conversation?
+What do you talk about when meeting someone for the first time?
+What is one thing you like to ask new people?
+What do you do when you meet someone interesting?
+What is something you do to stay connected with friends?
+How do you keep in touch with old friends?
+What is one way you show appreciation to others?
+How do you usually say thank you to someone?
+What is something nice you have done for someone?
+What do you do when someone is kind to you?
+How do you usually make people smile?
+What is one way you like to help others?
+How do you cheer up a friend who is feeling sad?
+What is one small thing that can make a big difference?
+What is something you enjoy doing for other people?
+How do you usually spend time with your best friend?
+What is one thing that makes a good friendship?
+Have you ever made cookies?
+What is your favorite homemade food?
+Have you ever tried making sushi?
+What is your favorite ice cream flavor?
+Have you ever tried making your own drink?
+Have you ever eaten something very unusual?
+What is your favorite candy?
+What kind of music do you like?
+Have you ever been to a concert?
+What is your favorite video game?
+Have you ever played chess?
+What do you usually eat for dinner?
+Have you ever learned a magic trick?
+Have you ever found a four-leaf clover?
+What is your zodiac sign?
+Have you ever seen a shooting star?
+Have you ever used a film camera?
+Have you ever visited an art museum?
+Have you ever made a scrapbook?
+What is something you are really proud of?
+What do you usually do when you feel sad?
+How do you cheer yourself up when you are having a bad day?
+What is one thing that always makes you smile?
+What is something nice someone has done for you?
+How do you usually show kindness to others?
+What is a small thing that makes your day better?
+How do you usually start a conversation with someone new?
+What do you usually talk about when you meet new people?
+What is one quality you admire in other people?
+How do you usually help people around you?
+What is something you are very passionate about?
+What do you usually do when you feel nervous?
+How do you prepare for a big event or a big day?
+What is something you always do before an important meeting?
+How do you stay motivated when working on something difficult?
+What is something you do to stay focused?
+What do you usually do when you have a lot of work?
+How do you usually manage your time every day?
+What is something you do to stay organized?
+How do you usually plan your week?
+What do you do when you have too many things to do?
+How do you usually balance work and personal life?
+What is one habit that helps you stay productive?
+What is something you want to improve in your daily routine?
+How do you usually prepare for an important decision?
+What do you do when you have to make a difficult choice?
+How do you usually handle stressful situations?
+What is one way you deal with pressure?
+What is something you do when you need to relax?
+How do you like to spend your time on weekends?
+What is something fun you did last weekend?
+What is your favorite way to spend a Saturday?
+What do you usually do on Sunday mornings?
+What is your ideal way to spend a day off?
+How do you usually spend time with your family?
+What is one of your favorite family traditions?
+What do you usually do when you visit relatives?
+What is something you love about your family?
+How do you usually celebrate special occasions?
+What is your favorite way to celebrate your birthday?
+What is something you always do on holidays?
+What is a fun memory you have from a holiday?
+What is something special you do during the winter?
+What do you usually do when the weather is really hot?
+What do you like to do when it is raining outside?
+How do you usually dress when it is cold?
+What is your favorite outfit for summer?
+What is your favorite thing to wear when relaxing at home?
+What is one item of clothing you wear often?
+How do you usually choose what to wear?
+What do you like to wear when going out with friends?
+What is something you do to take care of your health?
+How do you usually stay active in your daily life?
+What is something you do to keep your body strong?
+How do you usually take care of your skin?
+What is your favorite way to relax after a long day?
+What is something you do to get better sleep?
+How do you usually feel after a good night’s sleep?
+What is one thing you like to do before bed?
+How do you usually prepare for a busy day?
+What is something you do every morning?
+What do you usually eat for breakfast?
+What is your favorite meal of the day?
+How do you usually choose what to eat?
+What is something you like to cook at home?
+What is one food you can eat every day?
+What is your favorite snack?
+What is something you always buy at the grocery store?
+How do you usually decide where to eat?
+What is your favorite place to eat with friends?
+What is one restaurant you really like?
+What is something you like to order at a restaurant?
+What is your favorite drink?
+How do you usually make your coffee or tea?
+What is one dessert you really love?
+How do you usually spend time at a café?
+What is your favorite thing about visiting a café?
+What is your favorite book, and why?
+How do you usually choose books to read?
+What is a book that changed your perspective?
+What kind of books do you enjoy reading the most?
+What is one story that really inspired you?
+How do you usually find time to read?
+What is something you like about reading?
+What was the last book you read, and did you like it?
+What is your favorite way to enjoy a good book?
+What do you like about watching movies?
+How do you usually decide which movie to watch?
+What is one movie you can watch many times?
+Who is your favorite actor or actress?
+How do you usually feel after watching a great movie?
+What is your favorite movie soundtrack?
+What is a TV show you are currently watching?
+How do you like to spend your free time?
+What is a hobby you have been doing for a long time?
+How do you usually spend time alone?
+What is one skill you really want to learn?
+Have you ever written a poem?
+What do you usually do in the morning?
+How do you usually spend your evenings?
+What do you do when you feel nervous?
+What is something you do to relax?
+How do you usually start your day?
+What is one thing you do every night before bed?
+What do you usually do when you feel stressed?
+What is your favorite way to spend time alone?
+How do you like to spend time with your family?
+What do you do when you feel bored at home?
+What is something you always take when you travel?
+How do you usually plan for a trip?
+What do you like to do when you visit a new place?
+What is the best place you have ever traveled to?
+What is one place you really want to visit?
+What is something you always pack when you travel?
+How do you like to travel—by car, plane, or train?
+What do you do when you travel for a long time?
+What do you usually eat when you travel?
+What is one thing you like about traveling?
+What do you like to do on long weekends?
+How do you usually spend holidays?
+What do you usually do during the summer?
+What is one thing you do differently in winter?
+What do you usually do on your birthday?
+How do you celebrate New Year's Eve?
+What is one holiday tradition you like?
+What is something fun you did recently?
+How do you usually spend time with your friends?
+What do you usually do when you go out with friends?
+What is something fun you and your friends like to do?
+What is one thing you enjoy doing with your best friend?
+How do you like to meet new people?
+What is something important in a good friendship?
+What is something nice a friend has done for you?
+What do you like to do when you meet new people?
+What do you usually talk about with friends?
+What is something you do to stay in touch with friends?
+How do you like to keep memories with friends?
+What is one of your happiest memories with friends?
+What is one of your happiest childhood memories?
+What is something fun you did as a child?
+How did you like to spend your weekends as a child?
+What is something you miss about childhood?
+What was your favorite game as a child?
+How do you think your childhood was different from now?
+What is something you have always wanted to learn?
+What is a skill you want to improve?
+How do you like to practice learning new things?
+What do you usually do when you study?
+How do you like to learn a new language?
+What is a subject you find interesting?
+What do you usually do when you don’t understand something?
+What is one thing you have learned recently?
+How do you usually prepare for exams or tests?
+What do you do when you find something difficult to learn?
+What is a topic you enjoy reading about?
+What kind of books do you like to read?
+What was the last book you read?
+What is one book you would recommend to a friend?
+How do you like to read—on paper or on a screen?
+What do you usually do when you watch TV?
+What is one of your favorite TV shows?
+What do you usually watch on YouTube?
+What is your favorite kind of movie?
+What was the last movie you watched?
+What do you like to do when you watch a movie?
+How do you usually choose what to watch?
+Who do you usually watch movies with?
+What do you like to eat when you watch movies?
+How do you usually listen to music?
+What is one song you really like?
+What kind of music makes you happy?
+How do you usually find new music to listen to?
+What is your favorite thing about music?
+If you could learn an instrument, what would it be?
+What is something you do to stay healthy?
+How do you usually take care of your body?
+What do you do when you feel sick?
+What do you do when you feel tired?
+How do you usually stay active?
+What is your favorite way to exercise?
+What is one sport you like to play?
+How do you usually relax after exercising?
+What do you like to eat after working out?
+What do you usually do on a relaxing day?
+How do you usually take care of your skin?
+What is something you do to feel fresh in the morning?
+How do you like to spend your time before bed?
+What do you do when you have too much work to do?
+How do you manage your time every day?
+What is something you do to stay organized?
+What is something you always have on your desk?
+How do you prepare for an important day?
+What do you do when you feel really busy?
+What is one thing you do to feel productive?
+What is something you want to do in the next five years?
+What is a goal you are working on right now?
+How do you usually plan for your future?
+What is something you dream about doing one day?
+If you could change one thing in your life, what would it be?
+Have you ever made your own recipe?
+What do you usually eat for breakfast?
+How do you like to spend your weekends?
+What is the best meal you have ever had?
+Can you cook? If so, what is your best dish?
+What is your favorite way to relax after a long day?
+What do you usually do in your free time?
+How do you prepare for an important event?
+What is one thing you do every morning?
+What do you usually do before going to bed?
+How do you usually celebrate your birthday?
+What is your favorite holiday, and why?
+How do you like to spend time with your family?
+What do you usually do when you feel stressed?
+What do you think makes a good friend?
+What do you usually do when you hang out with friends?
+What is your favorite childhood memory?
+What kind of movies do you enjoy watching?
+What is the last movie you watched, and did you like it?
+What is your favorite TV show, and why?
+What kind of music do you listen to the most?
+Who is your favorite singer or band?
+What do you do when you feel bored?
+How do you usually spend a rainy day?
+What is something new you have learned recently?
+What is a hobby you would like to start?
+What was the last book you read? Did you enjoy it?
+If you could live anywhere in the world, where would it be?
+What is your dream job, and why?
+If you had a free day, how would you spend it?
+What is one skill you want to learn?
+How do you usually get to work or school?
+What is the best trip you have ever taken?
+Where would you like to travel next?
+What is one thing you always take when you travel?
+What do you usually do when you are on vacation?
+What is your favorite place in your city?
+What is one thing you like about your country?
+If you could meet any famous person, who would it be?
+What do you usually do on a long car ride?
+What is something that always makes you smile?
+What is a fun activity you like to do with friends?
+What is one thing you want to achieve this year?
+What do you usually do when you feel tired?
+What is your favorite way to spend a weekend morning?
+What do you usually do when you feel sad?
+What is one thing you always take when you go out?
+If you could have any superpower, what would it be?
+What is your favorite thing to do at home?
+What do you usually talk about with your friends?
+What is one thing you are really good at?
+What is something you want to improve about yourself?
+How do you usually celebrate special occasions?
+What is your favorite restaurant, and why?
+What is your favorite thing to do in the summer?
+What do you like to do when the weather is cold?
+What is one goal you have for the future?
+What do you do when you can’t sleep at night?
+If you could visit any country, where would you go?
+What do you usually do when you feel unwell?
+How do you usually spend time with your family?
+What is your favorite way to stay active?
+If you could change one thing about your daily routine, what would it be?
+What is something you are really passionate about?
+How do you usually prepare for a trip?
+What is one thing you always carry in your bag?
+What do you usually do when you meet someone new?
+What is something you have always wanted to try?
+If you could change one thing about the world, what would it be?
+What is something that always makes you happy?
+What do you usually do when you wake up late?
+What is the best advice you have ever received?
+What is one thing you always do before going to bed?
+How do you usually spend your lunch break?
+If you could learn any language, which one would you choose?
+What is something you enjoy doing alone?
+What do you usually do after work or school?
+What do you do when you have too much free time?
+What is something you enjoy learning about?
+If you could have any pet, what would it be?
+What is something small that makes your day better?
+What do you usually do on public holidays?
+What is one habit you would like to change?
+If you could visit any time in history, when would it be?
+What is one thing you always do before leaving the house?
+What do you usually do when you are waiting for someone?
+If you could be really good at any sport, which one would it be?
+What is something you have done that made you feel proud?
+How do you usually celebrate good news?
+What is one thing you do to stay healthy?
+What is something you want to buy but haven’t yet?
+How do you usually spend your evenings?
+What is one thing you always do when you travel?
+If you could have dinner with three famous people, who would they be?
+What is something you have done that was outside of your comfort zone?
+What is one thing that always makes you laugh?
+If you could live in any time period, when would it be?
+What is the best way to start your morning?
+How do you usually spend your time before work or school?
+What is something small that makes your mornings better?
+What helps you wake up quickly in the morning?
+How do you like to spend your lunch break?
+What is something you do every afternoon?
+How do you usually feel in the middle of the day?
+What is a habit you have in the evening?
+How do you usually unwind after a long day?
+What do you enjoy doing before bedtime?
+What is one thing you do to prepare for the next day?
+What is your favorite way to relax at home?
+How do you make your home feel comfortable?
+What is something you do when you need peace and quiet?
+How do you usually plan your week?
+What is the most important part of your daily routine?
+What is something you never forget to do each day?
+How do you prepare for a busy day?
+What helps you feel more organized?
+What do you do when you feel overwhelmed?
+How do you balance work and personal time?
+What helps you stay productive during the day?
+How do you stay motivated when you feel lazy?
+What do you usually do on a quiet afternoon?
+What makes you feel the most relaxed?
+How do you recharge when you feel tired?
+What is something that helps you stay focused?
+What do you do when you need a break?
+What is your favorite way to spend free time alone?
+How do you usually entertain yourself at home?
+What do you do when you have unexpected free time?
+How do you decide how to spend your weekends?
+What is something you only do on weekends?
+What is a weekend activity you always look forward to?
+How do you usually plan for a holiday?
+What is a tradition that is special to you?
+What is one thing you do on every holiday?
+How do you usually prepare for celebrations?
+What is your favorite way to spend time with loved ones?
+How do you usually celebrate good news?
+What is something you enjoy doing with family?
+What is one activity you always do with friends?
+How do you like to spend time with close friends?
+What is your favorite way to meet new people?
+How do you start a conversation with a stranger?
+What do you usually talk about with new people?
+What is something you and your friends always talk about?
+What is an easy way to stay in touch with friends?
+How do you usually communicate with people far away?
+What is one way you show kindness to others?
+What is something nice someone has done for you recently?
+How do you usually help the people around you?
+What is the best way to cheer someone up?
+How do you like to express appreciation?
+What do you do when you feel stressed?
+How do you usually calm yourself down?
+What is one thing that always makes you feel better?
+How do you deal with a difficult situation?
+What is your favorite way to clear your mind?
+What is something you do to stay mentally strong?
+How do you usually handle change?
+What is a small thing that brings you joy?
+How do you create positive energy in your life?
+What is one thing that helps you feel more confident?
+How do you usually prepare for important events?
+What is something you do when you have a big goal?
+How do you stay focused on long-term goals?
+What is a challenge you have overcome?
+What is one skill you want to develop?
+How do you usually practice new skills?
+What do you do when you need to solve a problem?
+What is the best way to improve at something?
+What is something you have worked hard to achieve?
+How do you stay excited about learning?
+What is a subject you wish you knew more about?
+What do you do when you feel curious about something?
+How do you usually find new things to learn?
+What is one fact you learned recently?
+How do you prefer to learn new information?
+What kind of things do you like to research?
+What is the best advice you have ever received?
+How do you decide when to take risks?
+What is something you have done that was outside your comfort zone?
+How do you handle unexpected situations?
+What do you usually do when plans change suddenly?
+How do you make big decisions?
+What is one lesson you learned from past mistakes?
+How do you stay strong during hard times?
+What is one thing that always gives you hope?
+What is something you want to do more often?
+How do you create good habits?
+What is a small step that leads to big changes?
+How do you remind yourself to stay positive?
+What is one way you make your days more enjoyable?
+How do you make the most of each day?
+What is something you do to bring more happiness into your life?
+How do you like to end your day on a good note?
+What is one thing you always look forward to?
+What is the best memory you have with your family?
+How do you usually spend time with your parents?
+What is one family tradition that is special to you?
+How do you celebrate holidays with your family?
+What is something you learned from your grandparents?
+How often do you visit your relatives?
+What is a fun activity you enjoy doing with your siblings?
+How do you and your family usually celebrate birthdays?
+What is one thing you appreciate about your family?
+How do you usually help your family at home?
+What is one thing you and your parents have in common?
+How do you stay connected with family members who live far away?
+What is something that makes your family unique?
+How do you and your family spend time together on weekends?
+What is one family rule that you always follow?
+How do you usually handle disagreements in your family?
+What is one thing you have taught your younger siblings or cousins?
+What is the best advice your parents have given you?
+How do you usually express love and care for your family?
+What is a fun childhood memory you have with your family?
+What do you and your best friend usually do together?
+How do you make new friends?
+What do you value the most in a friendship?
+How do you stay in touch with friends who live far away?
+What is something fun you and your friends have done recently?
+How do you usually celebrate your friends’ birthdays?
+What is one way you show appreciation for your friends?
+What is the longest friendship you have ever had?
+How do you handle conflicts with friends?
+What is one thing you and your closest friend have in common?
+How do you usually spend time with a group of friends?
+What do you do when you feel lonely?
+What is one quality that makes someone a good friend?
+How do you support a friend who is feeling down?
+What is one thing you have learned from a friend?
+How do you usually keep in touch with old friends?
+What is something small that can make someone feel special?
+What do you usually talk about with your friends?
+How do you make sure your friendships stay strong?
+What is one thing you admire about your best friend?
+How do you know if someone is a true friend?
+How do you usually deal with misunderstandings in a friendship?
+What is something you do to build trust in a relationship?
+What is one thing you do to maintain a strong relationship with others?
+How do you usually comfort a friend who is going through a hard time?
+What is one lesson you have learned from past friendships?
+How do you express your feelings to the people you care about?
+What is one thing that makes a friendship last?
+How do you usually introduce yourself to new people?
+What do you usually do to make a good first impression?
+How do you start a conversation with someone new?
+What is something you find easy to talk about with new people?
+How do you handle social situations when you feel shy?
+What is one way to make someone feel welcome?
+How do you usually remember people’s names when you meet them?
+What is one topic you enjoy discussing with others?
+How do you usually react when you meet someone with the same interests as you?
+What is something you do to keep a conversation interesting?
+How do you handle situations where you feel uncomfortable in a group?
+How do you usually introduce two people who don’t know each other?
+What do you do when you feel nervous in social situations?
+What is one way to be a good listener?
+How do you usually respond when someone shares good news with you?
+What do you do when you want to encourage someone?
+What is something you say to cheer up a friend?
+How do you usually handle negative comments from others?
+What is one way to stay confident in difficult situations?
+How do you keep yourself calm when facing a challenge?
+What is something that always lifts your mood?
+How do you usually manage your emotions in stressful situations?
+What is one thing you do to stay positive every day?
+How do you handle disappointment?
+What do you do when you feel frustrated?
+How do you usually motivate yourself to keep going?
+What is one way you can turn a bad day into a good one?
+How do you handle situations where you feel left out?
+What do you do when you feel discouraged?
+How do you remind yourself of your strengths?
+What is something you are grateful for today?
+How do you usually celebrate small achievements?
+What is one way to build self-confidence?
+How do you usually prepare for important decisions?
+What is one financial goal you have for the future?
+How do you usually save money?
+What is something you are currently saving up for?
+What is one habit that helps you manage your money well?
+How do you usually decide how to spend your money?
+What is something you have spent money on that was worth it?
+How do you avoid unnecessary spending?
+What is a smart way to use extra money?
+How do you usually set a budget for yourself?
+What is the best financial advice you have ever received?
+How do you decide whether to buy something or not?
+What is one thing you wish you had learned about money earlier?
+How do you usually plan for big purchases?
+What is something you would invest in if you had the chance?
+How do you usually research before making a financial decision?
+What is one thing you do to stay financially responsible?
+What is one financial mistake people should avoid?
+How do you usually manage your monthly expenses?
+What is one thing you think is worth investing in?
+How do you prepare for unexpected expenses?
+What is a long-term financial goal you have?
+How do you balance spending and saving money?
+What is one way to grow your money over time?
+How do you usually plan for your future?
+What is something you want to achieve in the next five years?
+How do you set realistic goals for yourself?
+What is one skill you want to improve for the future?
+How do you stay focused on long-term goals?
+What is something you are working on improving about yourself?
+What is one thing you do to prepare for the future?
+How do you usually track your progress towards your goals?
+What is something new you want to learn?
+How do you stay motivated when working on a big goal?
+What is one thing you can do today to improve your future?
+How do you usually reflect on your personal growth?
+What is something you have learned from past experiences?
+How do you handle setbacks when working towards a goal?
+What is one thing that keeps you excited about the future?
+How do you usually celebrate reaching a big goal?
+What is one habit that will help you succeed in life?
+How do you usually start a conversation with someone new?
+What do you do when a conversation becomes awkward?
+How do you show someone that you are actively listening?
+What do you say when you don’t understand someone’s point?
+How do you keep a conversation going when there are pauses?
+What are some topics you enjoy talking about with others?
+How do you know when someone is really interested in what you’re saying?
+What is something you can do to improve your conversation skills?
+How do you usually express your thoughts and ideas clearly?
+What do you do when someone interrupts you while you’re speaking?
+How do you handle misunderstandings in conversations?
+How do you make sure everyone feels included in a group conversation?
+What is something you say to show support in a conversation?
+How do you respond when someone disagrees with you?
+What is one way to be a better listener?
+How do you end a conversation politely when you need to leave?
+How do you make someone feel comfortable when talking to you?
+What do you do when you feel nervous before speaking in front of others?
+How do you practice speaking more confidently?
+What is one compliment that always makes you feel good?
+What would happen if there was no sun?
+How do you know when something is fair?
+What would you do if you lost something important?
+What do you do when you have to make a choice?
+How do you decide if something is a good idea?
+What is something that can make people work together better?
+What would you do if you found a lost puppy?
+What makes someone a great leader?
+What do you do when you don’t know the answer to a question?
+How do you know if something is true or not?
+What is something you are working hard to get better at?
+How do you feel when you finally learn something new?
+What do you do when you make a mistake?
+How do you feel when someone encourages you?
+What is something you want to try but haven’t yet?
+How do you practice something you want to get better at?
+What is one goal you want to achieve this year?
+How do you help yourself stay motivated?
+What do you do when you feel like giving up?
+What is something you have improved a lot in?
+What do you like most about nature?
+How do you take care of the earth?
+What would happen if there were no trees?
+How do you help animals in your neighborhood?
+What do you do when you see trash on the ground?
+Why is water important for people and animals?
+What do you like to do outside?
+What would happen if it never rained?
+What is your favorite season, and why?
+How do you take care of plants?
