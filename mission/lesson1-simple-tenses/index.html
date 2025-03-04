@@ -182,12 +182,12 @@
             let pause = 1000;    // 중간 공백 시간 (ms)
             
             // 첫 번째 "삐빅/삐빅"
-            beep(2000, 300, 0);
-            beep(1800, 300, 300 + interval);
+            beep(1800, 300, 0);
+            beep(2000, 300, 300 + interval);
             
             // 두 번째 "삐빅/삐빅"
-            beep(2000, 300, 300 + interval + pause);
-            beep(1800, 300, 600 + interval + interval + pause);
+            beep(1800, 300, 300 + interval + pause);
+            beep(2000, 300, 600 + interval + interval + pause);
         }
         
         function resetTimer() {
