@@ -178,16 +178,16 @@
             }
             
             // 삐빅/삐빅/ - /삐빅/삐빅 패턴 생성
-            let interval = 300; // 삐빅 간격 (ms)
+            let interval = 100; // 삐빅 간격 (ms)
             let pause = 1000;    // 중간 공백 시간 (ms)
             
             // 첫 번째 "삐빅/삐빅"
-            beep(1800, 300, 0);
-            beep(2000, 300, 300 + interval);
+            beep(1800, 50, 0);
+            beep(2000, 100, 50 + interval);
             
             // 두 번째 "삐빅/삐빅"
-            beep(1800, 300, 300 + interval + pause);
-            beep(2000, 300, 600 + interval + interval + pause);
+            beep(1800, 50, 100 + interval + pause);
+            beep(2000, 100, 150 + interval + interval + pause);
         }
         
         function resetTimer() {
