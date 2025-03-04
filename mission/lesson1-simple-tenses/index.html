@@ -165,6 +165,25 @@
             });
         }
 
+        function playEndBeep() {
+            function beep(frequency, duration, delay) {
+                setTimeout(() => {
+                    let oscillator = audioCtx.createOscillator();
+                    oscillator.type = "sine";
+                    oscillator.frequency.setValueAtTime(frequency, audioCtx.currentTime);
+                    oscillator.connect(audioCtx.destination);
+                    oscillator.start();
+                    setTimeout(() => oscillator.stop(), duration);
+                }, delay);
+            }
+            
+            // 삐빅 삐빅 삐빅 삐빅 (4번 반복)
+            let interval = 400; // 간격(ms)
+            for (let i = 0; i < 4; i++) {
+                beep(1000, 200, i * (200 + interval));
+            }
+        }
+        
         function resetTimer() {
             clearInterval(timerInterval);
             answerTime = 10;
@@ -174,6 +193,7 @@
                 document.getElementById("timer").textContent = answerTime;
                 if (answerTime <= 0) {
                     clearInterval(timerInterval);
+                    playEndBeep();
                 }
             }, 1000);
         }
