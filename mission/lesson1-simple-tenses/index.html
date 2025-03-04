@@ -177,11 +177,19 @@
                 }, delay);
             }
             
-            // 삐빅 삐빅 삐빅 삐빅 (4번 반복)
-            let interval = 400; // 간격(ms)
-            for (let i = 0; i < 4; i++) {
-                beep(1000, 200, i * (200 + interval));
-            }
+            // 삐빅/삐빅/ - /삐빅/삐빅 패턴 생성
+            let interval = 300; // 삐빅 간격 (ms)
+            let pause = 600;    // 중간 공백 시간 (ms)
+            
+            // 첫 번째 "삐빅/삐빅"
+            beep(1000, 200, 0);
+            beep(1000, 200, 200 + interval);
+            
+            // 중간 공백 (소리 없음)
+            
+            // 두 번째 "삐빅/삐빅"
+            beep(1000, 200, 200 + interval + pause);
+            beep(1000, 200, 400 + interval + pause);
         }
         
         function resetTimer() {
