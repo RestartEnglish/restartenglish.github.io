@@ -165,29 +165,39 @@
             });
         }
 
-        function playEndBeep() {
+        function playEndBeep() 
             function beep(frequency, duration, delay) {
                 setTimeout(() => {
                     let oscillator = audioCtx.createOscillator();
-                    oscillator.type = "sine";
+                    let gainNode = audioCtx.createGain(); // 부드럽게 끄기 위한 Gain 노드 추가
+            
+                    oscillator.type = "square"; // 알람 소리는 'square'가 더 자연스러움
                     oscillator.frequency.setValueAtTime(frequency, audioCtx.currentTime);
-                    oscillator.connect(audioCtx.destination);
+            
+                    gainNode.gain.setValueAtTime(1, audioCtx.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration / 1000);
+            
+                    oscillator.connect(gainNode);
+                    gainNode.connect(audioCtx.destination);
+                    
                     oscillator.start();
                     setTimeout(() => oscillator.stop(), duration);
                 }, delay);
             }
             
-            // 삐빅/삐빅/ - /삐빅/삐빅 패턴 생성
-            let interval = 100; // 삐빅 간격 (ms)
+            // 설정값
+            let interval = 150;  // "띠띠" 간격 (ms)
             let pause = 1000;    // 중간 공백 시간 (ms)
             
-            // 첫 번째 "삐빅/삐빅"
-            beep(1800, 50, 0);
-            beep(2000, 100, 50 + interval);
+            // 첫 번째 "띠띠"
+            beep(3000, 100, 0);
+            beep(3500, 150, 100 + interval);
             
-            // 두 번째 "삐빅/삐빅"
-            beep(1800, 50, 100 + interval + pause);
-            beep(2000, 100, 150 + interval + interval + pause);
+            // 중간 공백
+            
+            // 두 번째 "띠띠" (첫 번째와 동일)
+            beep(3000, 100, 100 + interval + pause);
+            beep(3500, 150, 200 + interval + interval + pause);
         }
         
         function resetTimer() {
