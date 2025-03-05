@@ -96,7 +96,7 @@
     <div class="timer-container">
         <button onclick="adjustTime(-5)">➖</button>
         <div class="progress-bar"><div id="progress" class="progress"></div></div>
-        <span id="timer">10</span>초
+        <span id="timer">60</span>초
         <button onclick="adjustTime(5)">➕</button>
     </div>
     <button onclick="toggleSound()">🔈 효과음 끄기</button>
@@ -105,7 +105,7 @@
         let questions = [];
         let rollingInterval;
         let timerInterval;
-        let answerTime = 10;
+        let answerTime = 60;
         let soundEnabled = true;
         let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
         
@@ -202,7 +202,7 @@
         
         function resetTimer() {
             clearInterval(timerInterval);
-            answerTime = 10;
+            answerTime = 60;
             document.getElementById("timer").textContent = answerTime;
             timerInterval = setInterval(() => {
                 answerTime--;
