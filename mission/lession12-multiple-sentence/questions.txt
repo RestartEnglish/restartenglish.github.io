@@ -1,1 +1,400 @@
-
+What do you usually do when you feel stressed?
+What do you usually do when you have free time?
+What do you usually do before going to bed?
+What do you usually do on weekends?
+What do you usually eat for breakfast?
+What do you usually do when you feel sad?
+What do you usually do when you are bored?
+What do you usually do after school/work?
+What do you usually do in the morning?
+What do you usually do in the evening?
+Can you describe a place you visited recently?
+Can you describe your daily routine?
+Can you describe your favorite hobby?
+Can you describe your best friend?
+Can you describe a memorable experience in your life?
+Can you describe a book you recently read?
+Can you describe a movie you enjoyed?
+Can you describe your dream job?
+Can you describe a place you want to visit?
+Can you describe your ideal weekend?
+How do you feel about learning a new language?
+How do you feel about public speaking?
+How do you feel about teamwork?
+How do you feel about social media?
+How do you feel about traveling alone?
+How do you feel about online learning?
+How do you feel about cooking?
+How do you feel about exercising regularly?
+How do you feel about keeping a journal?
+How do you feel about volunteering?
+What was the last time you tried something new?
+What was the last time you helped someone?
+What was the last time you had a great meal?
+What was the last time you felt really proud of yourself?
+What was the last time you made a difficult decision?
+What was the last time you learned a new skill?
+What was the last time you laughed really hard?
+What was the last time you watched a great movie?
+What was the last time you received a gift?
+What was the last time you gave someone a compliment?
+If you could travel anywhere, where would you go?
+If you could meet a famous person, who would you choose?
+If you could have any superpower, what would it be?
+If you could change one thing about yourself, what would it be?
+If you could live in any country, where would you live?
+If you could be an expert in any subject, what would it be?
+If you could have dinner with any historical figure, who would it be?
+If you could relive one day of your life, which day would it be?
+If you could change one thing in the world, what would it be?
+If you could learn any skill instantly, what would it be?
+Tell me about a time when you felt really proud of yourself.
+Tell me about a time when you helped a friend.
+Tell me about a time when you faced a big challenge.
+Tell me about a time when you made a mistake and learned from it.
+Tell me about a time when you were really surprised.
+Tell me about a time when you met someone interesting.
+Tell me about a time when you had to make a tough decision.
+Tell me about a time when you felt really happy.
+Tell me about a time when you received a special gift.
+Tell me about a time when you did something creative.
+What are your favorite things to do on weekends?
+What are your hobbies, and why do you enjoy them?
+What are your favorite foods?
+What are your strengths and weaknesses?
+What are your goals for the future?
+What are your favorite books, and why do you like them?
+What are some habits you want to develop?
+What are some things that make you happy?
+What are some things that stress you out?
+What are some things you are grateful for?
+Why do you think learning English is important?
+Why do you enjoy your favorite hobby?
+Why do you think people travel?
+Why do you like or dislike social media?
+Why do you think teamwork is important?
+Why do you think people should read books?
+Why do you think exercise is important?
+Why do you want to improve your English skills?
+Why do you enjoy a particular type of music?
+Why do you like your best friend?
+How do you usually start your day?
+How do you prepare for a big test?
+How do you deal with stress?
+How do you spend your free time?
+How do you stay motivated?
+How do you celebrate special occasions?
+How do you keep yourself organized?
+How do you make new friends?
+How do you handle difficult situations?
+How do you usually spend your weekends?
+Do you prefer living in a big city or a small town? Why?
+Do you prefer summer or winter? Why?
+Do you prefer reading books or watching movies? Why?
+Do you prefer working alone or in a team? Why?
+Do you prefer online shopping or in-store shopping? Why?
+Do you prefer cooking at home or eating out? Why?
+Do you prefer cats or dogs? Why?
+Do you prefer waking up early or staying up late? Why?
+Do you prefer traveling by plane or by train? Why?
+Do you prefer coffee or tea? Why?
+What is your favorite holiday? Why?
+What is your dream job?
+What is your favorite childhood memory?
+What is your biggest fear?
+What is the best gift you have ever received?
+What is your favorite way to relax?
+What is something you are really good at?
+What is something you want to learn?
+What is the most exciting thing you have ever done?
+What is the best advice you have ever received?
+What is the most beautiful place you have ever visited?
+What is the best meal you have ever eaten?
+What is your favorite season? Why?
+What is something you regret not doing?
+What is the funniest thing that has ever happened to you?
+What is your favorite way to spend a rainy day?
+What is one habit you want to break?
+What is one habit you want to develop?
+What is a skill you wish you had?
+What is something you are proud of?
+Who is your role model? Why?
+Who is your favorite author?
+Who is your favorite actor or actress?
+Who is the most inspiring person you know?
+Who do you admire the most in your life?
+Who is your best friend, and why?
+Who do you turn to when you need advice?
+Who is your favorite musician or band?
+Who do you spend the most time with?
+Who is the funniest person you know?
+When was the last time you felt really happy?
+When was the last time you did something kind for someone?
+When was the last time you learned something new?
+When was the last time you faced a big challenge?
+When was the last time you tried a new food?
+When was the last time you had an adventure?
+When was the last time you felt really motivated?
+When was the last time you made a new friend?
+When was the last time you watched a really good movie?
+When was the last time you stayed up all night?
+Where do you want to travel in the future?
+Where do you feel most comfortable?
+Where do you usually go when you want to relax?
+Where did you grow up, and what was it like?
+Where do you see yourself in five years?
+Where is your dream vacation destination?
+Where do you like to go with your friends?
+Where is the best place you have ever visited?
+Where would you like to live in the future?
+Where do you usually spend your weekends?
+Why do you enjoy your favorite hobby?
+Why do you want to improve your English?
+Why do you think people love traveling?
+Why do you think teamwork is important?
+Why do you enjoy or dislike social media?
+Why do you think reading books is important?
+Why do you think exercise is good for you?
+Why do you think kindness is important?
+Why do you think people should learn new skills?
+Why do you think self-confidence is important?
+How do you usually spend your holidays?
+How do you celebrate your birthday?
+How do you prepare for an important event?
+How do you deal with failure?
+How do you motivate yourself?
+How do you handle stress?
+How do you usually spend your weekends?
+How do you make new friends?
+How do you stay organized?
+How do you usually start your day?
+If you could live anywhere in the world, where would it be?
+If you won the lottery, what would you do?
+If you could time travel, would you go to the past or the future?
+If you could meet any historical figure, who would it be?
+If you had one superpower, what would it be?
+If you could be any animal, what would you be?
+If you could instantly master one skill, what would it be?
+If you had a chance to change your name, would you?
+If you could spend a day as someone else, who would it be?
+If you could have dinner with any celebrity, who would you choose?
+Tell me about a time when you learned a valuable lesson.
+Tell me about a time when you overcame a challenge.
+Tell me about a time when you made a new friend.
+Tell me about a time when you received an unexpected gift.
+Tell me about a time when you helped someone.
+Tell me about a time when you had an unforgettable experience.
+Tell me about a time when you tried something new.
+Tell me about a time when you felt really excited.
+Tell me about a time when you made a mistake but learned from it.
+Tell me about a time when you faced your fears.
+Do you prefer working alone or in a team? Why?
+Do you prefer reading books or watching movies? Why?
+Do you prefer living in a big city or a small town? Why?
+Do you prefer online shopping or shopping in stores? Why?
+Do you prefer waking up early or staying up late? Why?
+Do you prefer traveling by car or by plane? Why?
+Do you prefer cooking at home or eating out? Why?
+Do you prefer summer or winter? Why?
+Do you prefer watching TV shows or YouTube videos? Why?
+Do you prefer spending time alone or with others? Why?
+What is your favorite thing to do when you are alone?
+What is your favorite subject in school? Why?
+What is your favorite way to spend a Sunday?
+What is your biggest goal in life?
+What is one thing you can’t live without?
+What is something you have recently learned?
+What is one thing you want to achieve this year?
+What is your favorite type of weather?
+What is something that always makes you smile?
+What is your favorite place in your hometown?
+Who is someone you miss right now?
+Who do you spend the most time talking to?
+Who has had the biggest impact on your life?
+Who do you trust the most?
+Who do you go to when you need help?
+Who do you wish you could see more often?
+Who was your favorite teacher, and why?
+Who do you think is the most talented person you know?
+Who is someone that inspires you to be a better person?
+Who would you like to have a long conversation with?
+When was the last time you felt really nervous?
+When was the last time you felt really confident?
+When was the last time you surprised someone?
+When was the last time you went on a trip?
+When was the last time you tried a new activity?
+When was the last time you felt really lucky?
+When was the last time you stayed up late talking to someone?
+When was the last time you felt really tired?
+When was the last time you achieved something difficult?
+When was the last time you faced a difficult decision?
+Where is your favorite place to relax?
+Where do you usually go when you need to think?
+Where is the best restaurant you have ever been to?
+Where would you like to travel with your family?
+Where do you usually go to study or work?
+Where do you feel happiest?
+Where would you like to build your dream house?
+Where is the most peaceful place you know?
+Where do you usually go when you hang out with friends?
+Where do you see yourself in ten years?
+Why do you think people enjoy music?
+Why do you think friendship is important?
+Why do you think people should be kind?
+Why do you think people like watching movies?
+Why do you think laughter is good for people?
+Why do you think traveling is important?
+Why do you think learning new things is important?
+Why do you think some people are successful?
+Why do you think setting goals is important?
+Why do you think having hobbies is important?
+How do you usually spend your free time?
+How do you usually celebrate holidays?
+How do you deal with difficult people?
+How do you cheer yourself up when you feel sad?
+How do you usually prepare for an exam?
+How do you handle criticism?
+How do you express gratitude to others?
+How do you usually make important decisions?
+How do you stay healthy?
+How do you usually plan your schedule?
+If you could have any pet, what would it be?
+If you could live in any time period, which one would you choose?
+If you could only eat one type of food for the rest of your life, what would it be?
+If you could go back in time, what advice would you give your younger self?
+If you had one day to do anything you wanted, what would you do?
+If you could switch lives with someone for a day, who would it be?
+If you could master one sport, which one would you choose?
+If you had unlimited money for one day, what would you buy?
+If you could bring one fictional character to life, who would it be?
+If you could change one thing about the world, what would it be?
+Tell me about a time when you felt really excited.
+Tell me about a time when you solved a big problem.
+Tell me about a time when you made someone smile.
+Tell me about a time when you received a meaningful compliment.
+Tell me about a time when you stepped out of your comfort zone.
+Tell me about a time when you felt really lucky.
+Tell me about a time when you gave someone a gift.
+Tell me about a time when you felt really strong.
+Tell me about a time when you helped a stranger.
+Tell me about a time when you had an unforgettable conversation.
+Do you prefer working in an office or working from home? Why?
+Do you prefer listening to music or watching videos? Why?
+Do you prefer drinking coffee or tea? Why?
+Do you prefer living near the beach or in the mountains? Why?
+Do you prefer sending messages or making phone calls? Why?
+Do you prefer eating sweet or salty snacks? Why?
+Do you prefer watching sports or playing sports? Why?
+Do you prefer writing by hand or typing on a computer? Why?
+Do you prefer learning by reading or learning by doing? Why?
+Do you prefer spending time indoors or outdoors? Why?
+What do you think makes a person successful?
+What do you think is the most important quality in a friend?
+What do you think is the best way to learn a new skill?
+What do you think is the best way to make new friends?
+What do you think is the most difficult part of learning English?
+What do you think makes a great leader?
+What do you think is the best way to relax after a long day?
+What do you think is the most important thing in life?
+What do you think is the best way to stay motivated?
+What do you think is the key to happiness?
+What do you think is the best way to start the day?
+What do you think is the most important life lesson?
+What do you think makes a great teacher?
+What do you think is the most important habit for success?
+What do you think is the best way to spend a weekend?
+What do you think is the best way to handle stress?
+What do you think is the best way to apologize?
+What do you think is the most important thing in a relationship?
+What do you think is the biggest challenge for young people today?
+What do you think is the best way to stay healthy?
+Who is someone you admire for their kindness?
+Who is the most hardworking person you know?
+Who is the funniest person in your family?
+Who is someone you would like to meet in the future?
+Who is the most creative person you know?
+Who do you think has the most interesting job?
+Who do you think is the best role model for young people?
+Who is someone you look up to?
+Who do you enjoy spending time with the most?
+Who do you think is a great leader?
+When was the last time you learned something surprising?
+When was the last time you had a deep conversation?
+When was the last time you changed your opinion about something?
+When was the last time you felt really grateful?
+When was the last time you got really excited?
+When was the last time you helped someone without being asked?
+When was the last time you felt really inspired?
+When was the last time you were proud of a friend?
+When was the last time you received a compliment?
+When was the last time you gave someone good advice?
+Where do you usually go when you need inspiration?
+Where would you go if you could teleport anywhere right now?
+Where do you usually spend your time after school or work?
+Where do you go when you need a break?
+Where do you think is the best place to live?
+Where do you want to visit before you die?
+Where do you feel the safest?
+Where would you like to retire?
+Where do you think is the most beautiful place in the world?
+Where do you go when you want to be alone?
+Why do you think some people are more confident than others?
+Why do you think people enjoy challenges?
+Why do you think kindness matters?
+Why do you think some people are always happy?
+Why do you think family is important?
+Why do you think people enjoy scary movies?
+Why do you think good communication is important?
+Why do you think some people are more creative than others?
+Why do you think some friendships last longer than others?
+Why do you think some people like to take risks?
+How do you usually prepare for a special event?
+How do you deal with negative people?
+How do you make yourself feel better on a bad day?
+How do you manage your time effectively?
+How do you usually celebrate your achievements?
+How do you calm yourself down when you are nervous?
+How do you stay focused when you have a lot to do?
+How do you improve your creativity?
+How do you know when to trust someone?
+How do you usually spend your evenings?
+If you could be any fictional character, who would you be?
+If you could only listen to one song for the rest of your life, what would it be?
+If you could switch lives with anyone for a week, who would it be?
+If you had the chance to travel back in time, which year would you visit?
+If you could be famous for one thing, what would it be?
+If you could live in any TV show or movie world, which one would you choose?
+If you could speak any language fluently, which one would it be?
+If you had to eat only one type of food for a month, what would it be?
+If you could meet your future self, what would you ask?
+If you could live without one thing forever, what would it be?
+Tell me about a time when you received great advice.
+Tell me about a time when you made a new tradition.
+Tell me about a time when you felt really confident.
+Tell me about a time when you had to be really patient.
+Tell me about a time when you worked really hard for something.
+Tell me about a time when you had an unexpected adventure.
+Tell me about a time when you learned something important from a mistake.
+Tell me about a time when you overcame a fear.
+Tell me about a time when you helped solve a problem.
+Tell me about a time when you made a big decision.
+Do you prefer online classes or in-person classes? Why?
+Do you prefer eating alone or with others? Why?
+Do you prefer taking photos or being in photos? Why?
+Do you prefer texting or calling? Why?
+Do you prefer wearing casual clothes or formal clothes? Why?
+Do you prefer spending time with a small group or a large group? Why?
+Do you prefer staying home or going out? Why?
+Do you prefer watching movies at home or in a theater? Why?
+Do you prefer buying things online or in stores? Why?
+Do you prefer working in the morning or at night? Why?
+What do you think makes a great conversation?
+What do you think is the most important soft skill?
+What do you think is the best way to learn about other cultures?
+What do you think is the most interesting job in the world?
+What do you think is the best way to meet new people?
+What do you think is the most important thing to teach children?
+What do you think is the hardest part of being an adult?
+What do you think makes a great leader?
+What do you think is the best way to stay positive?
+What do you think is the secret to a happy life?
