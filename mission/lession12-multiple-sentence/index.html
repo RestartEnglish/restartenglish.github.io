@@ -90,7 +90,7 @@
 </head>
 <body>
     <div id="roulette">
-        <div id="question" onclick="speakText(this.textContent)">준비가 되었으면, 버튼을 눌러 주세요\n*3문장 이상으로 답변하세요.</div>
+        <div id="question" onclick="speakText(this.textContent)">준비가 되었으면, 버튼을 눌러 주세요(3문장 이상 답변)</div>
     </div>
     <button onclick="startRoulette()">🎰 질문 뽑기</button>
     <div class="timer-container">
@@ -122,7 +122,7 @@
             if (!text || text.trim() === "") return;
             speechSynthesis.cancel();
             let utterance = new SpeechSynthesisUtterance(text);
-            utterance.lang = 'ko-KR';
+            utterance.lang = 'en-US';
             speechSynthesis.speak(utterance);
         }
 
