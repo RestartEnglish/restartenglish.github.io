@@ -1,0 +1,177 @@
+He eats an apple.
+He doesn’t eat an apple.
+Does he eat an apple?
+He is eating an apple.
+He isn’t eating an apple.
+Is he eating an apple?
+He ate an apple.
+He didn’t eat an apple.
+Did he eat an apple?
+He was eating an apple.
+He wasn’t eating an apple.
+Was he eating an apple?
+He will eat an apple.
+He won’t eat an apple.
+Will he eat an apple?
+He won’t be eating an apple.
+Will he be eating an apple?
+She reads a book.
+She doesn’t read a book.
+Does she read a book?
+She is reading a book.
+She isn’t reading a book.
+Is she reading a book?
+She read a book.
+She didn’t read a book.
+Did she read a book?
+She was reading a book.
+She wasn’t reading a book.
+Was she reading a book?
+She will read a book.
+She won’t read a book.
+Will she read a book?
+She won’t be reading a book.
+Will she be reading a book?
+He plays soccer.
+He doesn’t play soccer.
+Does he play soccer?
+He is playing soccer.
+He isn’t playing soccer.
+Is he playing soccer?
+He played soccer.
+He didn’t play soccer.
+Did he play soccer?
+He was playing soccer.
+He wasn’t playing soccer.
+Was he playing soccer?
+He will play soccer.
+He won’t play soccer.
+Will he play soccer?
+He won’t be playing soccer.
+Will he be playing soccer?
+She goes to school.
+She doesn’t go to school.
+Does she go to school?
+She is going to school.
+She isn’t going to school.
+Is she going to school?
+She went to school.
+She didn’t go to school.
+Did she go to school?
+She was going to school.
+She wasn’t going to school.
+Was she going to school?
+She will go to school.
+She won’t go to school.
+Will she go to school?
+She won’t be going to school.
+Will she be going to school?
+He drinks milk.
+He doesn’t drink milk.
+Does he drink milk?
+He is drinking milk.
+He isn’t drinking milk.
+Is he drinking milk?
+He drank milk.
+He didn’t drink milk.
+Did he drink milk?
+He was drinking milk.
+He wasn’t drinking milk.
+Was he drinking milk?
+He will drink milk.
+He won’t drink milk.
+Will he drink milk?
+He won’t be drinking milk.
+Will he be drinking milk?
+She watches TV.
+She doesn’t watch TV.
+Does she watch TV?
+She is watching TV.
+She isn’t watching TV.
+Is she watching TV?
+She watched TV.
+She didn’t watch TV.
+Did she watch TV?
+She was watching TV
+He is eating lunch now.
+She is reading a book now.
+He is watching TV now.
+She is drawing a cat now.
+He is writing a letter now.
+She is playing the piano now.
+He isn’t doing homework now.
+Is she using the computer now?
+He drinks water now.
+She doesn’t eat cookies now.
+He will go to school tomorrow.
+She will clean her room tomorrow.
+He won’t eat cake tomorrow.
+Will she visit grandma tomorrow?
+He will not be watching TV tomorrow.
+Will she be reading tomorrow?
+She doesn’t go to the zoo tomorrow.
+He went to the park yesterday.
+She watched a movie yesterday.
+He didn’t eat lunch yesterday.
+Did she play piano yesterday?
+He was sleeping yesterday at 10 PM.
+She was crying yesterday morning.
+He wasn’t running yesterday.
+Was she reading a book yesterday?
+He read three books yesterday.
+She didn’t wash the dishes yesterday.
+They eat bread.
+They don’t eat bread.
+Do they eat bread?
+They are eating bread.
+They aren’t eating bread.
+Are they eating bread?
+They ate bread.
+They didn’t eat bread.
+Did they eat bread?
+They were eating bread.
+They weren’t eating bread.
+Were they eating bread?
+They will eat bread.
+They won’t eat bread.
+Will they eat bread?
+그는 우유를 마신다.
+그는 우유를 마시지 않는다.
+그는 우유를 마시니?
+그는 우유를 마시고 있다.
+그는 우유를 마시고 있지 않다.
+그는 우유를 마시고 있니?
+그는 우유를 마셨다.
+그는 우유를 마시지 않았다.
+그는 우유를 마셨니?
+그는 우유를 마시고 있었다.
+그는 우유를 마시고 있지 않았다.
+그는 우유를 마시고 있었니?
+그는 우유를 마실 것이다.
+그는 우유를 마시지 않을 것이다.
+그는 우유를 마실까?
+그녀는 텔레비전을 본다.
+그녀는 텔레비전을 보지 않는다.
+그녀는 텔레비전을 보니?
+그녀는 텔레비전을 보고 있다.
+그녀는 텔레비전을 보고 있지 않다.
+그녀는 텔레비전을 보고 있니?
+그녀는 텔레비전을 보았다.
+그녀는 텔레비전을 보지 않았다.
+그녀는 텔레비전을 보았니?
+그녀는 텔레비전을 보고 있었다.
+그들은 빵을 먹는다.
+그들은 빵을 먹지 않는다.
+그들은 빵을 먹니?
+그들은 빵을 먹고 있다.
+그들은 빵을 먹고 있지 않다.
+그들은 빵을 먹고 있니?
+그들은 빵을 먹었다.
+그들은 빵을 먹지 않았다.
+그들은 빵을 먹었니?
+그들은 빵을 먹고 있었다.
+그들은 빵을 먹고 있지 않았다.
+그들은 빵을 먹고 있었니?
+그들은 빵을 먹을 것이다.
+그들은 빵을 먹지 않을 것이다.
+그들은 빵을 먹을까?
