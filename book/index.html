@@ -1,157 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>English Book Viewer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>영어 책 뷰어</title>
   <style>
     body {
       font-family: sans-serif;
       margin: 0;
+      padding: 0;
       display: flex;
-      flex-direction: column;
       height: 100vh;
-      background-color: #f9f9f9;
+      background-color: #f4f4f4;
       user-select: none; /* 복사 금지 */
-    }
-    #container {
-      display: flex;
-      flex: 1;
-      overflow: hidden;
     }
     #main {
       flex: 3;
-      padding: 1rem;
+      padding: 1.5rem;
       overflow-y: auto;
     }
     #vocab {
       flex: 1;
-      background: #fff;
-      border-left: 1px solid #ccc;
       padding: 1rem;
+      background-color: #fff;
+      border-left: 1px solid #ccc;
       overflow-y: auto;
     }
-    .highlight-green { background-color: #ccffcc; }
+    h1, h2 {
+      margin-top: 0;
+    }
+    .highlight-green { background-color: #d2f8d2; }
     .highlight-blue { background-color: #cce5ff; }
-    .highlight-red { background-color: #ffd6e7; }
-    .sentence:hover { background: #eee; cursor: pointer; }
-    h1, h2 { margin-top: 1.5rem; }
-    @media (max-width: 768px) {
-      #container {
-        flex-direction: column;
-      }
-      #vocab {
-        border-left: none;
-        border-top: 1px solid #ccc;
-      }
+    .highlight-red { background-color: #ffc8cb; }
+    .sentence {
+      display: inline;
+    }
+    .sentence:hover {
+      background-color: #efefef;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
 
-<h1>📘 English Book</h1>
-<div id="container">
-  <div id="main">
-    <div id="content">Loading...</div>
-  </div>
-  <div id="vocab">
-    <h2>📚 Vocabulary</h2>
-    <ul id="word-list"></ul>
-  </div>
+<div id="main">
+  <h1>📖 영어 책</h1>
+  <div id="content">로딩 중...</div>
+</div>
+
+<div id="vocab">
+  <h2>📚 단어장</h2>
+  <ul id="word-list"></ul>
 </div>
 
 <script>
   async function loadTextFile(name) {
     const res = await fetch(`${name}.txt`);
-    if (!res.ok) throw new Error("File load failed.");
+    if (!res.ok) throw new Error("파일 불러오기 실패");
     return await res.text();
   }
 
-  function parseMarkdown(text) {
-    return text
-      .replace(/^# (.*)$/gm, '<h1>$1</h1>')
-      .replace(/^## (.*)$/gm, '<h2>$1</h2>')
-      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-  }
-
-  function splitSentences(text) {
-    return text.split(/(?<=[.?!])\s+|\n\s*\n/).filter(s => s.trim().length > 0);
+  function sentenceSplit(text) {
+    return text.split(/(?<=[.?!])\s+|\n\s*\n/).filter(s => s.trim());
   }
 
   function wrapSentences(text) {
-    const sentences = splitSentences(text);
-    return sentences.map(s => `<span class="sentence">${s.trim()}</span>`).join(' ');
-  }
-
-  function highlightStoredWords() {
-    const stored = JSON.parse(localStorage.getItem('savedWords') || '{}');
-    document.querySelectorAll('.sentence').forEach(span => {
-      let html = span.textContent.replace(/\b[a-zA-Z]{2,}\b/g, (w) => {
-        const count = stored[w.toLowerCase()];
-        if (!count) return w;
-        const cls = count >= 3 ? 'highlight-red' : count === 2 ? 'highlight-blue' : 'highlight-green';
-        return `<span class="${cls}">${w}</span>`;
-      });
-      span.innerHTML = html;
-    });
+    return sentenceSplit(text)
+      .map(s => `<span class="sentence">${s.trim()}</span>`)
+      .join(' ');
   }
 
   function updateVocabList() {
-    const stored = JSON.parse(localStorage.getItem('savedWords') || '{}');
+    const data = JSON.parse(localStorage.getItem('savedWords') || '{}');
+    const sorted = Object.entries(data).sort((a, b) => b[1] - a[1]);
     const list = document.getElementById('word-list');
     list.innerHTML = '';
-    Object.keys(stored).sort().forEach(word => {
+    for (const [word, count] of sorted) {
       const li = document.createElement('li');
-      li.textContent = `${word} (${stored[word]})`;
+      li.textContent = `${word} (${count})`;
       list.appendChild(li);
+    }
+  }
+
+  function highlightStoredWords() {
+    const data = JSON.parse(localStorage.getItem('savedWords') || '{}');
+    document.querySelectorAll('.sentence').forEach(span => {
+      const words = span.textContent.split(/\b/);
+      span.innerHTML = words.map(word => {
+        const key = word.toLowerCase();
+        const count = data[key];
+        if (!count) return word;
+        const cls = count >= 3 ? 'highlight-red' : count === 2 ? 'highlight-blue' : 'highlight-green';
+        return `<span class="${cls}">${word}</span>`;
+      }).join('');
     });
   }
 
-  document.addEventListener('DOMContentLoaded', async () => {
-    const params = new URLSearchParams(window.location.search);
-    const book = params.get('name');
-    if (!book) return document.getElementById('content').textContent = 'Missing ?name= parameter.';
+  function tts(text) {
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = 'en-US';
+    speechSynthesis.speak(utter);
+  }
 
+  window.addEventListener('DOMContentLoaded', async () => {
+    const params = new URLSearchParams(location.search);
+    const book = params.get('name') || 'thelittleprince';
     try {
-      const text = await loadTextFile(book);
-      const paragraphs = text.split(/\n\s*\n/).map(p => wrapSentences(p.replace(/\n/g, ' ').trim()));
-      const parsed = paragraphs.map(p => `<p>${parseMarkdown(p)}</p>`).join('');
-      const content = document.getElementById('content');
-      content.innerHTML = parsed;
+      const raw = await loadTextFile(book);
+      const paragraphs = raw.split(/\n\s*\n/)
+        .map(p => wrapSentences(p.replace(/\n/g, ' ')));
+      document.getElementById('content').innerHTML =
+        paragraphs.map(p => `<p>${p}</p>`).join('\n');
 
       highlightStoredWords();
       updateVocabList();
 
-      // Sentence click → TTS
-      document.querySelectorAll('.sentence').forEach(span => {
-        span.addEventListener('click', () => {
-          const utterance = new SpeechSynthesisUtterance(span.textContent);
-          utterance.lang = 'en-US';
-          speechSynthesis.speak(utterance);
-        });
+      // 문장 클릭 → TTS
+      document.getElementById('content').addEventListener('click', e => {
+        if (e.target.classList.contains('sentence')) {
+          tts(e.target.textContent);
+        }
       });
 
-      // Double-click → 단어 저장 및 강조
-      document.getElementById('content').addEventListener('dblclick', (e) => {
-        if (!e.target.closest('.sentence')) return;
-
-        const selection = window.getSelection().toString().trim();
-        if (!selection.match(/^[a-zA-Z]{2,}$/)) return;
-
-        const stored = JSON.parse(localStorage.getItem('savedWords') || '{}');
-        const key = selection.toLowerCase();
-        const count = (stored[key] || 0) + 1;
-        stored[key] = count;
-        localStorage.setItem('savedWords', JSON.stringify(stored));
-
+      // 단어 더블 클릭 → 저장 및 강조
+      document.getElementById('content').addEventListener('dblclick', e => {
+        const sel = window.getSelection().toString().trim().toLowerCase();
+        if (!/^[a-z]{2,}$/.test(sel)) return;
+        const data = JSON.parse(localStorage.getItem('savedWords') || '{}');
+        data[sel] = (data[sel] || 0) + 1;
+        localStorage.setItem('savedWords', JSON.stringify(data));
         highlightStoredWords();
         updateVocabList();
       });
 
-    } catch (e) {
-      document.getElementById('content').textContent = 'Error loading content: ' + e.message;
+    } catch (err) {
+      document.getElementById('content').textContent = '오류: ' + err.message;
     }
   });
 </script>
+
 </body>
 </html>
