@@ -155,10 +155,6 @@
     document.querySelectorAll('.sentence').forEach(span => {
       span.addEventListener('click', () => tts(span.textContent));
       span.addEventListener('dblclick', e => {
-        e.preventDefault();           // ✅ 새로고침 방지
-        e.stopPropagation();          // ✅ 이벤트 전파 방지
-
-        
         const word = window.getSelection().toString().toLowerCase();
         if (word.match(/^[a-zA-Z]+$/)) {
           const color = saveWord(word);
