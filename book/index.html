@@ -1,187 +1,157 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>영어 책 뷰어</title>
+  <meta charset="UTF-8">
+  <title>English Book Viewer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
+      font-family: sans-serif;
       margin: 0;
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       height: 100vh;
-      font-family: sans-serif;
-      user-select: none;
+      background-color: #f9f9f9;
+      user-select: none; /* 복사 금지 */
     }
-
+    #container {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
     #main {
       flex: 3;
       padding: 1rem;
       overflow-y: auto;
-      background: #f4f4f4;
     }
-
     #vocab {
       flex: 1;
-      padding: 1rem;
-      background: #ffffff;
+      background: #fff;
       border-left: 1px solid #ccc;
+      padding: 1rem;
       overflow-y: auto;
     }
-
-    h1, h2 {
-      margin-top: 2rem;
-    }
-
-    .sentence {
-      display: inline;
-    }
-
-    .sentence:hover {
-      background: #e6e6e6;
-      cursor: pointer;
-    }
-
     .highlight-green { background-color: #ccffcc; }
-    .highlight-blue  { background-color: #cce5ff; }
-    .highlight-red   { background-color: #ffc0cb; }
-
+    .highlight-blue { background-color: #cce5ff; }
+    .highlight-red { background-color: #ffd6e7; }
+    .sentence:hover { background: #eee; cursor: pointer; }
+    h1, h2 { margin-top: 1.5rem; }
     @media (max-width: 768px) {
-      body {
+      #container {
         flex-direction: column;
       }
-      #main, #vocab {
-        flex: none;
-        height: 50vh;
+      #vocab {
+        border-left: none;
+        border-top: 1px solid #ccc;
       }
     }
   </style>
 </head>
 <body>
 
-<div id="main">
-  <h1>📖 영어 책</h1>
-  <div id="content">로딩 중...</div>
-</div>
-
-<div id="vocab">
-  <h2>📚 단어장</h2>
-  <ul id="word-list"></ul>
+<h1>📘 English Book</h1>
+<div id="container">
+  <div id="main">
+    <div id="content">Loading...</div>
+  </div>
+  <div id="vocab">
+    <h2>📚 Vocabulary</h2>
+    <ul id="word-list"></ul>
+  </div>
 </div>
 
 <script>
-  document.addEventListener('contextmenu', e => e.preventDefault()); // 우클릭 금지
-  document.addEventListener('copy', e => e.preventDefault());        // Ctrl+C, ⌘+C 금지
-
-  
-  // 단어 횟수 데이터 로드/저장
-  const wordCounts = JSON.parse(localStorage.getItem("wordCounts") || "{}");
-
-  function saveWord(word) {
-    const lower = word.toLowerCase();
-    wordCounts[lower] = (wordCounts[lower] || 0) + 1;
-    localStorage.setItem("wordCounts", JSON.stringify(wordCounts));
-  }
-
-  function getWordColor(count) {
-    if (count >= 3) return "highlight-red";
-    if (count === 2) return "highlight-blue";
-    return "highlight-green";
-  }
-
-  function updateWordList() {
-    const list = document.getElementById("word-list");
-    list.innerHTML = "";
-    const sortedWords = Object.keys(wordCounts).sort();
-    sortedWords.forEach(word => {
-      const li = document.createElement("li");
-      const count = wordCounts[word];
-      const colorClass = getWordColor(count);
-      li.innerHTML = `<span class="${colorClass}">${word}</span>`;
-      list.appendChild(li);
-    });
-  }
-
-  function applyWordColors(container) {
-    Object.keys(wordCounts).forEach(word => {
-      const regex = new RegExp(`\\b(${word})\\b`, "gi");
-      container.innerHTML = container.innerHTML.replace(regex, (match) => {
-        const count = wordCounts[word.toLowerCase()];
-        const color = getWordColor(count);
-        return `<span class="${color}">${match}</span>`;
-      });
-    });
-  }
-
-  function tts(text) {
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = "en-US";
-    speechSynthesis.speak(utterance);
+  async function loadTextFile(name) {
+    const res = await fetch(`${name}.txt`);
+    if (!res.ok) throw new Error("File load failed.");
+    return await res.text();
   }
 
   function parseMarkdown(text) {
     return text
-      .replace(/^# (.*)$/gm, "<h1>$1</h1>")
-      .replace(/^## (.*)$/gm, "<h2>$1</h2>")
-      .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+      .replace(/^# (.*)$/gm, '<h1>$1</h1>')
+      .replace(/^## (.*)$/gm, '<h2>$1</h2>')
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   }
 
-  function sentenceSplit(text) {
+  function splitSentences(text) {
     return text.split(/(?<=[.?!])\s+|\n\s*\n/).filter(s => s.trim().length > 0);
   }
 
   function wrapSentences(text) {
-    const sentences = sentenceSplit(text);
-    return sentences.map(s => `<span class="sentence">${s.trim()}</span>`).join(" ");
+    const sentences = splitSentences(text);
+    return sentences.map(s => `<span class="sentence">${s.trim()}</span>`).join(' ');
   }
 
-  window.addEventListener("DOMContentLoaded", async () => {
-    const params = new URLSearchParams(location.search);
-    const name = params.get("name");
+  function highlightStoredWords() {
+    const stored = JSON.parse(localStorage.getItem('savedWords') || '{}');
+    document.querySelectorAll('.sentence').forEach(span => {
+      let html = span.textContent.replace(/\b[a-zA-Z]{2,}\b/g, (w) => {
+        const count = stored[w.toLowerCase()];
+        if (!count) return w;
+        const cls = count >= 3 ? 'highlight-red' : count === 2 ? 'highlight-blue' : 'highlight-green';
+        return `<span class="${cls}">${w}</span>`;
+      });
+      span.innerHTML = html;
+    });
+  }
 
-    if (!name) {
-      document.getElementById("content").innerHTML =
-        "파일 이름이 누락되었습니다. 예: <code>index.html?name=thelittleprince</code>";
-      return;
-    }
+  function updateVocabList() {
+    const stored = JSON.parse(localStorage.getItem('savedWords') || '{}');
+    const list = document.getElementById('word-list');
+    list.innerHTML = '';
+    Object.keys(stored).sort().forEach(word => {
+      const li = document.createElement('li');
+      li.textContent = `${word} (${stored[word]})`;
+      list.appendChild(li);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', async () => {
+    const params = new URLSearchParams(window.location.search);
+    const book = params.get('name');
+    if (!book) return document.getElementById('content').textContent = 'Missing ?name= parameter.';
 
     try {
-      const res = await fetch(`${name}.txt`);
-      const raw = await res.text();
+      const text = await loadTextFile(book);
+      const paragraphs = text.split(/\n\s*\n/).map(p => wrapSentences(p.replace(/\n/g, ' ').trim()));
+      const parsed = paragraphs.map(p => `<p>${parseMarkdown(p)}</p>`).join('');
+      const content = document.getElementById('content');
+      content.innerHTML = parsed;
 
-      const paragraphs = raw
-        .split(/\n\s*\n/)
-        .map(p => wrapSentences(p.replace(/\n/g, " ").trim()))
-        .map(html => parseMarkdown(html));
+      highlightStoredWords();
+      updateVocabList();
 
-      const container = document.getElementById("content");
-      container.innerHTML = paragraphs.map(p => `<p>${p}</p>`).join("\n");
-
-      // 문장 클릭 → TTS
-      document.querySelectorAll(".sentence").forEach(span => {
-        span.addEventListener("click", () => tts(span.textContent));
+      // Sentence click → TTS
+      document.querySelectorAll('.sentence').forEach(span => {
+        span.addEventListener('click', () => {
+          const utterance = new SpeechSynthesisUtterance(span.textContent);
+          utterance.lang = 'en-US';
+          speechSynthesis.speak(utterance);
+        });
       });
 
-      // 단어 더블 클릭 → 저장 + 색상
-      document.getElementById("content").addEventListener("dblclick", e => {
-        if (e.target.classList.contains("sentence")) {
-          const sel = window.getSelection();
-          const word = sel.toString().trim();
-          if (/^[a-zA-Z]+$/.test(word)) {
-            saveWord(word);
-            updateWordList();
-            applyWordColors(document.getElementById("content"));
-          }
-        }
+      // Double-click → 단어 저장 및 강조
+      document.getElementById('content').addEventListener('dblclick', (e) => {
+        if (!e.target.closest('.sentence')) return;
+
+        const selection = window.getSelection().toString().trim();
+        if (!selection.match(/^[a-zA-Z]{2,}$/)) return;
+
+        const stored = JSON.parse(localStorage.getItem('savedWords') || '{}');
+        const key = selection.toLowerCase();
+        const count = (stored[key] || 0) + 1;
+        stored[key] = count;
+        localStorage.setItem('savedWords', JSON.stringify(stored));
+
+        highlightStoredWords();
+        updateVocabList();
       });
 
-      applyWordColors(document.getElementById("content"));
-      updateWordList();
     } catch (e) {
-      document.getElementById("content").textContent = `에러: ${e.message}`;
+      document.getElementById('content').textContent = 'Error loading content: ' + e.message;
     }
   });
 </script>
-
 </body>
 </html>
