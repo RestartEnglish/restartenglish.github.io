@@ -1,82 +1,96 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>영어 책 뷰어</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>English Book Reader</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
     body {
-      font-family: sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: sans-serif;
       display: flex;
       flex-direction: column;
       height: 100vh;
       background-color: #f2f2f2;
     }
-    #main, #vocab {
+
+    #container {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      overflow: hidden;
+    }
+
+    #main {
+      flex: 3;
       padding: 1rem;
       overflow-y: auto;
     }
-    #main {
-      flex: 3;
-      background-color: #fff;
-    }
+
     #vocab {
       flex: 1;
-      background-color: #f9f9f9;
-      border-top: 1px solid #ccc;
+      background-color: #fff;
+      border-left: 1px solid #ccc;
+      padding: 1rem;
+      overflow-y: auto;
     }
 
     h1, h2 {
       margin-top: 1rem;
     }
 
-    strong {
-      font-weight: bold;
-    }
-
-    .sentence:hover {
-      cursor: pointer;
-      background-color: #00e5ff;
-    }
-
     .highlight-green { background-color: #ccffcc; }
     .highlight-blue { background-color: #cce5ff; }
-    .highlight-pink { background-color: #ffd6e7; }
+    .highlight-red { background-color: #ffcccc; }
 
-    @media (min-width: 768px) {
-      body {
-        flex-direction: row;
+    .word:hover { cursor: pointer; background-color: #e0e0e0; }
+    .sentence { display: block; margin-bottom: 0.5rem; }
+
+    @media (max-width: 768px) {
+      #container {
+        flex-direction: column;
       }
       #vocab {
-        border-top: none;
-        border-left: 1px solid #ccc;
-        max-width: 30%;
+        border-left: none;
+        border-top: 1px solid #ccc;
       }
     }
   </style>
 </head>
 <body>
 
-<div id="main">
-  <div id="content">로딩 중...</div>
-</div>
-
-<div id="vocab">
-  <ul id="word-list"></ul>
+<h1 style="padding: 1rem">📖 영어 책</h1>
+<div id="container">
+  <div id="main">
+    <div id="content">Loading...</div>
+  </div>
+  <div id="vocab">
+    <ul id="word-list"></ul>
+  </div>
 </div>
 
 <script>
   const wordCounts = JSON.parse(localStorage.getItem('wordCounts') || '{}');
 
-  async function loadTextFile(fileName) {
-    const response = await fetch(fileName);
-    if (!response.ok) throw new Error("파일을 불러올 수 없습니다.");
-    return await response.text();
+  function updateWordStyle(span, word) {
+    const count = wordCounts[word.toLowerCase()] || 0;
+    span.classList.remove('highlight-green', 'highlight-blue', 'highlight-red');
+    if (count === 1) span.classList.add('highlight-green');
+    else if (count === 2) span.classList.add('highlight-blue');
+    else if (count >= 3) span.classList.add('highlight-red');
+  }
+
+  function updateWordListDisplay() {
+    const list = document.getElementById('word-list');
+    list.innerHTML = '';
+    Object.entries(wordCounts)
+      .filter(([_, count]) => count > 0)
+      .sort()
+      .forEach(([word, _]) => {
+        const li = document.createElement('li');
+        li.textContent = word;
+        list.appendChild(li);
+      });
   }
 
   function parseMarkdown(text) {
@@ -90,100 +104,59 @@
     return text.split(/(?<=[.?!])\s+|\n\s*\n/).filter(s => s.trim().length > 0);
   }
 
-  function getHighlightClass(count) {
-    if (count >= 3) return 'highlight-pink';
-    if (count === 2) return 'highlight-blue';
-    if (count === 1) return 'highlight-green';
-    return '';
+  function wordWrap(sentence) {
+    return sentence.split(/\b/).map(token => {
+      if (/^[a-zA-Z]+$/.test(token)) {
+        const span = document.createElement('span');
+        span.classList.add('word');
+        span.textContent = token;
+        updateWordStyle(span, token);
+        span.addEventListener('dblclick', () => {
+          const lower = token.toLowerCase();
+          wordCounts[lower] = (wordCounts[lower] || 0) + 1;
+          localStorage.setItem('wordCounts', JSON.stringify(wordCounts));
+          updateWordStyle(span, token);
+          updateWordListDisplay();
+        });
+        return span.outerHTML;
+      } else {
+        return token;
+      }
+    }).join('');
   }
 
-  function wrapSentences(text) {
-    const sentences = sentenceSplit(text);
-    return sentences.map(s => `<span class="sentence">${s.trim()}</span>`).join(' ');
+  async function loadTextFile(fileName) {
+    const response = await fetch(fileName);
+    if (!response.ok) throw new Error("파일을 불러올 수 없습니다.");
+    return await response.text();
   }
 
-  function extractWords(text) {
-    const words = text.match(/\b[a-zA-Z]{4,}\b/g) || [];
-    const unique = [...new Set(words.map(w => w.toLowerCase()))];
-    return unique.sort();
-  }
-
-  function displayWordList(words) {
-    const list = document.getElementById('word-list');
-    list.innerHTML = '';
-    words.forEach(word => {
-      const count = wordCounts[word] || 0;
-      const li = document.createElement('li');
-      li.innerHTML = `<span class="${getHighlightClass(count)}">${word}</span>`;
-      li.title = '더블클릭 시 단어 뜻 조회';
-      li.addEventListener('dblclick', () => fetchMeaning(word));
-      list.appendChild(li);
-    });
-  }
-
-  function updateWord(word) {
-    const lower = word.toLowerCase();
-    wordCounts[lower] = (wordCounts[lower] || 0) + 1;
-    localStorage.setItem('wordCounts', JSON.stringify(wordCounts));
-  }
-
-  function fetchMeaning(word) {
-    const api = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
-    fetch(api)
-      .then(res => res.json())
-      .then(data => {
-        if (!Array.isArray(data)) throw new Error('단어 정보를 찾을 수 없습니다.');
-        const item = data[0];
-        const meaning = item.meanings?.[0]?.definitions?.[0]?.definition || '뜻 없음';
-        const phonetic = item.phonetic || item.phonetics?.[0]?.text || '';
-        alert(`${word} ${phonetic}\n\n${meaning}`);
-      })
-      .catch(() => alert(`${word}\n\n뜻을 찾을 수 없습니다.`));
-  }
-
-  function tts(text) {
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'en-US';
-    speechSynthesis.speak(utterance);
-  }
-
-  window.addEventListener('DOMContentLoaded', async () => {
-    const params = new URLSearchParams(window.location.search);
-    const bookName = params.get('name');
-    if (!bookName) {
-      document.getElementById('content').textContent =
-        '책 이름이 누락되었습니다. 예: index.html?name=thelittleprince';
+  async function init() {
+    const params = new URLSearchParams(location.search);
+    const name = params.get('name');
+    if (!name) {
+      document.getElementById('content').textContent = '책 이름이 누락되었습니다. 예: ?name=thelittleprince';
       return;
     }
 
-    const fileName = `${bookName}.txt`;
-
     try {
-      const rawText = await loadTextFile(fileName);
-      const paragraphs = rawText
-        .split(/\n\s*\n/)
-        .map(p => wrapSentences(p.replace(/\n/g, ' ').trim()))
-        .map(html => parseMarkdown(html));
+      const rawText = await loadTextFile(`${name}.txt`);
+      const paragraphs = rawText.split(/\n\s*\n/);
 
-      const content = document.getElementById('content');
-      content.innerHTML = paragraphs.map(p => `<p>${p}</p>`).join('\n');
+      const contentHTML = paragraphs.map(p => {
+        const sentences = sentenceSplit(p.replace(/\n/g, ' '));
+        return sentences.map(s => `<span class="sentence">${wordWrap(s.trim())}</span>`).join(' ');
+      }).map(p => `<p>${parseMarkdown(p)}</p>`).join('\n');
 
-      document.querySelectorAll('.sentence').forEach(span => {
-        span.addEventListener('click', () => tts(span.textContent));
-        span.addEventListener('dblclick', () => {
-          const words = span.textContent.match(/\b[a-zA-Z]{4,}\b/g) || [];
-          words.forEach(updateWord);
-          displayWordList(Object.keys(wordCounts));
-        });
-      });
-
-      const words = extractWords(rawText);
-      displayWordList(words);
+      document.getElementById('content').innerHTML = contentHTML;
+      updateWordListDisplay();
 
     } catch (err) {
       document.getElementById('content').textContent = `에러: ${err.message}`;
     }
-  });
+  }
+
+  init();
 </script>
 
 </body>
