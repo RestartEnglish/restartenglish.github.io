@@ -53,12 +53,12 @@
 
   function parseMarkdown(text) {
     return text
-      .replace(/^# (.*$)/gim, '<h1>$1</h1>')
-      .replace(/^## (.*$)/gim, '<h2>$1</h2>')
-      .replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>')
-      .replace(/\[green\](.*?)\[\/green\]/gim, '<span class="highlight-green">$1</span>')
-      .replace(/\[blue\](.*?)\[\/blue\]/gim, '<span class="highlight-blue">$1</span>')
-      .replace(/\[pink\](.*?)\[\/pink\]/gim, '<span class="highlight-pink">$1</span>');
+      .replace(/^# (.*)$/gm, '<h1>$1</h1>')
+      .replace(/^## (.*)$/gm, '<h2>$1</h2>')
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\[green\](.*?)\[\/green\]/g, '<span class="highlight-green">$1</span>')
+      .replace(/\[blue\](.*?)\[\/blue\]/g, '<span class="highlight-blue">$1</span>')
+      .replace(/\[pink\](.*?)\[\/pink\]/g, '<span class="highlight-pink">$1</span>');
   }
 
   function tts(text) {
@@ -83,15 +83,36 @@
     });
   }
 
-  function splitSentencesToSpans(text) {
-    return text.replace(/([^.?!]+[.?!])/g, '<span class="sentence">$1</span>');
+  function sentenceWrap(text) {
+    // HTML 태그를 제외한 실제 텍스트만 문장 기준으로 나눔
+    const div = document.createElement('div');
+    div.innerHTML = text;
+
+    div.querySelectorAll('p').forEach(p => {
+      const raw = p.innerHTML;
+      const sentences = raw.match(/[^.!?]+[.!?]?/g);
+      if (!sentences) return;
+
+      p.innerHTML = '';
+      sentences.forEach(sentence => {
+        const span = document.createElement('span');
+        span.className = 'sentence';
+        span.textContent = sentence.trim() + ' ';
+        span.onclick = () => tts(sentence.trim());
+        p.appendChild(span);
+      });
+    });
+
+    return div.innerHTML;
   }
 
   window.addEventListener('DOMContentLoaded', async () => {
     const params = new URLSearchParams(window.location.search);
-    const bookName = params.get('');
+    const bookName = params.get('name'); // ✅ 수정된 부분
+
     if (!bookName) {
-      document.getElementById('content').textContent = '책 이름이 누락되었습니다. 예: ?=thelittleprince';
+      document.getElementById('content').textContent =
+        '책 이름이 누락되었습니다. 예: index.html?name=thelittleprince';
       return;
     }
 
@@ -99,17 +120,28 @@
 
     try {
       const rawText = await loadTextFile(fileName);
-      const md = parseMarkdown(rawText);
-      const sentences = splitSentencesToSpans(md);
-      document.getElementById('content').innerHTML = sentences;
 
+      // 문단 나누기: \n\n 기준
+      const rawParagraphs = rawText
+        .split(/\n\s*\n/)
+        .map(p => p.replace(/\n/g, ' ').trim())
+        .filter(p => p.length > 0);
+
+      // 파싱 + 문장 래핑
+      const contentDiv = document.getElementById('content');
+      contentDiv.innerHTML = '';
+      rawParagraphs.forEach(paragraph => {
+        const parsed = parseMarkdown(paragraph);
+        const wrapped = sentenceWrap(parsed);
+        const container = document.createElement('div');
+        container.innerHTML = wrapped;
+        contentDiv.appendChild(container);
+      });
+
+      // 단어 목록
       const words = extractWords(rawText);
       displayWordList(words);
 
-      // TTS on click
-      document.querySelectorAll('.sentence').forEach(span => {
-        span.addEventListener('click', () => tts(span.textContent));
-      });
     } catch (err) {
       document.getElementById('content').textContent = `에러: ${err.message}`;
     }
