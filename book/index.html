@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>English Reader</title>
+  <meta charset="UTF-8" />
+  <title>The Little Prince Reader</title>
   <style>
     body {
       font-family: sans-serif;
@@ -34,23 +34,10 @@
 </head>
 <body>
 
-<div id="reader"></div>
+<div id="reader">📖 Loading <code>thelittleprince.txt</code>...</div>
 <div id="wordlist"><h3>📌 Word List</h3><ul id="words"></ul></div>
 
 <script>
-const rawText = `
-# The Power of Habit
-## Why We Do What We Do in Life and Business
-
-Humans are creatures of **habit**.
-We often do things without thinking, because we have ==green==routines==green==.
-
-These ==blue==patterns==blue== shape our lives more than we realize.
-
-To change a habit, you must understand the ==pink==cue==pink==, the **routine**, and the reward.
-`;
-
-// 파서
 function parseText(raw) {
   const lines = raw.trim().split('\n');
   const container = document.createElement('div');
@@ -59,7 +46,7 @@ function parseText(raw) {
   for (let line of lines) {
     let element;
 
-    // 제목
+    // 제목/부제목
     if (line.startsWith('## ')) {
       element = document.createElement('h2');
       line = line.replace(/^## /, '');
@@ -78,7 +65,6 @@ function parseText(raw) {
     line = line.replace(/==blue==(.*?)==blue==/g, '<span class="highlight-blue">$1</span>');
     line = line.replace(/==pink==(.*?)==pink==/g, '<span class="highlight-pink">$1</span>');
 
-    // 문장 구분 및 TTS 처리
     if (element.tagName === 'P') {
       const sentenceParts = line.match(/[^.!?]+[.!?]?/g) || [];
       sentenceParts.forEach(part => {
@@ -106,6 +92,7 @@ function parseText(raw) {
 
   // 단어 목록 표시
   const ul = document.getElementById('words');
+  ul.innerHTML = '';
   [...wordSet].sort().forEach(w => {
     const li = document.createElement('li');
     li.textContent = w;
@@ -115,8 +102,19 @@ function parseText(raw) {
   return container;
 }
 
-// 렌더링
-document.getElementById('reader').appendChild(parseText(rawText));
+// 실제 텍스트 파일 불러오기
+fetch('./thelittleprince.txt')
+  .then(response => response.text())
+  .then(text => {
+    const parsed = parseText(text);
+    const readerDiv = document.getElementById('reader');
+    readerDiv.innerHTML = '';
+    readerDiv.appendChild(parsed);
+  })
+  .catch(err => {
+    document.getElementById('reader').textContent = '❌ Failed to load text file.';
+    console.error(err);
+  });
 </script>
 
 </body>
