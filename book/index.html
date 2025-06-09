@@ -39,34 +39,35 @@
 
 <script>
 function parseText(raw) {
-  const lines = raw.trim().split('\n');
+  const paragraphs = raw
+    .split(/\n\s*\n/) // 빈 줄 기준 문단 나누기
+    .map(p => p.replace(/\n/g, ' ').trim()) // 문단 내 줄들은 붙이기
+    .filter(p => p.length > 0);
+
   const container = document.createElement('div');
   const wordSet = new Set();
 
-  for (let line of lines) {
+  for (let para of paragraphs) {
     let element;
 
-    // 제목/부제목
-    if (line.startsWith('## ')) {
+    if (para.startsWith('## ')) {
       element = document.createElement('h2');
-      line = line.replace(/^## /, '');
-    } else if (line.startsWith('# ')) {
+      para = para.replace(/^## /, '');
+    } else if (para.startsWith('# ')) {
       element = document.createElement('h1');
-      line = line.replace(/^# /, '');
+      para = para.replace(/^# /, '');
     } else {
       element = document.createElement('p');
     }
 
-    // 굵은 글씨
-    line = line.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-
-    // 하이라이트
-    line = line.replace(/==green==(.*?)==green==/g, '<span class="highlight-green">$1</span>');
-    line = line.replace(/==blue==(.*?)==blue==/g, '<span class="highlight-blue">$1</span>');
-    line = line.replace(/==pink==(.*?)==pink==/g, '<span class="highlight-pink">$1</span>');
+    // 스타일 변환
+    para = para.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    para = para.replace(/==green==(.*?)==green==/g, '<span class="highlight-green">$1</span>');
+    para = para.replace(/==blue==(.*?)==blue==/g, '<span class="highlight-blue">$1</span>');
+    para = para.replace(/==pink==(.*?)==pink==/g, '<span class="highlight-pink">$1</span>');
 
     if (element.tagName === 'P') {
-      const sentenceParts = line.match(/[^.!?]+[.!?]?/g) || [];
+      const sentenceParts = para.match(/[^.!?]+[.!?]?/g) || [];
       sentenceParts.forEach(part => {
         const span = document.createElement('span');
         span.className = 'sentence';
@@ -78,19 +79,18 @@ function parseText(raw) {
         };
         element.appendChild(span);
 
-        // 단어 추출
         part.trim().split(/\W+/).forEach(word => {
           if (word.length > 3) wordSet.add(word.toLowerCase());
         });
       });
     } else {
-      element.innerHTML = line;
+      element.innerHTML = para;
     }
 
     container.appendChild(element);
   }
 
-  // 단어 목록 표시
+  // 단어 리스트 출력
   const ul = document.getElementById('words');
   ul.innerHTML = '';
   [...wordSet].sort().forEach(w => {
