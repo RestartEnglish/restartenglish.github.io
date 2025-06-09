@@ -11,6 +11,7 @@
       flex-direction: row;
       height: 100vh;
       font-family: sans-serif;
+      user-select: none;
     }
 
     #main {
@@ -69,6 +70,10 @@
 </div>
 
 <script>
+  document.addEventListener('contextmenu', e => e.preventDefault()); // 우클릭 금지
+  document.addEventListener('copy', e => e.preventDefault());        // Ctrl+C, ⌘+C 금지
+
+  
   // 단어 횟수 데이터 로드/저장
   const wordCounts = JSON.parse(localStorage.getItem("wordCounts") || "{}");
 
