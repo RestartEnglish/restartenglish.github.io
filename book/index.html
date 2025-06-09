@@ -83,16 +83,18 @@
     });
   }
 
+  function splitSentences(text) {
+    // 문장 단위로 나누기: . ? ! 또는 문단 줄바꿈(\n\n)
+    return text.split(/(?<=[.?!])\s+|\n\s*\n/).filter(s => s.trim().length > 0);
+  }
+
   function sentenceWrap(text) {
-    // HTML 태그를 제외한 실제 텍스트만 문장 기준으로 나눔
     const div = document.createElement('div');
     div.innerHTML = text;
 
     div.querySelectorAll('p').forEach(p => {
-      const raw = p.innerHTML;
-      const sentences = raw.match(/[^.!?]+[.!?]?/g);
-      if (!sentences) return;
-
+      const raw = p.innerText;
+      const sentences = splitSentences(raw);
       p.innerHTML = '';
       sentences.forEach(sentence => {
         const span = document.createElement('span');
@@ -108,7 +110,7 @@
 
   window.addEventListener('DOMContentLoaded', async () => {
     const params = new URLSearchParams(window.location.search);
-    const bookName = params.get('name'); // ✅ 수정된 부분
+    const bookName = params.get('name');
 
     if (!bookName) {
       document.getElementById('content').textContent =
@@ -121,16 +123,15 @@
     try {
       const rawText = await loadTextFile(fileName);
 
-      // 문단 나누기: \n\n 기준
-      const rawParagraphs = rawText
-        .split(/\n\s*\n/)
-        .map(p => p.replace(/\n/g, ' ').trim())
+      const paragraphs = rawText
+        .split(/\n\s*\n/) // 문단 구분
+        .map(p => p.replace(/\n/g, ' ').trim()) // 줄 연결
         .filter(p => p.length > 0);
 
-      // 파싱 + 문장 래핑
       const contentDiv = document.getElementById('content');
       contentDiv.innerHTML = '';
-      rawParagraphs.forEach(paragraph => {
+
+      paragraphs.forEach(paragraph => {
         const parsed = parseMarkdown(paragraph);
         const wrapped = sentenceWrap(parsed);
         const container = document.createElement('div');
@@ -138,7 +139,6 @@
         contentDiv.appendChild(container);
       });
 
-      // 단어 목록
       const words = extractWords(rawText);
       displayWordList(words);
 
