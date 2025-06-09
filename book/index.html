@@ -1,119 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <title>The Little Prince Reader</title>
+  <meta charset="UTF-8">
+  <title>영어 책 뷰어</title>
   <style>
     body {
       font-family: sans-serif;
-      display: flex;
       margin: 0;
+      padding: 0;
+      display: flex;
+      height: 100vh;
+      background-color: #f2f2f2;
     }
-    #reader {
-      flex: 2;
-      padding: 20px;
-      line-height: 1.6;
+    #main {
+      flex: 3;
+      padding: 2rem;
+      overflow-y: scroll;
     }
-    #wordlist {
+    #vocab {
       flex: 1;
-      background: #f5f5f5;
-      padding: 20px;
-      border-left: 1px solid #ddd;
+      background-color: #fff;
+      border-left: 1px solid #ccc;
+      padding: 1rem;
+      overflow-y: auto;
     }
-    .highlight-green { background-color: #ccff00; }
-    .highlight-blue { background-color: #00ffff; }
-    .highlight-pink { background-color: #ff66cc; }
-    .sentence:hover {
-      background-color: rgba(255,255,0,0.3);
-      cursor: pointer;
-    }
-    h1 { font-size: 24px; }
-    h2 { font-size: 20px; margin-top: 1em; }
+    .highlight-green { background-color: #ccffcc; }
+    .highlight-blue { background-color: #cce5ff; }
+    .highlight-pink { background-color: #ffd6e7; }
     strong { font-weight: bold; }
+    h1, h2 { margin-top: 2rem; }
+    .sentence:hover { cursor: pointer; background-color: #efefef; }
   </style>
 </head>
 <body>
 
-<div id="reader">📖 Loading <code>thelittleprince.txt</code>...</div>
-<div id="wordlist"><h3>📌 Word List</h3><ul id="words"></ul></div>
+<div id="main">
+  <h1>📖 영어 책</h1>
+  <div id="content">로딩 중...</div>
+</div>
+
+<div id="vocab">
+  <h2>📚 단어</h2>
+  <ul id="word-list"></ul>
+</div>
 
 <script>
-function parseText(raw) {
-  const paragraphs = raw
-    .split(/\n\s*\n/) // 빈 줄 기준 문단 나누기
-    .map(p => p.replace(/\n/g, ' ').trim()) // 문단 내 줄들은 붙이기
-    .filter(p => p.length > 0);
-
-  const container = document.createElement('div');
-  const wordSet = new Set();
-
-  for (let para of paragraphs) {
-    let element;
-
-    if (para.startsWith('## ')) {
-      element = document.createElement('h2');
-      para = para.replace(/^## /, '');
-    } else if (para.startsWith('# ')) {
-      element = document.createElement('h1');
-      para = para.replace(/^# /, '');
-    } else {
-      element = document.createElement('p');
-    }
-
-    // 스타일 변환
-    para = para.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-    para = para.replace(/==green==(.*?)==green==/g, '<span class="highlight-green">$1</span>');
-    para = para.replace(/==blue==(.*?)==blue==/g, '<span class="highlight-blue">$1</span>');
-    para = para.replace(/==pink==(.*?)==pink==/g, '<span class="highlight-pink">$1</span>');
-
-    if (element.tagName === 'P') {
-      const sentenceParts = para.match(/[^.!?]+[.!?]?/g) || [];
-      sentenceParts.forEach(part => {
-        const span = document.createElement('span');
-        span.className = 'sentence';
-        span.textContent = part.trim() + ' ';
-        span.onclick = () => {
-          const utterance = new SpeechSynthesisUtterance(part.trim());
-          utterance.lang = 'en-US';
-          speechSynthesis.speak(utterance);
-        };
-        element.appendChild(span);
-
-        part.trim().split(/\W+/).forEach(word => {
-          if (word.length > 3) wordSet.add(word.toLowerCase());
-        });
-      });
-    } else {
-      element.innerHTML = para;
-    }
-
-    container.appendChild(element);
+  async function loadTextFile(fileName) {
+    const response = await fetch(fileName);
+    if (!response.ok) throw new Error("파일을 불러올 수 없습니다.");
+    return await response.text();
   }
 
-  // 단어 리스트 출력
-  const ul = document.getElementById('words');
-  ul.innerHTML = '';
-  [...wordSet].sort().forEach(w => {
-    const li = document.createElement('li');
-    li.textContent = w;
-    ul.appendChild(li);
-  });
+  function parseMarkdown(text) {
+    return text
+      .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+      .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+      .replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>')
+      .replace(/\[green\](.*?)\[\/green\]/gim, '<span class="highlight-green">$1</span>')
+      .replace(/\[blue\](.*?)\[\/blue\]/gim, '<span class="highlight-blue">$1</span>')
+      .replace(/\[pink\](.*?)\[\/pink\]/gim, '<span class="highlight-pink">$1</span>');
+  }
 
-  return container;
-}
+  function tts(text) {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-US';
+    speechSynthesis.speak(utterance);
+  }
 
-// 실제 텍스트 파일 불러오기
-fetch('./thelittleprince.txt')
-  .then(response => response.text())
-  .then(text => {
-    const parsed = parseText(text);
-    const readerDiv = document.getElementById('reader');
-    readerDiv.innerHTML = '';
-    readerDiv.appendChild(parsed);
-  })
-  .catch(err => {
-    document.getElementById('reader').textContent = '❌ Failed to load text file.';
-    console.error(err);
+  function extractWords(text) {
+    const words = text.match(/\b[a-zA-Z]{4,}\b/g) || [];
+    const unique = [...new Set(words.map(w => w.toLowerCase()))];
+    return unique.sort();
+  }
+
+  function displayWordList(words) {
+    const list = document.getElementById('word-list');
+    list.innerHTML = '';
+    words.forEach(word => {
+      const li = document.createElement('li');
+      li.textContent = word;
+      list.appendChild(li);
+    });
+  }
+
+  function splitSentencesToSpans(text) {
+    return text.replace(/([^.?!]+[.?!])/g, '<span class="sentence">$1</span>');
+  }
+
+  window.addEventListener('DOMContentLoaded', async () => {
+    const params = new URLSearchParams(window.location.search);
+    const bookName = params.get('');
+    if (!bookName) {
+      document.getElementById('content').textContent = '책 이름이 누락되었습니다. 예: ?=thelittleprince';
+      return;
+    }
+
+    const fileName = `${bookName}.txt`;
+
+    try {
+      const rawText = await loadTextFile(fileName);
+      const md = parseMarkdown(rawText);
+      const sentences = splitSentencesToSpans(md);
+      document.getElementById('content').innerHTML = sentences;
+
+      const words = extractWords(rawText);
+      displayWordList(words);
+
+      // TTS on click
+      document.querySelectorAll('.sentence').forEach(span => {
+        span.addEventListener('click', () => tts(span.textContent));
+      });
+    } catch (err) {
+      document.getElementById('content').textContent = `에러: ${err.message}`;
+    }
   });
 </script>
 
