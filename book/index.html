@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>English Reader</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      margin: 0;
+    }
+    #reader {
+      flex: 2;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    #wordlist {
+      flex: 1;
+      background: #f5f5f5;
+      padding: 20px;
+      border-left: 1px solid #ddd;
+    }
+    .highlight-green { background-color: #ccff00; }
+    .highlight-blue { background-color: #00ffff; }
+    .highlight-pink { background-color: #ff66cc; }
+    .sentence:hover {
+      background-color: rgba(255,255,0,0.3);
+      cursor: pointer;
+    }
+    h1 { font-size: 24px; }
+    h2 { font-size: 20px; margin-top: 1em; }
+    strong { font-weight: bold; }
+  </style>
+</head>
+<body>
+
+<div id="reader"></div>
+<div id="wordlist"><h3>📌 Word List</h3><ul id="words"></ul></div>
+
+<script>
+const rawText = `
+# The Power of Habit
+## Why We Do What We Do in Life and Business
+
+Humans are creatures of **habit**.
+We often do things without thinking, because we have ==green==routines==green==.
+
+These ==blue==patterns==blue== shape our lives more than we realize.
+
+To change a habit, you must understand the ==pink==cue==pink==, the **routine**, and the reward.
+`;
+
+// 파서
+function parseText(raw) {
+  const lines = raw.trim().split('\n');
+  const container = document.createElement('div');
+  const wordSet = new Set();
+
+  for (let line of lines) {
+    let element;
+
+    // 제목
+    if (line.startsWith('## ')) {
+      element = document.createElement('h2');
+      line = line.replace(/^## /, '');
+    } else if (line.startsWith('# ')) {
+      element = document.createElement('h1');
+      line = line.replace(/^# /, '');
+    } else {
+      element = document.createElement('p');
+    }
+
+    // 굵은 글씨
+    line = line.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+
+    // 하이라이트
+    line = line.replace(/==green==(.*?)==green==/g, '<span class="highlight-green">$1</span>');
+    line = line.replace(/==blue==(.*?)==blue==/g, '<span class="highlight-blue">$1</span>');
+    line = line.replace(/==pink==(.*?)==pink==/g, '<span class="highlight-pink">$1</span>');
+
+    // 문장 구분 및 TTS 처리
+    if (element.tagName === 'P') {
+      const sentenceParts = line.match(/[^.!?]+[.!?]?/g) || [];
+      sentenceParts.forEach(part => {
+        const span = document.createElement('span');
+        span.className = 'sentence';
+        span.textContent = part.trim() + ' ';
+        span.onclick = () => {
+          const utterance = new SpeechSynthesisUtterance(part.trim());
+          utterance.lang = 'en-US';
+          speechSynthesis.speak(utterance);
+        };
+        element.appendChild(span);
+
+        // 단어 추출
+        part.trim().split(/\W+/).forEach(word => {
+          if (word.length > 3) wordSet.add(word.toLowerCase());
+        });
+      });
+    } else {
+      element.innerHTML = line;
+    }
+
+    container.appendChild(element);
+  }
+
+  // 단어 목록 표시
+  const ul = document.getElementById('words');
+  [...wordSet].sort().forEach(w => {
+    const li = document.createElement('li');
+    li.textContent = w;
+    ul.appendChild(li);
+  });
+
+  return container;
+}
+
+// 렌더링
+document.getElementById('reader').appendChild(parseText(rawText));
+</script>
+
+</body>
+</html>
