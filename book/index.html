@@ -1,20 +1,23 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>English Book Reader</title>
+  <meta charset="UTF-8" />
+  <title>영어 책 뷰어</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
+    * { box-sizing: border-box; }
     body {
       font-family: sans-serif;
       margin: 0;
       padding: 0;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       height: 100vh;
       background-color: #f2f2f2;
       user-select: none;
+    }
+    @media (max-width: 768px) {
+      body { flex-direction: column; }
     }
     #main {
       flex: 3;
@@ -24,43 +27,31 @@
     #vocab {
       flex: 1;
       background-color: #fff;
-      border-top: 1px solid #ccc;
+      border-left: 1px solid #ccc;
       padding: 1rem;
       overflow-y: auto;
     }
     .highlight-green { background-color: #ccffcc; }
     .highlight-blue { background-color: #cce5ff; }
-    .highlight-red { background-color: #ffcccc; }
+    .highlight-pink { background-color: #ffd6e7; }
     strong { font-weight: bold; }
-    h1, h2 { margin-top: 1rem; }
+    h1, h2 { margin-top: 2rem; }
     .sentence:hover { cursor: pointer; background-color: #efefef; }
-    .word { padding: 0 2px; }
-    ul { padding-left: 20px; }
-    @media (min-width: 768px) {
-      body {
-        flex-direction: row;
-      }
-      #main {
-        flex: 3;
-      }
-      #vocab {
-        flex: 1;
-        border-left: 1px solid #ccc;
-        border-top: none;
-      }
-    }
+    li:hover { cursor: pointer; color: blue; }
+    .word-info { margin-top: 1rem; font-size: 0.9rem; }
   </style>
 </head>
 <body>
 
 <div id="main">
-  <h1>📖 English Book</h1>
-  <div id="content">Loading...</div>
+  <h1>📖 영어 책</h1>
+  <div id="content">로딩 중...</div>
 </div>
 
 <div id="vocab">
-  <h2>📚 Word List</h2>
+  <h2>📚 단어</h2>
   <ul id="word-list"></ul>
+  <div id="word-info" class="word-info"></div>
 </div>
 
 <script>
@@ -68,7 +59,7 @@
 
   async function loadTextFile(fileName) {
     const response = await fetch(fileName);
-    if (!response.ok) throw new Error("Cannot load file");
+    if (!response.ok) throw new Error("파일을 불러올 수 없습니다.");
     return await response.text();
   }
 
@@ -79,88 +70,103 @@
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   }
 
-  function wrapWords(text) {
-    return text.replace(/\b([a-zA-Z]+)\b/g, (match) => {
-      const lower = match.toLowerCase();
-      const count = wordCounts[lower] || 0;
-      let className = "";
-      if (count === 1) className = "highlight-green";
-      else if (count === 2) className = "highlight-blue";
-      else if (count >= 3) className = "highlight-red";
-      return `<span class="word ${className}">${match}</span>`;
-    });
-  }
-
   function sentenceSplit(text) {
     return text.split(/(?<=[.?!])\s+|\n\s*\n/).filter(s => s.trim().length > 0);
   }
 
   function wrapSentences(text) {
     const sentences = sentenceSplit(text);
-    return sentences.map(s => {
-      const wrapped = wrapWords(s.trim());
-      return `<span class="sentence">${wrapped}</span>`;
-    }).join(" ");
+    return sentences.map(s => `<span class="sentence">${s.trim()}</span>`).join(' ');
+  }
+
+  function getColor(count) {
+    if (count >= 3) return 'highlight-pink';
+    if (count === 2) return 'highlight-blue';
+    return 'highlight-green';
   }
 
   function updateWordList() {
     const list = document.getElementById('word-list');
     list.innerHTML = '';
-    const sorted = Object.entries(wordCounts)
-      .filter(([_, count]) => count >= 1)
-      .sort((a, b) => a[0].localeCompare(b[0]));
-    for (const [word, count] of sorted) {
+    Object.entries(wordCounts).forEach(([word, count]) => {
       const li = document.createElement('li');
       li.textContent = `${word} (${count})`;
-      li.className = count === 1 ? 'highlight-green' : count === 2 ? 'highlight-blue' : 'highlight-red';
+      li.addEventListener('click', () => showWordInfo(word));
       list.appendChild(li);
+    });
+  }
+
+  async function showWordInfo(word) {
+    const infoBox = document.getElementById('word-info');
+    infoBox.textContent = '로딩 중...';
+    try {
+      const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
+      const data = await res.json();
+      const entry = data[0];
+      const phonetic = entry.phonetics?.[0]?.text || 'N/A';
+      const meaning = entry.meanings?.[0]?.definitions?.[0]?.definition || 'No definition found.';
+      infoBox.innerHTML = `<strong>${word}</strong><br>발음: ${phonetic}<br>뜻: ${meaning}`;
+      const utter = new SpeechSynthesisUtterance(word);
+      utter.lang = 'en-US';
+      speechSynthesis.speak(utter);
+    } catch {
+      infoBox.textContent = '단어 정보를 가져올 수 없습니다.';
     }
+  }
+
+  function saveWord(word) {
+    wordCounts[word] = (wordCounts[word] || 0) + 1;
+    localStorage.setItem('wordCounts', JSON.stringify(wordCounts));
+    updateWordList();
+    return getColor(wordCounts[word]);
+  }
+
+  function applyWordHighlight() {
+    document.querySelectorAll('.sentence').forEach(span => {
+      span.innerHTML = span.textContent.split(/\b/).map(part => {
+        const word = part.toLowerCase();
+        if (wordCounts[word]) {
+          return `<span class="${getColor(wordCounts[word])}">${part}</span>`;
+        }
+        return part;
+      }).join('');
+    });
   }
 
   function tts(text) {
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'en-US';
-    speechSynthesis.cancel();
-    speechSynthesis.speak(utterance);
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = 'en-US';
+    speechSynthesis.speak(utter);
   }
 
   window.addEventListener('DOMContentLoaded', async () => {
-    const params = new URLSearchParams(window.location.search);
-    const bookName = params.get('name');
-    if (!bookName) {
-      document.getElementById('content').textContent =
-        'Missing book name. Try: index.html?name=thelittleprince';
-      return;
-    }
+    const params = new URLSearchParams(location.search);
+    const name = params.get('name');
+    if (!name) return document.getElementById('content').textContent = '책 이름이 필요합니다.';
+    const rawText = await loadTextFile(`${name}.txt`);
+    const content = document.getElementById('content');
 
-    try {
-      const rawText = await loadTextFile(`${bookName}.txt`);
-      const paragraphs = rawText
-        .split(/\n\s*\n/)
-        .map(p => wrapSentences(p.replace(/\n/g, ' ').trim()))
-        .map(html => parseMarkdown(html));
-      const content = document.getElementById('content');
-      content.innerHTML = paragraphs.map(p => `<p>${p}</p>`).join('\n');
+    const paragraphs = rawText.split(/\n\s*\n/)
+      .map(p => wrapSentences(p.replace(/\n/g, ' ').trim()))
+      .map(html => parseMarkdown(html));
 
-      // TTS
-      document.querySelectorAll('.sentence').forEach(span => {
-        span.addEventListener('click', () => tts(span.textContent));
+    content.innerHTML = paragraphs.map(p => `<p>${p}</p>`).join('\n');
+
+    document.querySelectorAll('.sentence').forEach(span => {
+      span.addEventListener('click', () => tts(span.textContent));
+      span.addEventListener('dblclick', e => {
+        const word = window.getSelection().toString().toLowerCase();
+        if (word.match(/^[a-zA-Z]+$/)) {
+          const color = saveWord(word);
+          e.target.innerHTML = e.target.textContent.split(/\b/).map(part =>
+            part.toLowerCase() === word ? `<span class="${color}">${part}</span>` : part
+          ).join('');
+        }
       });
+    });
 
-      // Word click tracking
-      document.querySelectorAll('.word').forEach(wordEl => {
-        wordEl.addEventListener('dblclick', () => {
-          const word = wordEl.textContent.toLowerCase();
-          wordCounts[word] = (wordCounts[word] || 0) + 1;
-          localStorage.setItem('wordCounts', JSON.stringify(wordCounts));
-          location.reload(); // Refresh to reapply highlights and word list
-        });
-      });
-
-      updateWordList();
-    } catch (err) {
-      document.getElementById('content').textContent = `Error: ${err.message}`;
-    }
+    updateWordList();
+    applyWordHighlight();
   });
 </script>
 
