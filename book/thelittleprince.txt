@@ -1,11 +1,11 @@
-# The Little Prince  
+# The Little Prince #
 **Antoine de Saint-Exupéry**
 
 Original work *The Little Prince* and its images are in the public domain.  
 This translation is Copyrighted by Jeff Mcneill and licensed under Creative Commons  
 **CC-BY-NC-ND 4.0**
 
-## To Leon Werth
+## To Leon Werth ##
 
 I apologize to the children for dedicating this book to a grown-up.  
 I have a good excuse: this grown-up is the best friend I have in the world.  
@@ -21,7 +21,7 @@ So I correct my dedication:
 **To Leon Werth**  
 **when he was a little boy.**
 
-## I
+## I ##
 
 When I was six years old, I once saw a magnificent picture in a book on the virgin forest called *Stories of Life*.  
 It was a boa constrictor that had swallowed a wild beast.  
