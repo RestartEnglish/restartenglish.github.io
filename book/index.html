@@ -115,12 +115,28 @@
     }
   }
 
-  function tts(text) {
+  function speak(text) {
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'en-US';
-    speechSynthesis.cancel();
-    speechSynthesis.speak(utterance);
+  
+    // wait for voices to be loaded
+    const waitForVoices = setInterval(() => {
+      const voices = speechSynthesis.getVoices();
+      if (voices.length !== 0) {
+        clearInterval(waitForVoices);
+  
+        const enVoice = voices.find(v => v.lang === 'en-US' && v.name.includes('Siri') || v.name.includes('en-US'));
+  
+        if (enVoice) {
+          utterance.voice = enVoice;
+          utterance.lang = enVoice.lang;
+        }
+  
+        speechSynthesis.cancel();
+        speechSynthesis.speak(utterance);
+      }
+    }, 100);
   }
+
 
   window.addEventListener('DOMContentLoaded', async () => {
     const params = new URLSearchParams(window.location.search);
