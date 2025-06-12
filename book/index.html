@@ -107,10 +107,17 @@
     const sorted = Object.entries(wordCounts)
       .filter(([_, count]) => count >= 1)
       .sort((a, b) => a[0].localeCompare(b[0]));
+  
     for (const [word, count] of sorted) {
       const li = document.createElement('li');
       li.textContent = `${word} (${count})`;
       li.className = count === 1 ? 'highlight-green' : count === 2 ? 'highlight-blue' : 'highlight-red';
+  
+      // ✅ 여기 추가: 더블 클릭 시 TTS
+      li.addEventListener('dblclick', () => {
+        tts(word);
+      });
+  
       list.appendChild(li);
     }
   }
