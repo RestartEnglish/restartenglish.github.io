@@ -115,16 +115,37 @@
     }
   }
 
-  function tts(text, lang = 'en-us') {
-    const apiKey = 'ac2cdea3da81447283cd75e38a92fa36'; // 실제 키로 대체
+  async function tts(text, lang = 'ko-KR', voiceName = 'ko-KR-Wavenet-A') {
+    const apiKey = 'AIzaSyC4tLuk2F7VyrtiDrARfOSpbt9lZ5UPsLg';
+    const url = `https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`;
   
-    const url = `https://api.voicerss.org/?key=${apiKey}&hl=${lang}&src=${encodeURIComponent(text)}&c=MP3`;
+    const requestBody = {
+      input: { text },
+      voice: {
+        languageCode: lang,
+        name: voiceName
+      },
+      audioConfig: {
+        audioEncoding: 'MP3'
+      }
+    };
   
-    const audio = new Audio();
-    audio.src = url;
-    audio.onerror = (e) => console.error('TTS audio load error:', e);
-    audio.play().catch(e => console.error('TTS play error:', e));
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(requestBody)
+    });
+  
+    const data = await res.json();
+  
+    if (data.audioContent) {
+      const audio = new Audio("data:audio/mp3;base64," + data.audioContent);
+      audio.play();
+    } else {
+      console.error('TTS error:', data);
+    }
   }
+
   
   window.addEventListener('DOMContentLoaded', async () => {
     const params = new URLSearchParams(window.location.search);
