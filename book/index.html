@@ -57,6 +57,11 @@
     #word-info strong {
       font-size: 1.1rem;
     }
+    #word-list em {
+      font-style: italic;
+      color: #555;
+      margin-left: 0.5em;
+    }
   </style>
 </head>
 <body>
@@ -112,9 +117,10 @@
     }).join(" ");
   }
 
-  function updateWordList() {
+  async function updateWordList() {
     const list = document.getElementById('word-list');
     list.innerHTML = '';
+  
     const sorted = Object.entries(wordCounts)
       .filter(([_, count]) => count >= 1)
       .sort((a, b) => a[0].localeCompare(b[0]));
@@ -124,10 +130,23 @@
       li.textContent = `${word} (${count})`;
       li.className = count === 1 ? 'highlight-green' : count === 2 ? 'highlight-blue' : 'highlight-red';
   
-      // ✅ 여기 추가: 더블 클릭 시 TTS
+      // 발음기호와 뜻 추가
+      try {
+        const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
+        const data = await res.json();
+        const phonetic = data[0]?.phonetics?.[0]?.text || '';
+        const definition = data[0]?.meanings?.[0]?.definitions?.[0]?.definition || '';
+  
+        const extra = document.createElement('span');
+        extra.innerHTML = ` <em>[${phonetic}]</em>: ${definition}`;
+        li.appendChild(extra);
+      } catch (err) {
+        // API 오류 무시
+      }
+  
+      // TTS 연결 (더블클릭 시)
       li.addEventListener('dblclick', () => {
-        tts(word);  
-        fetchDefinition(word);
+        tts(word);
       });
   
       list.appendChild(li);
