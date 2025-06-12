@@ -115,12 +115,15 @@
     }
   }
 
-  function tts(text, lang = 'en') {
-    // lang: 'en' or 'ko'
-    const url = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(text)}&tl=${lang}&client=tw-ob`;
+  const API_KEY = 'ac2cdea3da81447283cd75e38a92fa36'; // 여기에 실제 발급받은 키 넣기
+  
+  function tts(text, lang = 'en-us') {
+    const url = `https://api.voicerss.org/?key=${API_KEY}&hl=${lang}&src=${encodeURIComponent(text)}`;
+  
     const audio = new Audio(url);
     audio.play();
   }
+  
 
 
   window.addEventListener('DOMContentLoaded', async () => {
