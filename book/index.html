@@ -117,7 +117,7 @@
     }).join(" ");
   }
 
-  async function updateWordList() {
+  function updateWordList() {
     const list = document.getElementById('word-list');
     list.innerHTML = '';
   
@@ -130,23 +130,32 @@
       li.textContent = `${word} (${count})`;
       li.className = count === 1 ? 'highlight-green' : count === 2 ? 'highlight-blue' : 'highlight-red';
   
-      // 발음기호와 뜻 추가
-      try {
-        const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
-        const data = await res.json();
-        const phonetic = data[0]?.phonetics?.[0]?.text || '';
-        const definition = data[0]?.meanings?.[0]?.definitions?.[0]?.definition || '';
-  
-        const extra = document.createElement('span');
-        extra.innerHTML = ` <em>[${phonetic}]</em>: ${definition}`;
-        li.appendChild(extra);
-      } catch (err) {
-        // API 오류 무시
-      }
-  
-      // TTS 연결 (더블클릭 시)
-      li.addEventListener('dblclick', () => {
+      // 더블 클릭 시 TTS 및 정의/발음 표시
+      li.addEventListener('dblclick', async () => {
         tts(word);
+  
+        // 이미 뜻이 표시된 경우 중복 방지
+        if (li.querySelector('span')) return;
+  
+        try {
+          const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
+          const data = await res.json();
+          const phonetic = data[0]?.phonetics?.[0]?.text || '';
+          const definition = data[0]?.meanings?.[0]?.definitions?.[0]?.definition || '';
+  
+          const extra = document.createElement('span');
+          extra.innerHTML = ` <em>[${phonetic}]</em>: ${definition}`;
+          extra.style.display = 'inline';
+          extra.style.marginLeft = '0.5em';
+          extra.style.color = '#555';
+  
+          li.appendChild(extra);
+        } catch (err) {
+          const errorMsg = document.createElement('span');
+          errorMsg.innerHTML = ` ❌ not found`;
+          errorMsg.style.color = 'red';
+          li.appendChild(errorMsg);
+        }
       });
   
       list.appendChild(li);
