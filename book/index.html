@@ -190,9 +190,22 @@
       });
 
       updateWordList();
+
+      setTimeout(() => {
+        const savedScroll = localStorage.getItem(`scroll-${bookName}`);
+        if (savedScroll) {
+          document.getElementById('main').scrollTop = parseInt(savedScroll, 10);
+        }
+      }, 200);
     } catch (err) {
       document.getElementById('content').textContent = `Error: ${err.message}`;
     }
+
+    
+    document.getElementById('main').addEventListener('scroll', () => {
+      const scrollPos = document.getElementById('main').scrollTop;
+      localStorage.setItem(`scroll-${bookName}`, scrollPos);
+    });
   });
 </script>
 
