@@ -1,0 +1,251 @@
+Does he eat an apple?
+Is he eating an apple?
+Did he eat an apple?
+Was he eating an apple?
+Will he eat an apple?
+Will he be eating an apple?
+Does she read a book?
+Is she reading a book?
+Did she read a book?
+Was she reading a book?
+Will she read a book?
+Will she be reading a book?
+Does he play soccer?
+Is he playing soccer?
+Did he play soccer?
+Was he playing soccer?
+Will he play soccer?
+Will he be playing soccer?
+Does she go to school?
+Is she going to school?
+Did she go to school?
+Was she going to school?
+Will she go to school?
+Will she be going to school?
+Does he drink milk?
+Is he drinking milk?
+Did he drink milk?
+Was he drinking milk?
+Will he drink milk?
+Will he be drinking milk?
+Does she watch TV?
+Is she watching TV?
+Did she watch TV?
+Is she using the computer now?
+Will she visit grandma tomorrow?
+Will she be reading tomorrow?
+Did she play piano yesterday?
+Was she reading a book yesterday?
+Are they eating bread?
+Did they eat bread?
+Were they eating bread?
+Will they eat bread?
+How does he eat an apple?
+How much milk does he drink?
+How many books does she read?
+How often does he play soccer?
+How long does she go to school?
+How far does she walk to school?
+Which apple does he choose?
+Which book does she read?
+When does he eat breakfast?
+Where does she watch TV?
+What does he drink?
+Why does she read a book?
+Who eats an apple?
+How is she reading a book?
+How much bread did they eat?
+How many apples did he eat?
+How often did she play piano?
+How long was he playing soccer?
+How far did they travel yesterday?
+Which game was he playing?
+When was she reading a book yesterday?
+Where were they eating bread?
+What were they watching on TV?
+Why were they using the computer?
+Who was reading the book?
+How did she drink milk?
+How much time did she spend reading?
+How many friends were playing soccer?
+How often was she watching TV?
+How long did he drink milk?
+How far will she walk tomorrow?
+Which bread will they eat?
+When will he visit grandma?
+Where will she be reading tomorrow?
+What will he eat for dinner?
+Why will they go to school?
+Who will be playing soccer?
+How will she use the computer now?
+How much will he drink tonight?
+How many books will she read?
+How often will he play soccer?
+How long will she stay there?
+How far will they travel next week?
+Which movie will she watch?
+When is he eating lunch?
+Where is she going now?
+What is he drinking now?
+Why is she using the computer now?
+Who is watching TV?
+How is he playing soccer?
+How much milk is he drinking now?
+How many apples is she eating now?
+How often is she reading these days?
+How long is he going to school?
+How far is she running today?
+Which book is he choosing?
+When did she eat lunch?
+Where did he play soccer yesterday?
+What did they drink?
+Why did she visit grandma?
+Who drank milk this morning?
+How did they watch the game?
+How much did she pay for the book?
+How many games did he play?
+How often did they go to school?
+How long did she stay?
+How far did he walk?
+Which school did she attend?
+When was he drinking milk?
+Where was she watching TV?
+What was he doing at noon?
+Why was she reading late?
+Who was playing piano yesterday?
+How long was the class?
+How many people were there?
+How much sugar did she add?
+How far was the journey?
+Which dress did she wear?
+When will he finish eating?
+Where will they meet tomorrow?
+What will she cook?
+Why will he miss the class?
+Who will take the test?
+How will they go to school?
+How much time will the trip take?
+How many students will attend?
+How often will she practice piano?
+How long will the exam last?
+How far will he cycle?
+Which subjects will they learn?
+When are they eating breakfast?
+Where are they going now?
+What are they drinking?
+Why are they studying English?
+Who is visiting grandma?
+How are they playing together?
+How much cake are they eating?
+How many songs are they singing?
+How often are they watching TV?
+How long are they staying here?
+What does he cook at home?
+How often does she visit the library?
+Which school does he attend?
+When does she meet her friends?
+Where does he buy his groceries?
+Why does she take piano lessons?
+Who helps him with homework?
+How is she feeling right now?
+How much rice do they eat?
+How many times did he call you?
+When did she arrive at the station?
+Where did they go last weekend?
+What did he write in his diary?
+Why did she leave early?
+Who did they invite to the party?
+How was he driving yesterday?
+How much sugar did she use in the cake?
+How many emails did he send today?
+When was she writing the report?
+Where were they staying during the trip?
+What were they discussing at lunch?
+Why were they laughing so much?
+Who was he talking to on the phone?
+How did she solve the problem?
+How much money did he spend?
+How many hours did they work yesterday?
+When will he call again?
+Where will she meet her teacher?
+What will they bring to the picnic?
+Why will he be late tomorrow?
+Who will cook dinner tonight?
+How will she travel to Busan?
+How much water will they need?
+How many people will attend the concert?
+When is he leaving for the airport?
+Where is she staying this week?
+What is he reading today?
+Why is she crying?
+Who is singing that song?
+How is he learning English?
+How much time is left?
+How many chapters did she read yesterday?
+When did he finish the project?
+Where did she put the keys?
+What did he buy at the store?
+Why did they cancel the meeting?
+Who broke the vase?
+How had she learned to dance?
+How much gas did he use last month?
+How many pages did he write?
+When had they moved to Seoul?
+Where had she hidden the gift?
+What had he done before leaving?
+Why had she stopped singing?
+Who had borrowed his book?
+How much cake will he eat tonight?
+How many songs will they learn this week?
+When will she finish her homework?
+Where will he park the car?
+What will they build by then?
+Why will she leave early?
+Who will solve the puzzle?
+How often does he practice violin?
+How often is she going to the gym?
+How often did they visit grandparents?
+How often were you late last year?
+How often will she ski this winter?
+Which job did he apply for?
+Which phone are you buying?
+Which dress will she wear tomorrow?
+Which game were they playing at lunch?
+Which show is he watching now?
+Which dish did she prepare for guests?
+Which exam will they take next?
+Which song are you singing?
+Which team is he supporting?
+Which language are they learning?
+Which museum will they visit?
+Which movie did she suggest?
+Which place did he recommend?
+Which topic will they discuss?
+Which project is he working on?
+Which friend did she call?
+Which exercise are they doing?
+Which gift will you give?
+Which course did he finish?
+Which app is she using?
+Which class did they choose?
+Which subject were you studying?
+Which city did they visit?
+Which tool did he bring?
+Which phone number did she dial?
+Which plan will they follow?
+Which picture are they drawing?
+How far does she run every morning?
+How far is the station from here?
+How far did you walk today?
+How far will they travel this summer?
+How far did she bike before lunch?
+How long does the movie last?
+How long is he planning to stay?
+How long did she wait for the bus?
+How long will the meeting take?
+How long had he worked there before quitting?
+How long will she be visiting us?
+How long was the concert yesterday?
+How long is this road?
+How long was he reading before sleep?
+How long will they be studying tonight?
