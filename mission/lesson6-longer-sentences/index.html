@@ -42,10 +42,9 @@
       background: #ecf0f1;
       border: 1px solid #bdc3c7;
       border-radius: 4px;
-      cursor: move;
       user-select: none;
       transition: transform 0.2s ease, background 0.2s;
-      touch-action: none;
+      touch-action: manipulation;
     }
     .word.dragging {
       opacity: 0.5;
@@ -128,7 +127,11 @@
           const span = document.createElement("span");
           span.className = "word";
           span.textContent = word;
-          span.draggable = true;
+
+          span.setAttribute("draggable", true);
+          span.addEventListener("touchstart", touchStartHandler, { passive: true });
+          span.addEventListener("touchmove", touchMoveHandler, { passive: false });
+          span.addEventListener("touchend", touchEndHandler);
 
           span.addEventListener("dragstart", (e) => {
             e.dataTransfer.effectAllowed = "move";
@@ -169,6 +172,30 @@
         div.appendChild(wordContainer);
         quizContainer.appendChild(div);
       });
+    }
+
+    let touchTarget = null;
+
+    function touchStartHandler(e) {
+      touchTarget = e.target;
+      touchTarget.classList.add("dragging");
+    }
+
+    function touchMoveHandler(e) {
+      e.preventDefault();
+      const touch = e.touches[0];
+      const elem = document.elementFromPoint(touch.clientX, touch.clientY);
+      if (elem && elem.classList.contains("word") && elem !== touchTarget) {
+        const container = elem.parentNode;
+        container.insertBefore(touchTarget, elem);
+      }
+    }
+
+    function touchEndHandler(e) {
+      if (touchTarget) {
+        touchTarget.classList.remove("dragging");
+        touchTarget = null;
+      }
     }
 
     function submitAnswers() {
