@@ -1,0 +1,106 @@
+Swimming,is,my,favorite,hobby.::Swimming is my favorite hobby.
+Eating,too,much,is,not,good,for,you.::Eating too much is not good for you.
+Reading,books,helps,you,learn.::Reading books helps you learn.
+Watching,TV,for,too,long,is,bad,for,your,eyes.::Watching TV for too long is bad for your eyes.
+Traveling,is,my,passion.::Traveling is my passion.
+I,like,playing,the,guitar.::I like playing the guitar.
+He,enjoys,running,in,the,morning.::He enjoys running in the morning.
+She,loves,dancing,in,the,rain.::She loves dancing in the rain.
+Learning,new,things,is,fun.::Learning new things is fun.
+Practicing,every,day,improves,skills.::Practicing every day improves skills.
+Writing,can,be,therapeutic.::Writing can be therapeutic.
+Cooking,requires,patience,and,focus.::Cooking requires patience and focus.
+His,hobby,is,painting,landscapes.::His hobby is painting landscapes.
+Jogging,is,a,good,form,of,exercise.::Jogging is a good form of exercise.
+Baking,cakes,is,her,passion.::Baking cakes is her passion.
+They,started,learning,French,last,week.::They started learning French last week.
+He,avoids,eating,junk,food.::He avoids eating junk food.
+I,enjoy,listening,to,music.::I enjoy listening to music.
+Swimming,in,the,ocean,is,relaxing.::Swimming in the ocean is relaxing.
+Reading,at,night,helps,me,sleep.::Reading at night helps me sleep.
+Drawing,is,how,she,expresses,herself.::Drawing is how she expresses herself.
+Playing,chess,is,his,hobby.::Playing chess is his hobby.
+Studying,abroad,is,my,dream.::Studying abroad is my dream.
+Singing,is,not,my,strong,point.::Singing is not my strong point.
+Working,from,home,can,be,difficult.::Working from home can be difficult.
+Gardening,is,very,relaxing.::Gardening is very relaxing.
+Fishing,is,something,I,love.::Fishing is something I love.
+I,prefer,reading,to,watching,TV.::I prefer reading to watching TV.
+He,enjoys,learning,new,skills.::He enjoys learning new skills.
+Doing,yoga,helps,me,relax.::Doing yoga helps me relax.
+They,love,hiking,in,the,mountains.::They love hiking in the mountains.
+Cleaning,the,house,is,tiring.::Cleaning the house is tiring.
+Designing,is,part,of,her,job.::Designing is part of her job.
+The,girl,who,is,singing,is,my,sister.::The girl who is singing is my sister.
+The,book,that,you,gave,me,is,great.::The book that you gave me is great.
+I,met,a,man,who,can,speak,five,languages.::I met a man who can speak five languages.
+The,car,which,is,parked,outside,is,mine.::The car which is parked outside is mine.
+This,is,the,student,who,won,the,prize.::This is the student who won the prize.
+She,is,the,teacher,that,everyone,loves.::She is the teacher that everyone loves.
+The,bag,which,you,lost,was,expensive.::The bag which you lost was expensive.
+I,know,the,girl,who,helped,you.::I know the girl who helped you.
+That,is,the,dog,that,barks,all,night.::That is the dog that barks all night.
+He’s,the,artist,who,drew,this.::He’s the artist who drew this.
+The,man,who,lives,next,door,is,nice.::The man who lives next door is nice.
+I,didn’t,like,the,movie,that,we,saw.::I didn’t like the movie that we saw.
+The,laptop,which,she,bought,is,new.::The laptop which she bought is new.
+He,is,a,friend,who,always,helps,me.::He is a friend who always helps me.
+The,teacher,who,teaches,math,is,strict.::The teacher who teaches math is strict.
+The,bus,that,goes,to,Seoul,is,late.::The bus that goes to Seoul is late.
+The,kid,who,cried,was,hungry.::The kid who cried was hungry.
+That,is,the,house,that,Jack,built.::That is the house that Jack built.
+I,saw,the,guy,who,stole,the,bike.::I saw the guy who stole the bike.
+This,is,the,watch,that,I,lost.::This is the watch that I lost.
+The,book,which,is,on,the,table,is,mine.::The book which is on the table is mine.
+He’s,the,person,who,knows,everything.::He’s the person who knows everything.
+The,game,that,we,played,was,fun.::The game that we played was fun.
+The,boy,who,is,crying,needs,help.::The boy who is crying needs help.
+The,cat,that,was,missing,has,returned.::The cat that was missing has returned.
+She,is,the,one,who,called,you.::She is the one who called you.
+I,need,someone,who,can,help,me.::I need someone who can help me.
+The,lady,who,sold,me,this,is,nice.::The lady who sold me this is nice.
+Do,you,know,anyone,who,can,sing?::Do you know anyone who can sing?
+That’s,the,guy,who,won,the,lottery.::That’s the guy who won the lottery.
+This,is,the,child,who,was,lost.::This is the child who was lost.
+The,luggage,that,you,found,is,mine.::The luggage that you found is mine.
+I,like,the,singer,who,sings,this,song.::I like the singer who sings this song.
+This,is,the,place,where,I,met,her.::This is the place where I met her.
+I,remember,the,day,when,we,first,met.::I remember the day when we first met.
+That,was,the,time,when,I,was,sick.::That was the time when I was sick.
+The,cafe,where,we,had,coffee,was,nice.::The cafe where we had coffee was nice.
+Do,you,remember,the,day,when,it,rained?::Do you remember the day when it rained?
+That,is,the,restaurant,where,we,ate,dinner.::That is the restaurant where we ate dinner.
+I,will,never,forget,the,day,when,you,left.::I will never forget the day when you left.
+This,is,the,park,where,we,played,soccer.::This is the park where we played soccer.
+That,is,the,room,where,I,study.::That is the room where I study.
+She,lives,in,a,house,where,I,used,to,live.::She lives in a house where I used to live.
+The,reason,why,I,left,is,personal.::The reason why I left is personal.
+That’s,the,moment,when,everything,changed.::That’s the moment when everything changed.
+Do,you,know,the,place,where,he,works?::Do you know the place where he works?
+This,is,the,shop,where,I,bought,it.::This is the shop where I bought it.
+It,was,the,night,when,I,was,alone.::It was the night when I was alone.
+There,is,a,reason,why,I,didn’t,call.::There is a reason why I didn’t call.
+The,reason,why,she,left,is,clear.::The reason why she left is clear.
+That,was,the,season,when,I,fell,in,love.::That was the season when I fell in love.
+Do,you,remember,the,place,where,we,danced?::Do you remember the place where we danced?
+She,showed,me,the,house,where,she,grew,up.::She showed me the house where she grew up.
+That,is,the,time,when,I,was,busy.::That is the time when I was busy.
+This,is,the,school,where,I,studied.::This is the school where I studied.
+He,forgot,the,day,when,he,was,hired.::He forgot the day when he was hired.
+That,is,the,reason,why,I,cried.::That is the reason why I cried.
+I,love,the,spot,where,we,watched,the,sunset.::I love the spot where we watched the sunset.
+The,corner,where,the,accident,happened,is,closed.::The corner where the accident happened is closed.
+It’s,the,time,when,flowers,bloom.::It’s the time when flowers bloom.
+There’s,no,reason,why,you,should,worry.::There’s no reason why you should worry.
+The,market,where,we,bought,fruit,was,busy.::The market where we bought fruit was busy.
+This,is,the,time,when,you,need,rest.::This is the time when you need rest.
+Eating,out,is,fun,sometimes.::Eating out is fun sometimes.
+I,love,traveling,to,new,places.::I love traveling to new places.
+He,avoids,talking,about,politics.::He avoids talking about politics.
+She,enjoys,swimming,in,the,sea.::She enjoys swimming in the sea.
+Reading,helps,me,relax.::Reading helps me relax.
+I,don’t,mind,waiting.::I don’t mind waiting.
+Watching,movies,is,my,hobby.::Watching movies is my hobby.
+They,started,learning,Korean.::They started learning Korean.
+Working,late,makes,me,tired.::Working late makes me tired.
+Listening,to,music,cheers,me,up.::Listening to music cheers me up.

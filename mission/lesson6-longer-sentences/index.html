@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Drag & Drop Sentence Quiz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    .question {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+    .words {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 10px;
+      border: 2px dashed #aaa;
+      border-radius: 6px;
+      background-color: #fafafa;
+      margin-top: 15px;
+      min-height: 60px;
+      transition: all 0.3s ease;
+    }
+    .word {
+      padding: 10px 14px;
+      background: #ecf0f1;
+      border: 1px solid #bdc3c7;
+      border-radius: 4px;
+      cursor: move;
+      user-select: none;
+      transition: transform 0.2s ease, background 0.2s;
+      touch-action: none;
+    }
+    .word.dragging {
+      opacity: 0.5;
+      transform: scale(1.05);
+    }
+    .word.over {
+      border-left: 3px solid #3498db;
+    }
+    .submit-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 12px 30px;
+      font-size: 16px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .submit-btn:hover {
+      background-color: #2980b9;
+    }
+    .result {
+      background-color: #fff;
+      padding: 20px;
+      margin-top: 40px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    @media (max-width: 600px) {
+      .word {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+      .submit-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Sentence Order Quiz</h1>
+  <div id="quiz"></div>
+  <button class="submit-btn" onclick="submitAnswers()">Submit All</button>
+  <div id="result" class="result"></div>
+
+  <script>
+    let shuffledData = [];
+
+    fetch("questions.txt")
+      .then(response => response.text())
+      .then(text => {
+        const lines = text.trim().split('\n');
+        shuffledData = lines.sort(() => 0.5 - Math.random()).slice(0, 5);
+        renderQuiz();
+      })
+      .catch(err => {
+        document.getElementById("quiz").innerHTML = `<p style="color:red">Failed to load questions.txt</p>`;
+      });
+
+    function renderQuiz() {
+      const quizContainer = document.getElementById("quiz");
+      quizContainer.innerHTML = "";
+
+      shuffledData.forEach((line, index) => {
+        const [wordsStr, answer] = line.split("::");
+        const words = wordsStr.split(",").sort(() => 0.5 - Math.random());
+
+        const div = document.createElement("div");
+        div.className = "question";
+        div.innerHTML = `<div><strong>Question ${index + 1}</strong></div>`;
+
+        const wordContainer = document.createElement("div");
+        wordContainer.className = "words";
+        wordContainer.setAttribute("data-index", index);
+
+        words.forEach((word, i) => {
+          const span = document.createElement("span");
+          span.className = "word";
+          span.textContent = word;
+          span.draggable = true;
+
+          span.addEventListener("dragstart", (e) => {
+            e.dataTransfer.effectAllowed = "move";
+            e.dataTransfer.setData("text/plain", i);
+            span.classList.add("dragging");
+          });
+
+          span.addEventListener("dragend", () => {
+            span.classList.remove("dragging");
+            document.querySelectorAll('.word').forEach(w => w.classList.remove('over'));
+          });
+
+          span.addEventListener("dragover", (e) => {
+            e.preventDefault();
+            const dragging = document.querySelector(".dragging");
+            if (dragging && dragging !== span) {
+              span.classList.add("over");
+            }
+          });
+
+          span.addEventListener("dragleave", () => {
+            span.classList.remove("over");
+          });
+
+          span.addEventListener("drop", (e) => {
+            e.preventDefault();
+            const dragged = document.querySelector(".dragging");
+            if (dragged && dragged !== span) {
+              const parent = span.parentNode;
+              parent.insertBefore(dragged, span);
+              span.classList.remove("over");
+            }
+          });
+
+          wordContainer.appendChild(span);
+        });
+
+        div.appendChild(wordContainer);
+        quizContainer.appendChild(div);
+      });
+    }
+
+    function submitAnswers() {
+      const allAnswers = document.querySelectorAll(".words");
+      let output = "<h2>Results</h2>";
+
+      allAnswers.forEach(container => {
+        const index = container.getAttribute("data-index");
+        const userAnswer = [...container.children].map(span => span.textContent).join(" ");
+        const correctAnswer = shuffledData[index].split("::")[1];
+
+        output += `<p><strong>Q${parseInt(index) + 1}</strong><br>
+        ✅ Correct: ${correctAnswer}<br>
+        🧠 Your answer: ${userAnswer}<br>
+        ${userAnswer === correctAnswer ? "<span style='color:green;'>✔ Correct!</span>" : "<span style='color:red;'>✘ Incorrect</span>"}
+        </p>`;
+      });
+
+      document.getElementById("result").innerHTML = output;
+    }
+  </script>
+</body>
+</html>
