@@ -28,32 +28,35 @@
     let correctAnswer = '';
     let correctExample = '';
     let selectedOption = null;
+    let score = 0;
+    const totalQuestions = 10;
 
     async function loadQuestions() {
       const res = await fetch('questions.txt');
       const text = await res.text();
-      data = text.trim().split('\n').map(line => {
+      const all = text.trim().split('\n').map(line => {
         const [phrasal, meaning, example] = line.split('\t');
         return { phrasal, meaning, example };
       });
-      shuffle(data);
+      shuffle(all);
+      data = all.slice(0, totalQuestions);
       loadNext();
     }
 
     function loadNext() {
-      if (current >= data.length) {
+      if (current >= totalQuestions) {
         document.getElementById('question').innerText = '퀴즈 완료!';
         document.getElementById('options').innerHTML = '';
         document.getElementById('submit-btn').style.display = 'none';
         document.getElementById('next-btn').style.display = 'none';
-        document.getElementById('result').innerText = '';
+        document.getElementById('result').innerHTML = `<strong>${totalQuestions}문제 중 ${score}개 정답! 🎉</strong>`;
         return;
       }
 
       const q = data[current];
       correctAnswer = q.meaning;
       correctExample = q.example;
-      document.getElementById('question').innerText = `"${q.phrasal}" 의 뜻은?`;
+      document.getElementById('question').innerText = `Q${current + 1}. "${q.phrasal}" 의 뜻은?`;
 
       const options = generateOptions(correctAnswer);
       const optionDiv = document.getElementById('options');
@@ -75,7 +78,6 @@
       document.getElementById('submit-btn').style.display = 'inline-block';
       document.getElementById('next-btn').style.display = 'none';
       document.getElementById('result').innerHTML = '';
-      current++;
     }
 
     function submitAnswer() {
@@ -85,12 +87,14 @@
 
       if (answer === correctAnswer) {
         resultDiv.innerHTML = `<strong>정답:</strong> ${correctAnswer} ✅<br><strong>예문:</strong> ${correctExample}`;
+        score++;
       } else {
         resultDiv.innerHTML = `<strong>오답:</strong> ${answer} ❌<br><strong>정답:</strong> ${correctAnswer}<br><strong>예문:</strong> ${correctExample}`;
       }
 
       document.getElementById('submit-btn').style.display = 'none';
       document.getElementById('next-btn').style.display = 'inline-block';
+      current++;
     }
 
     function generateOptions(correct) {
