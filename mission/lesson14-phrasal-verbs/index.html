@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>구동사 퀴즈</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f4f4f4; }
+    .quiz-box { background: white; padding: 20px; border-radius: 10px; max-width: 600px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    .option { margin: 10px 0; padding: 10px; border-radius: 5px; background: #e0e0e0; cursor: pointer; }
+    .option:hover { background: #d0d0d0; }
+    .selected { background: #b3e5fc !important; }
+    .result { margin-top: 20px; padding: 10px; background: #fff3cd; border: 1px solid #ffeeba; border-radius: 5px; }
+    button { margin-top: 10px; padding: 8px 16px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <div class="quiz-box">
+    <h2 id="question">문제 로딩 중...</h2>
+    <div id="options"></div>
+    <button id="submit-btn" onclick="submitAnswer()">제출</button>
+    <button id="next-btn" onclick="loadNext()" style="display:none;">다음 문제</button>
+    <div id="result" class="result"></div>
+  </div>
+
+  <script>
+    let data = [];
+    let current = 0;
+    let correctAnswer = '';
+    let correctExample = '';
+    let selectedOption = null;
+
+    async function loadQuestions() {
+      const res = await fetch('questions.txt');
+      const text = await res.text();
+      data = text.trim().split('\n').map(line => {
+        const [phrasal, meaning, example] = line.split('\t');
+        return { phrasal, meaning, example };
+      });
+      shuffle(data);
+      loadNext();
+    }
+
+    function loadNext() {
+      if (current >= data.length) {
+        document.getElementById('question').innerText = '퀴즈 완료!';
+        document.getElementById('options').innerHTML = '';
+        document.getElementById('submit-btn').style.display = 'none';
+        document.getElementById('next-btn').style.display = 'none';
+        document.getElementById('result').innerText = '';
+        return;
+      }
+
+      const q = data[current];
+      correctAnswer = q.meaning;
+      correctExample = q.example;
+      document.getElementById('question').innerText = `"${q.phrasal}" 의 뜻은?`;
+
+      const options = generateOptions(correctAnswer);
+      const optionDiv = document.getElementById('options');
+      optionDiv.innerHTML = '';
+      selectedOption = null;
+
+      options.forEach(opt => {
+        const div = document.createElement('div');
+        div.className = 'option';
+        div.innerText = opt;
+        div.onclick = () => {
+          document.querySelectorAll('.option').forEach(el => el.classList.remove('selected'));
+          div.classList.add('selected');
+          selectedOption = div;
+        };
+        optionDiv.appendChild(div);
+      });
+
+      document.getElementById('submit-btn').style.display = 'inline-block';
+      document.getElementById('next-btn').style.display = 'none';
+      document.getElementById('result').innerHTML = '';
+      current++;
+    }
+
+    function submitAnswer() {
+      if (!selectedOption) return alert('답을 선택하세요!');
+      const answer = selectedOption.innerText;
+      const resultDiv = document.getElementById('result');
+
+      if (answer === correctAnswer) {
+        resultDiv.innerHTML = `<strong>정답:</strong> ${correctAnswer} ✅<br><strong>예문:</strong> ${correctExample}`;
+      } else {
+        resultDiv.innerHTML = `<strong>오답:</strong> ${answer} ❌<br><strong>정답:</strong> ${correctAnswer}<br><strong>예문:</strong> ${correctExample}`;
+      }
+
+      document.getElementById('submit-btn').style.display = 'none';
+      document.getElementById('next-btn').style.display = 'inline-block';
+    }
+
+    function generateOptions(correct) {
+      const wrongs = data.filter(q => q.meaning !== correct);
+      shuffle(wrongs);
+      const options = [correct, ...wrongs.slice(0, 3).map(q => q.meaning)];
+      return shuffle(options);
+    }
+
+    function shuffle(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    loadQuestions();
+  </script>
+</body>
+</html>
