@@ -32,15 +32,14 @@
     const totalQuestions = 10;
 
     async function loadQuestions() {
-      const res = await fetch('questions.txt');
-      const text = await res.text();
-      const all = text.trim().split('\n').map(line => {
+    const res = await fetch('questions.txt');
+    const text = await res.text();
+    const all = text.trim().split('\n').map(line => {
         const [phrasal, meaning, example] = line.split('\t');
         return { phrasal, meaning, example };
-      });
-      shuffle(all);
-      data = all.slice(0, totalQuestions);
-      loadNext();
+    });
+    data = shuffle(all).slice(0, totalQuestions); // 🔥 랜덤으로 10개 추출
+    loadNext();
     }
 
     function loadNext() {
