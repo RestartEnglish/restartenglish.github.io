@@ -73,6 +73,11 @@
       color: white;
     }
 
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
     @media (max-width: 480px) {
       .quiz-box {
         padding: 16px;
@@ -102,7 +107,7 @@
   <div class="quiz-box" id="quiz-container">
     <h1>구동사 퀴즈 (10문제)</h1>
     <div id="questions"></div>
-    <button onclick="showResults()">제출</button>
+    <button id="submit-btn" onclick="showResults()" disabled>제출</button>
     <div id="result" class="result"></div>
   </div>
 
@@ -140,7 +145,7 @@
         block.className = 'question-block';
 
         const title = document.createElement('h2');
-        title.innerText = `Q${index + 1}. \"${q.phrasal}\" 의 뜻은?`;
+        title.innerText = `Q${index + 1}. "${q.phrasal}" 의 뜻은?`;
         block.appendChild(title);
 
         options.forEach(opt => {
@@ -152,12 +157,19 @@
             all.forEach(o => o.classList.remove('selected'));
             optDiv.classList.add('selected');
             userAnswers[qid] = opt;
+            checkAllAnswered();
           };
           block.appendChild(optDiv);
         });
 
         container.appendChild(block);
       });
+    }
+
+    function checkAllAnswered() {
+      const submitBtn = document.getElementById('submit-btn');
+      const allAnswered = Object.keys(userAnswers).length === 10;
+      submitBtn.disabled = !allAnswered;
     }
 
     function showResults() {
@@ -175,7 +187,7 @@
           block.innerHTML = `<strong>Q${index + 1}. \"${q.phrasal}\"</strong><br>
           당신의 답: ${userAnswer} ❌<br>
           정답: ${q.meaning}<br>
-          예문: <span class="example" onclick="tts('${q.example}')">${q.example}</span><br><br>`;
+          예문: <span class="example" onclick="tts(\"${q.example.replace(/"/g, '&quot;')}\")">${q.example}</span><br><br>`;
           resultBox.appendChild(block);
         }
       });
