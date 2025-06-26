@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Idiom 퀴즈 - 10문제 일괄출제</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background: #f4f4f4;
+      margin: 0;
+    }
+
+    .quiz-box {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 700px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .question-block {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: 1.3em;
+    }
+
+    .option {
+      margin: 8px 0;
+      padding: 12px;
+      border-radius: 6px;
+      background: #e0e0e0;
+      cursor: pointer;
+      font-size: 1.1em;
+    }
+
+    .option:hover {
+      background: #d0d0d0;
+    }
+
+    .selected {
+      background: #b3e5fc !important;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 12px;
+      background: #fff3cd;
+      border: 1px solid #ffeeba;
+      border-radius: 5px;
+      font-size: 1em;
+      line-height: 1.6;
+    }
+
+    .example {
+      cursor: pointer;
+      color: #1976d2;
+      text-decoration: underline;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      font-size: 1.1em;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      background: #1976d2;
+      color: white;
+    }
+
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    @media (max-width: 480px) {
+      .quiz-box {
+        padding: 16px;
+      }
+
+      .option {
+        font-size: 1em;
+        padding: 10px;
+      }
+
+      h2 {
+        font-size: 1.1em;
+      }
+
+      .result {
+        font-size: 0.95em;
+      }
+
+      button {
+        width: 100%;
+        font-size: 1.2em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-box" id="quiz-container">
+    <h1>구동사 퀴즈 (10문제)</h1>
+    <div id="questions"></div>
+    <button id="submit-btn" onclick="showResults()" disabled>제출</button>
+    <div id="result" class="result"></div>
+  </div>
+
+  <script>
+    let userAnswers = {};
+    let questionList = [];
+
+    async function loadQuestions() {
+    const res = await fetch('questions.txt');
+    const text = await res.text();
+    const all = text.trim().split('\n').map(line => {
+        const [phrasal, meaning, example] = line.split('\t');
+        return { phrasal, meaning, example };
+    });
+
+    // 전체에서 무작위로 10개 고르기 (중복되지 않도록 Set 사용)
+    const pickedSet = new Set();
+    const pickedQuestions = [];
+
+    while (pickedQuestions.length < 10 && pickedSet.size < all.length) {
+        const rand = all[Math.floor(Math.random() * all.length)];
+        if (!pickedSet.has(rand.phrasal)) {
+        pickedSet.add(rand.phrasal);
+        pickedQuestions.push(rand);
+        }
+    }
+
+    questionList = pickedQuestions;
+    const container = document.getElementById('questions');
+    container.innerHTML = '';
+
+    questionList.forEach((q, index) => {
+        const qid = `q${index}`;
+        const distractors = new Set();
+
+        while (distractors.size < 3) {
+        const rand = all[Math.floor(Math.random() * all.length)].meaning;
+        if (rand !== q.meaning) distractors.add(rand);
+        }
+
+        const options = shuffle([q.meaning, ...Array.from(distractors)]);
+
+        const block = document.createElement('div');
+        block.className = 'question-block';
+
+        const title = document.createElement('h2');
+        title.innerText = `Q${index + 1}. "${q.phrasal}" 의 뜻은?`;
+        block.appendChild(title);
+
+        options.forEach(opt => {
+        const optDiv = document.createElement('div');
+        optDiv.className = 'option';
+        optDiv.innerText = opt;
+        optDiv.onclick = () => {
+            const all = block.querySelectorAll('.option');
+            all.forEach(o => o.classList.remove('selected'));
+            optDiv.classList.add('selected');
+            userAnswers[qid] = opt;
+            checkAllAnswered();
+        };
+        block.appendChild(optDiv);
+        });
+
+        container.appendChild(block);
+    });
+    }
+
+    function checkAllAnswered() {
+      const submitBtn = document.getElementById('submit-btn');
+      const allAnswered = Object.keys(userAnswers).length === 10;
+      submitBtn.disabled = !allAnswered;
+    }
+
+    function showResults() {
+      const resultBox = document.getElementById('result');
+      resultBox.innerHTML = '';
+
+      let wrongCount = 0;
+
+      questionList.forEach((q, index) => {
+        const qid = `q${index}`;
+        const userAnswer = userAnswers[qid];
+        if (userAnswer && userAnswer !== q.meaning) {
+          wrongCount++;
+          const block = document.createElement('div');
+          block.innerHTML = `<strong>Q${index + 1}. \"${q.phrasal}\"</strong><br>
+          당신의 답: ${userAnswer} ❌<br>
+          정답: ${q.meaning}<br>
+          예문: <span class="example" onclick="tts('${q.example.replace(/'/g, "\\'")}')">${q.example}</span><br><br>`;
+          resultBox.appendChild(block);
+        }
+      });
+
+      const summary = document.createElement('div');
+      summary.innerHTML = `<strong>${wrongCount === 0 ? "모든 문제를 맞췄습니다! 🎉" : `총 ${wrongCount}문제 틀렸습니다.`}</strong><br><br>`;
+      resultBox.prepend(summary);
+    }
+
+    function shuffle(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    let currentAudio = null; // 전역 상태로 현재 재생 중인 오디오 추적
+    async function tts(text, lang = 'en-US', voiceName = 'en-US-Wavenet-F') {
+        const apiKey = 'AIzaSyC4tLuk2F7VyrtiDrARfOSpbt9lZ5UPsLg';
+        const url = `https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`;
+
+        if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+        currentAudio = null;
+        }
+        
+        const requestBody = {
+        input: { text },
+        voice: {
+            languageCode: lang,
+            name: voiceName
+        },
+        audioConfig: {
+            audioEncoding: 'MP3'
+        }
+        };
+    
+        const res = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(requestBody)
+        });
+    
+        const data = await res.json();
+    
+        if (data.audioContent) {
+            const audio = new Audio("data:audio/mp3;base64," + data.audioContent);
+            currentAudio = audio;
+            audio.play();
+        } else {
+            console.error('TTS error:', data);
+        }
+    }
+
+    loadQuestions();
+  </script>
+</body>
+</html>
