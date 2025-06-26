@@ -98,3 +98,19 @@ set aside	따로 떼어 놓다	Set aside some money for emergencies.
 stand up for	옹호하다	You should stand up for your beliefs.
 take out	꺼내다 / 데리고 나가다	He took out his wallet.
 work through	해결하다	We need to work through this problem.
+break down	고장나다 / 감정이 무너지다	My car broke down yesterday.
+burn out	기진맥진하다	He burned out after weeks of overtime.
+chicken out	겁먹고 빠지다	He chickened out at the last minute.
+drag on	질질 끌다	The meeting dragged on forever.
+edge out	간신히 이기다	They edged out their competitors.
+fall apart	부서지다 / 무너지다	Their marriage fell apart.
+gear up	준비하다	We’re gearing up for the launch.
+hand over	넘겨주다	She handed over the documents.
+iron out	해결하다	Let’s iron out our differences.
+jack up	급등시키다	They jacked up the prices.
+keep away	멀리하다	Keep away from the dog.
+live up to	기대에 부응하다	She lived up to her reputation.
+make do with	있는 것으로 때우다	We'll have to make do with instant noodles.
+nail down	확정하다	Let’s nail down the details.
+overlook	간과하다	He overlooked an important clue.
+pass on	전달하다 / 사망하다	I’ll pass on the message.

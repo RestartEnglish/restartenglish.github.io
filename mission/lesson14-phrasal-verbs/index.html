@@ -116,27 +116,36 @@
     let questionList = [];
 
     async function loadQuestions() {
-      const res = await fetch('questions.txt');
-      const text = await res.text();
-      const all = text.trim().split('\n').map(line => {
+    const res = await fetch('questions.txt');
+    const text = await res.text();
+    const all = text.trim().split('\n').map(line => {
         const [phrasal, meaning, example] = line.split('\t');
         return { phrasal, meaning, example };
-      });
+    });
 
-      const uniqueByPhrasal = Array.from(
-        new Map(all.map(q => [q.phrasal, q])).values()
-      );
+    // 전체에서 무작위로 10개 고르기 (중복되지 않도록 Set 사용)
+    const pickedSet = new Set();
+    const pickedQuestions = [];
 
-      questionList = shuffle(uniqueByPhrasal).slice(0, 10);
-      const container = document.getElementById('questions');
-      container.innerHTML = '';
+    while (pickedQuestions.length < 10 && pickedSet.size < all.length) {
+        const rand = all[Math.floor(Math.random() * all.length)];
+        if (!pickedSet.has(rand.phrasal)) {
+        pickedSet.add(rand.phrasal);
+        pickedQuestions.push(rand);
+        }
+    }
 
-      questionList.forEach((q, index) => {
+    questionList = pickedQuestions;
+    const container = document.getElementById('questions');
+    container.innerHTML = '';
+
+    questionList.forEach((q, index) => {
         const qid = `q${index}`;
         const distractors = new Set();
+
         while (distractors.size < 3) {
-          const rand = all[Math.floor(Math.random() * all.length)].meaning;
-          if (rand !== q.meaning) distractors.add(rand);
+        const rand = all[Math.floor(Math.random() * all.length)].meaning;
+        if (rand !== q.meaning) distractors.add(rand);
         }
 
         const options = shuffle([q.meaning, ...Array.from(distractors)]);
@@ -149,21 +158,21 @@
         block.appendChild(title);
 
         options.forEach(opt => {
-          const optDiv = document.createElement('div');
-          optDiv.className = 'option';
-          optDiv.innerText = opt;
-          optDiv.onclick = () => {
+        const optDiv = document.createElement('div');
+        optDiv.className = 'option';
+        optDiv.innerText = opt;
+        optDiv.onclick = () => {
             const all = block.querySelectorAll('.option');
             all.forEach(o => o.classList.remove('selected'));
             optDiv.classList.add('selected');
             userAnswers[qid] = opt;
             checkAllAnswered();
-          };
-          block.appendChild(optDiv);
+        };
+        block.appendChild(optDiv);
         });
 
         container.appendChild(block);
-      });
+    });
     }
 
     function checkAllAnswered() {
