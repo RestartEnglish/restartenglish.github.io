@@ -172,7 +172,7 @@
             block.innerHTML = `<strong>Q${index + 1}. "${q.phrasal}"</strong><br>
             당신의 답: ${userAnswer} ❌<br>
             정답: ${q.meaning}<br>
-            예문: ${q.example}<br><br>`;
+            예문: <span style="color:blue; cursor:pointer;" onclick="tts('${q.example.replace(/'/g, "\\'")}')">${q.example}</span><br><br>`;
             resultBox.appendChild(block);
         }
         });
@@ -188,6 +188,44 @@
         [arr[i], arr[j]] = [arr[j], arr[i]];
         }
         return arr;
+    }
+
+    async function tts(text, lang = 'en-US', voiceName = 'en-US-Wavenet-F') {
+        const apiKey = 'AIzaSyC4tLuk2F7VyrtiDrARfOSpbt9lZ5UPsLg';
+        const url = `https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`;
+
+        if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+        currentAudio = null;
+        }
+        
+        const requestBody = {
+        input: { text },
+        voice: {
+            languageCode: lang,
+            name: voiceName
+        },
+        audioConfig: {
+            audioEncoding: 'MP3'
+        }
+        };
+    
+        const res = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(requestBody)
+        });
+    
+        const data = await res.json();
+    
+        if (data.audioContent) {
+        const audio = new Audio("data:audio/mp3;base64," + data.audioContent);
+        currentAudio = audio;
+        audio.play();
+        } else {
+        console.error('TTS error:', data);
+        }
     }
 
     loadQuestions();
