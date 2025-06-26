@@ -187,7 +187,7 @@
           block.innerHTML = `<strong>Q${index + 1}. \"${q.phrasal}\"</strong><br>
           당신의 답: ${userAnswer} ❌<br>
           정답: ${q.meaning}<br>
-          예문: <span class="example" onclick="tts(\"${q.example.replace(/"/g, '&quot;')}\")">${q.example}</span><br><br>`;
+          예문: <span class="example" onclick="tts('${q.example.replace(/'/g, "\\'")}')">${q.example}</span><br><br>`;
           resultBox.appendChild(block);
         }
       });
@@ -235,11 +235,11 @@
         const data = await res.json();
     
         if (data.audioContent) {
-        const audio = new Audio("data:audio/mp3;base64," + data.audioContent);
-        currentAudio = audio;
-        audio.play();
+            const audio = new Audio("data:audio/mp3;base64," + data.audioContent);
+            currentAudio = audio;
+            audio.play();
         } else {
-        console.error('TTS error:', data);
+            console.error('TTS error:', data);
         }
     }
 
