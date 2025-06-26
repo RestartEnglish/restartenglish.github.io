@@ -473,3 +473,316 @@ make up	with 화해하다 / 메이크업하다	They made up after the quarrel.
 move on	to 다음으로 넘어가다	It’s time to move on.
 move out	of 떠나다 / 거주지를 옮기다	She moved out of her parents’ home.
 move up	to 승진하다 / 앞당기다	He moved up the schedule by two days.
+act up	장애를 일으키다 / 못되게 굴다	My phone acts up when it’s cold.
+ask over	초대하다	We asked them over for dinner.
+back down	철회하다	He refused at first but later backed down.
+break out	of 탈출하다	Three prisoners broke out of jail.
+bring forth	제시하다	Her argument brought forth a lively debate.
+butt in	끼어들다	Please don’t butt in when I’m talking.
+call back	다시 전화하다	I'll call you back later.
+carry off	잘 해내다	She carried off that song beautifully.
+catch out	실수로 폭로하다	The check-out clerk caught out the lie.
+check out	from	퇴실하다	We checked out from the hotel early.
+chip away	at 차근차근 제거하다	She chipped away at her debt over years.
+come up	to 합계가 ~이 되다	The total comes up to $50.
+count up	합산하다	Count up all the votes, please.
+cross over	건너가다 / 바꾸다	He crossed over to the other side.
+cut through	뚫고 지나가다	The scissors cut through the rope easily.
+deal out	분배하다	They dealt out the cards.
+die away	사라지다	The applause died away gradually.
+draw back	주춤하다	He drew back when he saw the spider.
+drop back	뒤로 물러나다	She dropped back in the race.
+ease off	완화되다	The rain eased off by noon.
+fall back	on 대체책을 쓰다	If needed, I can fall back on savings.
+fend off	막아내다	She fended off unwanted questions.
+get along	with 잘 지내다	I get along with my coworkers.
+get behind	with 뒤처지다	I’m getting behind with work.
+give out	of 배출하다 / 떨어지다	The heater gives out a lot of heat.
+go back	on 어기다	I won’t go back on my word.
+go through	with 끝까지 해내다	She went through with the procedure.
+hand around	돌려보내다	They handed around the microphone.
+hang out	with 함께 어울리다	We hang out with friends every weekend.
+hold down	억제하다 / 유지하다	He couldn’t hold down the job.
+keep off	피하다 / 방지하다	Please keep off the grass.
+leave behind	남겨두다	She left behind her old shoes.
+let out	of 풀어주다 / 누설하다	They let out the secret by mistake.
+light up	환하게 하다	His face lights up when he smiles.
+look forward	to 기대되다	I look forward to meeting you.
+make off	with 훔쳐 달아나다	He made off with the stolen goods.
+mark down	가격 인하하다	The store marked down winter coats.
+move aside	비켜주다	Move aside so others can pass.
+pass along	전달하다	Please pass the message along.
+pass over	간과하다 / 건너뛰다	He was passed over for promotion.
+pass up	거절하다	I can’t pass up this offer.
+pull together	협력하다	They pulled together on the project.
+pull through	(병을) 이겨내다	He pulled through after surgery.
+put up	with 견디다	I can’t put up with this noise.
+run down	on 헐뜯다	They ran down the policy unfairly.
+run out	on 떠나다 / 그만두다	He ran out on his family.
+set back	방해하다 / 늦추다	The storm set back construction.
+stand in	for 대신하다	Can you stand in for me at the meeting?
+stick with	고수하다	I’ll stick with my plan.
+tie up	with 묶다 / 바쁘게 만들다	I’m tied up in meetings all day.
+turn over	to 양도하다 / 뒤집다	Please turn over the page.
+use up	all다 써버리다	Don’t use up all the toner.
+account for	설명하다 / 차지하다	It’s hard to account for his absence.
+add up	to 합계가 ~이 되다	The costs add up to much more than we expected.
+agree to	동의하다 / 수락하다	She agreed to the terms.
+aim at	목표로 삼다	This ad aims at teenagers.
+allow for	감안하다	Allow for delays when planning.
+answer for	책임지다	He must answer for his actions.
+argue over	논쟁하다	They argued over who would pay.
+ask about	문의하다	I asked about the Wi‑Fi password.
+back away	from 물러나다	He backed away from confrontation.
+back off	from 물러나다 / 자제하다	Back off—I can handle this myself.
+back up	data	데이터 백업	Don’t forget to back up your files.
+bail out	of 구제받다 / 탈주하다	The country was bailed out by IMF.
+bank on	기대하다	I’m banking on your support.
+barge in	on 끼어들다	He barged in on our conversation.
+be cut off	from 연락이 끊기다	The call was cut off suddenly.
+be dedicated to	헌신하다	She’s dedicated to her work.
+bear with	참다 / 견디다	Bear with me for a moment.
+blow up	at 폭발하다 / 확장되다	The situation blew up unexpectedly.
+break into	침입하다 / 갑자기 시작되다	A fire broke into the warehouse.
+break through	to 돌파하다	They broke through the barriers.
+bring down	on 초래하다	The mistake brought down criticism on him.
+bring in	to 수익을 올리다	The business brings in consistent revenue.
+bring up	화제에 올리다	Don’t bring up politics at dinner.
+brush aside	묵살하다	She brushed the suggestion aside.
+build up	of 구축하다 / 증가하다	They built up a large client base.
+burn off	calories	소모시키다	He burns off calories by running.
+burst into	laugh/cry 갑자기 ~하다	She burst into tears when she heard.
+buy up	대량 매입하다	He bought up all the available land.
+call for	요구하다	This situation calls for immediate attention.
+calm down	진정하다	Calm down and take a deep breath.
+carry on	with 계속하다	They carried on with the event.
+catch up	with 따라잡다	We need to catch up with the schedule.
+check up	on 확인하다	He checked up on the progress.
+chip away	at 제거하다 / 극복하다	Slowly chip away at the problem.
+clean up	정리하다 / 개선하다	Clean up this mess!
+clarify on	명확히 하다	Let me clarify on the previous point.
+close down	폐쇄하다	The shop closed down last year.
+come ahead	with 앞서다 / 성공하다	They came ahead with innovative design.
+come down	on 비난하다	The teacher came down on him for cheating.
+come into	상속하다	She came into a fortune recently.
+come off	as ~처럼 보이다	He came off as rude unintentionally.
+count on	upon 의존하다	You can count on me for support.
+cut back	on 줄이다	We must cut back on expenses.
+cut in	on 끼어들다	She cut in on our discussion.
+cut out	forcess 불필요하다	That task can be cut out.
+deal with	upon 처리하다	He deals with customer complaints.
+die off	서서히 사라지다	Defaulting species die off over time.
+dive into	착수하다 / 파고들다	He dove into the project headfirst.
+do away	with 제거하다 / 폐지하다	They did away with outdated policies.
+do without ~없이 지내다	I can’t do without my morning coffee.
+drag on	지속되다 / 늘어지다	The meeting dragged on for hours.
+draw up	request 계약서 작성하다	The lawyer will draw up the agreement.
+dress down	as 꾸짖다 / 편하게 입다	He was dressed down by his manager.
+drive off	몰아내다 / 떠나다	The guard drove off intruders.
+drop back	to 뒤로 밀리다	He dropped back in the rankings.
+get over	to 극복하다 / 회복하다	She finally got over her cold.
+get through	to 이겨내다 / 연락 닿다	I got through the exam; now I’m relaxed.
+go over	to 검토하다 / 반복하다	Let’s go over the agenda once more.
+go through	to 겪다 / 확인하다	He went through a rough time last year.
+hand out	to 나눠주다	They handed out flyers at the event.
+hand over	to 넘겨주다	Please hand over the documents.
+hold on	to 유지하다 / 기다리다	Hold on to the rope tightly.
+keep up	with 따라가다 / 유지하다	Can you keep up with the pace?
+lay off	from 해고하다 / 중단하다	He was laid off from the project.
+look into	to 조사하다	I’ll look into the complaint tomorrow.
+look out	for 조심하다 / 돌보다	Look out for falling branches.
+make up	to 보충하다 / 화해하다	They made up after the argument.
+move on	to 넘어가다 / 진행하다	Let’s move on to the next topic.
+move out	of 이사 나가다	He moved out of his parents’ house.
+pass away	to 사망하다	Sadly, his grandfather passed away.
+pass out	to 기절하다	It was hot, and I nearly passed out.
+pick up	to 줍다 / 마중가다	I’ll pick up coffee on the way.
+put away	to 치우다	Clean up and put away your toys.
+put off	to 미루다	We had to put off our trip due to rain.
+put on	to 입다 / 개최하다	She put on her coat and left.
+put out	to 끄다 / 발표하다	Firefighters put out the blaze quickly.
+run into	to 우연히 만나다	I ran into an old friend yesterday.
+run out	of 다 써버리다	We ran out of sugar again.
+run over	to 치다 / 복습하다	He ran over the notes before class.
+set up	to 설치하다 / 준비하다	They set up the conference room.
+show up	to 나타나다 / 도착하다	He showed up late again.
+slow down	to 늦추다 / 천천히 가다	Slow down—you’re rushing.
+stand by	to 지지하다 / 대기하다	I’ll stand by you no matter what.
+stick to	to 고수하다	Stick to the plan no matter what.
+take after	to 닮다	She takes after her mother in talent.
+take off	to 이륙하다 / 벗다	The plane took off on time.
+take over	to 인수하다	She will take over the department next week.
+talk over	to 의논하다	Let’s talk over the proposal now.
+think through	to 곰곰이 생각하다	We need to think through every step.
+throw away	to 버리다	Don’t throw away useful things.
+throw up	to 토하다	I felt sick and threw up.
+turn down	to 거절하다	She turned down the job offer.
+turn off	to 끄다 / 흥미떨어지게 하다	Turn off the lights, please.
+turn on	to 켜다 / 흥분시키다	Can you turn on the heater?
+wake up	to 깨우다	I wake up at dawn every day.
+watch out	for 조심하다	Watch out for slippery floors.
+work out	to 운동하다 / 해결하다	We need to work out a new plan.
+write down	to 적어두다	Write down all important notes.
+zip up	to 지퍼를 올리다	Zip up your jacket—it’s cold.
+zoom in	on 확대하다	Zoom in on the subject to see detail.
+zoom out	of 축소하다	Zoom out to get the full view.
+open up	to 마음 열다 / 개방되다	He opened up about his past.
+clean up	to 청소하다 / 개선하다	Clean up your desk before leaving.
+break in	to 길들이다 / 침입하다	The shoes need breaking in.
+break out	in 발발하다	Fire broke out in the factory.
+break down	to 고장나다 / 무너지다	The computer broke down again.
+bring up	to (이야기를) 꺼내다	She brought up the issue in the meeting.
+bring back	to 되살리다 / 되돌려주다	This song brings back memories.
+break off	from 중단하다	They broke off their engagement.
+bring down	to 낮추다 / 좌절시키다	The news brought him down.
+bring in	to 수익을 올리다	The campaign brought in record donations.
+burn out	from 탈진하다	He burned out after months of stress.
+butt in	on 끼어들다	Don’t butt in on private matters.
+carry on	with 계속하다	We carried on despite the rain.
+carry out	to 수행하다	The team carried out the plan successfully.
+check out	of 체크아웃하다	We checked out of the hotel.
+check up	on 확인하다	I’ll check up on your progress tomorrow.
+come across	as ~처럼 보이다	He comes across as shy.
+come along	to 동행하다 / 진행되다	She came along to the event.
+come down	to 내려오다 / 값 내리다	The price came down last week.
+come through	to 극복하다 / 전달되다	She came through the crisis well.
+count on	upon 의존하다	You can always count on me.
+come up	to 떠오르다 / 발생하다	A question came up during class.
+cut back	on 줄이다	We’re cutting back on expenses.
+cut in	on 끼어들다 / 방해하다	She cut in on our conversation.
+deal with	to 처리하다	I’ll deal with the customer complaint.
+dress up	as 차려입다	He dressed up as a vampire for Halloween.
+drop off	at 내려주다 / 감소하다	I’ll drop you off at home.
+end up	in 결국 ~하게 되다	We ended up in a small town.
+fall apart	at 무너지다 / 산산이 부서지다	The vase fell apart in my hands.
+fall back	on to 대체하다	If things go wrong, we can fall back on savings.
+fill in	for 대신하다	She filled in for me during the meeting.
+find out	to 알아내다	He found out the truth eventually.
+get ahead	of 출세하다	She worked hard to get ahead at her job.
+get over	to 극복하다 / 회복하다	It took him months to get over the flu.
+go ahead	with 진행하다	Let’s go ahead with the plan.
+go back	to 되돌아가다	I went back to my hometown last summer.
+go off	on 폭발하다 / (알람) 울리다	The alarm went off at 6 AM.
+go on	with 계속되다 The show must go on despite the rain.
+go through	with 겪다	She went through a tough time last year.
+grow up	in 자라다	I grew up in London.
+hand over	to 넘기다	Please hand over the documents.
+hang up	on 전화를 끊다	He hung up on me suddenly.
+hold on	to 기다리다	Hold on to the rope tightly.
+keep up	with 따라가다 Can you keep up with the fast pace?
+lay off	of 해고하다	The factory had to lay off workers.
+look into	to 조사하다	I’ll look into that issue this afternoon.
+look out	for 조심하다 Look out for icy pavements.
+make up	for 보충하다 / 보상하다	He made up for his lateness.
+move on	to 진행하다	Let’s move on to the next agenda.
+move in	to 입주하다	They moved in last month.
+pass away	from 사망하다	Unfortunately, her cousin passed away.
+pick up	from 회수하다 / 픽업하다	I’ll pick up the parcel tomorrow.
+put back	on 원래대로 돌려놓다	Put the book back on the shelf.
+put out	to 끄다 / 내놓다	Firefighters put out the fire quickly.
+run across	to 우연히 만나 다	I ran across an old friend in the park.
+run out	of 다 떨어지다	We ran out of milk this morning.
+set up	to 설치하다 / 준비하다	They set up a camp by the lake.
+show up	at 나타나다 / 도착하다	He showed up late for the meeting.
+stick to	to 고수하다	Stick to your beliefs.
+take after	to 닮다	She really takes after her grandmother.
+take over	from 인수하다	He plans to take over the business.
+talk over	with 논의하다	Let’s talk over the details tomorrow.
+think through	to 깊이 생각하다	We need to think through our strategy.
+throw away	to 버리다	Don’t throw away recyclable items.
+bring in	to 수익을 창출하다	The event brought in a lot of donations.
+bring up	to (話題을) 꺼내다	She brought up the issue in our meeting.
+bring back	to 되돌려주다 / 회상시키다	This song brings back memories.
+break out	of 탈출하다 / 갑자기 시작되다	A fire broke out of nowhere.
+break off	from 중단하다	They broke off negotiations.
+break down	to 고장나다 / 감정이 폭발하다	The machine broke down again.
+burn out	from 탈진하다	He burned out after months of overtime.
+carry on	with 계속하다	We carry on despite challenges.
+carry out	to 수행하다	They carried out the plan successfully.
+check in	to 체크인하다	We checked in at noon.
+check out	of 체크아웃하다	They checked out early from the hotel.
+come across	as ~처럼 보이다	He comes across as very confident.
+come around	to 의식을 회복하다	She came around after fainting.
+come down	with 병에 걸리다	She came down with the flu.
+come in	to 들어오다	Come in and take a seat.
+come up	with 생각해내다	They came up with a clever idea.
+count on	upon 의존하다	You can count on me to help.
+cut back	on 줄이다	We need to cut back on expenses.
+cut in	on 끼어들다	He cut in on our conversation.
+cut out	to 제거하다	I need to cut out sugar from my diet.
+deal with	to 처리하다	She deals with customer complaints efficiently.
+do away	with 제거하다 / 끝내다	They did away with outdated policies.
+dress up	as 변장하다 / 차려입다	The kids dressed up for Halloween.
+drop off	at 내려주다	I’ll drop you off at school.
+end up	with 결국 ~하게 되다	They ended up with too much work.
+fall apart	at 무너지다 / 산산이 부서지다	The vase fell apart when I dropped it.
+fall back	on	to 의지하다	If needed, I can fall back on savings.
+fill in	for 대신하다	Can you fill in for me at the meeting?
+find out	to 알아내다	He found out the truth eventually.
+get ahead	of 출세하다	She’s working hard to get ahead of her peers.
+get over	to 극복하다 / 회복하다	He finally got over his jet lag.
+get around	to 시간 내다	It took me days to get around to fixing it.
+give in	to 굴복하다	They gave in to the demands.
+go ahead	with 진행하다	Let’s go ahead with the plan.
+go back	to 돌아가다	They went back to their hometown.
+go off	on 폭발하다 / 알람이 울리다	The bomb went off at dawn.
+go on	with 계속되다	The show must go on despite rain.
+go through	with 겪다	She went through a tough breakup.
+grow up	in 자라다	I grew up in a small town.
+hand out	to 나눠주다	They handed out free samples.
+hand over	to 넘겨주다	Please hand over the keys.
+hang up	on 전화를 끊다	He hung up on me abruptly.
+hold on	to 기다리다 / 붙들다	Hold on to the rail.
+keep up	with 따라가다 / 유지하다	Can you keep up with these changes?
+lay off	from 해고하다	The company had to lay off workers.
+look into	to 조사하다	I’ll look into this issue soon.
+look out	for 조심하다 / 돌보다 Look out for slippery floors.
+make up	to 보충하다 / 화해하다	They made up after their fight.
+move on	to 넘어가다	Let’s move on to the next topic.
+move out	of 이사 나가다	They moved out of the city last month.
+pass away	from 사망하다	Her grandmother passed away peacefully.
+pick up	to 줍다 / 태우러 가다	I’ll pick you up at six.
+put off	to 미루다	We had to put off the meeting.
+pull up	to 멈추다 / 끌어올리다	He pulled up the car by the curb.
+put down	to 내려놓다 / 비난하다	Don’t put others down.
+put together	to 조립하다 / 구성하다	We put together the engine parts.
+put up	to 제공하다 / 숙소를 마련하다	They put me up for the night.
+run into	to 우연히 만나다	I ran into Tina at the store.
+run out	of 다 써버리다	We ran out of milk again.
+run over	to 치다 / 복습하다	He ran over the plan before the meeting.
+set aside	to 제쳐두다 / 저축하다	She set aside money for retirement.
+set up	to 설치하다 / 기획하다	They set up a new office downtown.
+show off	to 과시하다 / 자랑하다	He loves to show off his skills.
+sit down	to 앉다 / 착수하다	Let’s sit down and discuss.
+stand by	to 지지하다 / 대기하다	I’ll stand by you in this crisis.
+stick out	to 눈에 띄다 / 내밀다	The nail sticks out—be careful.
+stick up	for 옹호하다 / 지지하다	I’ll stick up for you anytime.
+take after	to 닮다	He takes after his mother in temperament.
+take away	to 제거하다 / 없애다	This will take away the monotony.
+take back	to 되돌려주다 / 취소하다	I take back what I said.
+take up	to 차지하다 / 시작하다	He took up painting last year.
+talk into	to 설득하다	I talked him into joining us.
+talk out	of 설득하여 못하도록 만들다	I talked her out of quitting.
+think ahead	to 앞을 계획하다	Always think ahead in business.
+think of	to 생각해내다 / 기억해내다	What do you think of this idea?
+throw out	to 버리다 / 해고하다	They threw out the trash.
+turn away	to 돌아서다 / 거부하다	They turned away those without tickets.
+turn back	to 되돌아가다	We had to turn back because of rain.
+turn in	to 제출하다 / 잠자리에 들다	I’ll turn in my report tonight.
+turn up	to 나타나다 / 소리 키우다	She turned up unexpectedly.
+use up	to 다 써버리다	We used up all the paint.
+warm up	to 예열하다 / 준비운동하다	He warmed up before recording.
+work on	to 작업하다 / 개선하다	She’s working on her presentation.
+work out	to 해결하다 / 운동하다	They worked out a deal.
+write up	to 작성하다 / 정리하다	He wrote up the meeting minutes.
+zoom in	on 확대하다	Zoom in on the main subject.
+zoom out	of 축소하다	You can zoom out to get context.
+wipe off	to 닦아내다 / 지우다	Wipe off the dust from the table.
+watch over	to 돌보다 / 감독하다	I’ll watch over your children.
+wake up	to 깨우다 / 정신 차리다	Wake up and smell the coffee!
+walk away	from 떠나다 / 포기하다	He walked away from the deal.
+wind up	to 마무리하다 / 종료하다	Let’s wind up the discussion here.
+work up	to 준비하다 / 흥분시키다	He worked up the crowd with his speech.
+wind down	to 종료하다 / 진정되다	The festival winds down by midnight.
+write down	to 적어두다	Write down the address in your phone.
+wrap up	to 마무리하다 / 정리하다	Let’s wrap up the meeting now.
