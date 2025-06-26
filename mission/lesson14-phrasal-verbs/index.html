@@ -164,17 +164,17 @@
         let wrongCount = 0;
 
         questionList.forEach((q, index) => {
-        const qid = `q${index}`;
-        const userAnswer = userAnswers[qid];
-        if (userAnswer && userAnswer !== q.meaning) {
-            wrongCount++;
-            const block = document.createElement('div');
-            block.innerHTML = `<strong>Q${index + 1}. "${q.phrasal}"</strong><br>
-            당신의 답: ${userAnswer} ❌<br>
-            정답: ${q.meaning}<br>
-            예문: <span style="color:blue; cursor:pointer;" onclick="tts('${q.example.replace(/'/g, "\\'")}')">${q.example}</span><br><br>`;
-            resultBox.appendChild(block);
-        }
+            const qid = `q${index}`;
+            const userAnswer = userAnswers[qid];
+            if (userAnswer && userAnswer !== q.meaning) {
+                wrongCount++;
+                const block = document.createElement('div');
+                block.innerHTML = `<strong>Q${index + 1}. "${q.phrasal}"</strong><br>
+                당신의 답: ${userAnswer} ❌<br>
+                정답: ${q.meaning}<br>
+                예문: <span style="color:blue; cursor:pointer;" onclick="tts('${q.example.replace(/'/g, "\\'")}')">${q.example}</span><br><br>`;
+                resultBox.appendChild(block);
+            }
         });
 
         const summary = document.createElement('div');
