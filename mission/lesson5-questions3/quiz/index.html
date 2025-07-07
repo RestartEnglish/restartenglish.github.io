@@ -100,7 +100,7 @@
       .then(response => response.text())
       .then(text => {
         const lines = text.trim().split('\n');
-        shuffledData = lines.sort(() => 0.5 - Math.random()).slice(0, 5);
+        shuffledData = lines.sort(() => 0.5 - Math.random()).slice(0, 10);
         renderQuiz();
       })
       .catch(err => {
