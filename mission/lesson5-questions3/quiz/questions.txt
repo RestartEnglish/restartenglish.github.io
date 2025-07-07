@@ -1,0 +1,150 @@
+Does,he,eat,apples?::Does he eat apples?
+Is,he,eating,an,apple?::Is he eating an apple?
+Did,he,eat,an,apple?::Did he eat an apple?
+Was,he,eating,an,apple?::Was he eating an apple?
+Will,he,eat,an,apple?::Will he eat an apple?
+Will,he,be,eating,an,apple?::Will he be eating an apple?
+Does,she,read,books?::Does she read books?
+Is,she,reading,a,book?::Is she reading a book?
+Did,she,read,a,book?::Did she read a book?
+Was,she,reading,a,book?::Was she reading a book?
+Will,she,read,a,book?::Will she read a book?
+Will,she,be,reading,a,book?::Will she be reading a book?
+Does,he,play,soccer?::Does he play soccer?
+Is,he,playing,soccer?::Is he playing soccer?
+Did,he,play,soccer?::Did he play soccer?
+Was,he,playing,soccer?::Was he playing soccer?
+Will,he,play,soccer?::Will he play soccer?
+Will,he,be,playing,soccer?::Will he be playing soccer?
+Does,she,go,to,school?::Does she go to school?
+Is,she,going,to,school?::Is she going to school?
+Did,she,go,to,school?::Did she go to school?
+Was,she,going,to,school?::Was she going to school?
+Will,she,go,to,school?::Will she go to school?
+Will,she,be,going,to,school?::Will she be going to school?
+Does,he,drink,milk?::Does he drink milk?
+Is,he,drinking,milk?::Is he drinking milk?
+Did,he,drink,milk?::Did he drink milk?
+Was,he,drinking,milk?::Was he drinking milk?
+Will,he,drink,milk?::Will he drink milk?
+Will,he,be,drinking,milk?::Will he be drinking milk?
+Does,she,watch,TV?::Does she watch TV?
+Is,she,watching,TV?::Is she watching TV?
+Did,she,watch,TV?::Did she watch TV?
+Is,she,using,the,computer,now?::Is she using the computer now?
+Will,she,visit,her,grandmother,tomorrow?::Will she visit her grandmother tomorrow?
+Will,she,be,reading,a,book,tomorrow?::Will she be reading a book tomorrow?
+Did,she,play,the,piano,yesterday?::Did she play the piano yesterday?
+Was,she,reading,a,book,yesterday?::Was she reading a book yesterday?
+Are,they,eating,bread?::Are they eating bread?
+Did,they,eat,bread?::Did they eat bread?
+Were,they,eating,bread?::Were they eating bread?
+Will,they,eat,bread?::Will they eat bread?
+What,is,he,cooking,at,home?::What is he cooking at home?
+How,often,does,she,go,to,the,library?::How often does she go to the library?
+Which,school,does,he,go,to?::Which school does he go to?
+When,does,she,meet,her,friends?::When does she meet her friends?
+Where,does,he,shop,for,groceries?::Where does he shop for groceries?
+Why,does,she,take,piano,lessons?::Why does she take piano lessons?
+Who,helps,him,with,his,homework?::Who helps him with his homework?
+How,is,she,feeling,now?::How is she feeling now?
+How,much,rice,do,they,eat?::How much rice do they eat?
+How,many,times,did,he,call,today?::How many times did he call today?
+When,did,she,arrive,at,the,station?::When did she arrive at the station?
+Where,did,they,go,last,weekend?::Where did they go last weekend?
+What,did,he,write,in,his,journal?::What did he write in his journal?
+Why,did,she,leave,early?::Why did she leave early?
+Who,did,they,invite,to,the,party?::Who did they invite to the party?
+How,did,he,drive,yesterday?::How did he drive yesterday?
+How,much,sugar,did,she,put,in,the,cake?::How much sugar did she put in the cake?
+How,many,emails,did,he,send,today?::How many emails did he send today?
+When,was,she,writing,the,report?::When was she writing the report?
+Where,did,they,stay,during,their,trip?::Where did they stay during their trip?
+What,did,they,talk,about,during,lunch?::What did they talk about during lunch?
+Why,were,they,laughing,like,that?::Why were they laughing like that?
+Who,was,he,talking,to,on,the,phone?::Who was he talking to on the phone?
+How,did,she,solve,the,problem?::How did she solve the problem?
+How,much,money,did,he,spend?::How much money did he spend?
+How,many,hours,did,they,work,yesterday?::How many hours did they work yesterday?
+When,will,he,call,again?::When will he call again?
+Where,will,she,meet,the,teacher?::Where will she meet the teacher?
+What,will,they,bring,on,the,picnic?::What will they bring on the picnic?
+Why,will,he,be,late,tomorrow?::Why will he be late tomorrow?
+Who,will,cook,dinner,tonight?::Who will cook dinner tonight?
+How,will,she,go,to,Busan?::How will she go to Busan?
+How,much,water,will,they,need?::How much water will they need?
+How,many,people,will,come,to,the,concert?::How many people will come to the concert?
+When,will,he,leave,for,the,airport?::When will he leave for the airport?
+Where,will,she,stay,this,week?::Where will she stay this week?
+What,is,he,reading,today?::What is he reading today?
+Why,is,she,crying?::Why is she crying?
+Who,is,singing,that,song?::Who is singing that song?
+How,is,he,learning,English?::How is he learning English?
+How,much,time,is,left?::How much time is left?
+How,many,pages,did,she,read,yesterday?::How many pages did she read yesterday?
+When,did,he,finish,the,project?::When did he finish the project?
+Where,did,she,put,the,keys?::Where did she put the keys?
+What,did,he,buy,at,the,store?::What did he buy at the store?
+Why,did,they,cancel,the,meeting?::Why did they cancel the meeting?
+Who,broke,the,vase?::Who broke the vase?
+How,did,she,learn,to,dance?::How did she learn to dance?
+How,much,gas,did,he,use,last,month?::How much gas did he use last month?
+How,many,sheets,did,he,use?::How many sheets did he use?
+When,did,they,move,to,Seoul?::When did they move to Seoul?
+Where,did,she,hide,the,gift?::Where did she hide the gift?
+What,did,he,do,before,leaving?::What did he do before leaving?
+Why,did,she,stop,singing?::Why did she stop singing?
+Who,borrowed,his,book?::Who borrowed his book?
+How,much,cake,will,he,eat,today?::How much cake will he eat today?
+How,many,songs,will,they,learn,this,week?::How many songs will they learn this week?
+When,will,she,finish,her,homework?::When will she finish her homework?
+Where,will,he,park,his,car?::Where will he park his car?
+What,will,they,build?::What will they build?
+Why,will,she,leave,early?::Why will she leave early?
+Who,will,solve,the,puzzle?::Who will solve the puzzle?
+How,often,does,he,practice,the,violin?::How often does he practice the violin?
+How,often,does,she,go,to,the,gym?::How often does she go to the gym?
+How,often,do,they,visit,their,grandparents?::How often do they visit their grandparents?
+How,often,were,you,late,last,year?::How often were you late last year?
+How,often,will,she,ski,this,winter?::How often will she ski this winter?
+What,kind,of,job,did,he,apply,for?::What kind of job did he apply for?
+What,kind,of,phone,will,you,buy?::What kind of phone will you buy?
+What,kind,of,dress,will,she,wear,tomorrow?::What kind of dress will she wear tomorrow?
+What,kind,of,game,did,they,play,at,lunch?::What kind of game did they play at lunch?
+What,kind,of,show,is,he,watching,now?::What kind of show is he watching now?
+What,kind,of,dish,did,she,make,for,the,guests?::What kind of dish did she make for the guests?
+What,kind,of,test,will,they,take,next?::What kind of test will they take next?
+What,song,are,you,singing?::What song are you singing?
+What,team,does,he,support?::What team does he support?
+What,language,are,they,learning?::What language are they learning?
+What,museum,will,they,visit?::What museum will they visit?
+What,movie,did,she,recommend?::What movie did she recommend?
+What,place,did,he,recommend?::What place did he recommend?
+What,topic,will,they,discuss?::What topic will they discuss?
+What,project,is,he,working,on?::What project is he working on?
+What,friend,did,she,call?::What friend did she call?
+What,exercise,are,they,doing?::What exercise are they doing?
+What,gift,will,you,give?::What gift will you give?
+What,class,did,he,finish?::What class did he finish?
+What,app,is,she,using?::What app is she using?
+What,class,did,they,choose?::What class did they choose?
+What,subject,were,you,studying?::What subject were you studying?
+What,city,did,they,visit?::What city did they visit?
+What,tool,did,he,bring?::What tool did he bring?
+What,number,did,she,dial?::What number did she dial?
+What,plan,will,they,follow?::What plan will they follow?
+What,picture,are,they,drawing?::What picture are they drawing?
+How,far,does,she,run,every,morning?::How far does she run every morning?
+How,far,is,it,from,here,to,the,station?::How far is it from here to the station?
+How,far,did,you,walk,today?::How far did you walk today?
+How,far,will,they,travel,this,summer?::How far will they travel this summer?
+How,far,did,she,ride,her,bike,before,lunch?::How far did she ride her bike before lunch?
+How,long,is,the,movie?::How long is the movie?
+How,long,will,he,stay?::How long will he stay?
+How,long,did,she,wait,for,the,bus?::How long did she wait for the bus?
+How,long,will,the,meeting,take?::How long will the meeting take?
+How,long,did,he,work,before,quitting?::How long did he work before quitting?
+How,long,will,she,stay,at,our,house?::How long will she stay at our house?
+How,long,was,the,concert,yesterday?::How long was the concert yesterday?
+How,long,is,this,road?::How long is this road?
+How,long,did,he,read,before,bed?::How long did he read before bed?
