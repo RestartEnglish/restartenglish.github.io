@@ -127,7 +127,7 @@
 
   <div id="word-bank"></div>
   <div id="answer"></div>
-
+  <button onclick="resetAnswer()" title="선택 초기화" style="margin-right: 10px">🔄</button>
   <button onclick="submitAnswer()">제출</button>
   <div id="feedback"></div>
   <button id="next-btn" onclick="nextQuestion()">다음</button>
@@ -162,22 +162,15 @@
     }
 
     function restoreState() {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const state = JSON.parse(saved);
-        currentIndex = state.currentIndex || 0;
-        score = state.score || 0;
-        updateScore();
-      } else {
+  resetState(); // always start fresh
+} else {
         resetState();
       }
     }
 
     function saveState() {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({
-        currentIndex,
-        score
-      }));
+  // disabled to prevent persistent storage
+}));
     }
 
     function resetState() {
@@ -243,7 +236,14 @@
       return words.map(el => el.innerText).join(' ') + "?";
     }
 
-    function submitAnswer() {
+    function resetAnswer() {
+  const answerArea = document.getElementById('answer');
+  const wordBank = document.getElementById('word-bank');
+  const words = [...answerArea.children];
+  words.forEach(word => wordBank.appendChild(word));
+}
+
+function submitAnswer() {
       if (answered) return;
       clearInterval(timer);
       answered = true;
