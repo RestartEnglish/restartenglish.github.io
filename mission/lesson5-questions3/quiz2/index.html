@@ -253,10 +253,10 @@
 
       if (userAns === correct) {
         score += pointPerQuestion;
-        feedback.innerHTML = `<span class="speak" onclick="tts(\"${correct}\")">✅ 정답: ${correct}</span>`;
+        feedback.innerHTML = `<span class="speak" onclick="tts('${correct}')">✅ 정답: ${correct}</span>`;
         tts(correct);
       } else {
-        feedback.innerHTML = `<span class="speak" onclick="tts(\"${correct}\")">❌ 오답! 정답: ${correct}</span>`;
+        feedback.innerHTML = `<span class="speak" onclick="tts('${correct}')">❌ 오답! 정답: ${correct}</span>`;
         tts(correct);
         resetState();
       }
@@ -269,7 +269,7 @@
       if (answered) return;
       answered = true;
       const correct = quizData[currentIndex].en;
-      document.getElementById('feedback').innerHTML = `<span class=\"speak\" onclick=\"tts(\"${correct}\")\">⏱ 시간 초과! 정답: ${correct}</span>`;
+      document.getElementById('feedback').innerHTML = `<span class="speak" onclick="tts('${correct}')">⏱ 시간 초과! 정답: ${correct}</span>`;
       tts(correct);
       resetState();
       updateScore();
