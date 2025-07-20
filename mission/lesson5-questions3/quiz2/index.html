@@ -229,10 +229,14 @@
       document.getElementById('score').innerText = `점수: ${Math.round(score)}`;
     }
     function nextQuestion() {
-      currentIndex = (currentIndex + 1) % quizData.length;
-      updateScore();
-      loadQuestion();
-    }
+  if (Math.round(score) >= 100) {
+    showVictoryScreen();
+    return;
+  }
+  currentIndex = (currentIndex + 1) % quizData.length;
+  updateScore();
+  loadQuestion();
+}
     function resetAnswer() {
       const answer = document.getElementById('answer');
       const wordBank = document.getElementById('word-bank');
@@ -274,5 +278,70 @@
     }
     window.onload = loadQuestionsFromFile;
   </script>
+<div id="victory" style="display:none; font-size:24px; color:green; margin-top:40px;">
+  🎉 축하합니다! 모든 문제를 맞혔어요! 🎉<br>
+  <button onclick="restartGame()">🔄 다시 시작</button><br>
+  <canvas id="confetti" style="margin-top: 20px; width: 100%; height: 200px;"></canvas>
+  <audio id="victory-sound" src="https://www.soundjay.com/human/sounds/applause-8.mp3" preload="auto"></audio>
+  🎉 축하합니다! 모든 문제를 맞혔어요! 🎉<br>
+  <canvas id="confetti" style="margin-top: 20px; width: 100%; height: 200px;"></canvas>
+</div>
+
+<script>
+function showVictoryScreen() {
+  document.getElementById('question').style.display = 'none';
+  document.getElementById('word-bank').style.display = 'none';
+  document.getElementById('answer').style.display = 'none';
+  document.querySelector('button[onclick="submitAnswer()"]')?.style.display = 'none';
+  document.getElementById('next-btn').style.display = 'none';
+  document.getElementById('feedback').style.display = 'none';
+  document.getElementById('countdown').style.display = 'none';
+  document.getElementById('timer-bar').style.display = 'none';
+  document.getElementById('victory').style.display = 'block';
+  launchConfetti();
+  document.getElementById('victory-sound').play();
+}
+
+function launchConfetti() {
+  const canvas = document.getElementById('confetti');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = 200;
+
+  const pieces = Array.from({length: 100}, () => ({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    size: Math.random() * 8 + 2,
+    speed: Math.random() * 2 + 1,
+    color: `hsl(${Math.random() * 360}, 70%, 60%)`
+  }));
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    pieces.forEach(p => {
+      ctx.fillStyle = p.color;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fill();
+      p.y += p.speed;
+      if (p.y > canvas.height) p.y = 0;
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+}
+function restartGame() {
+  document.getElementById('victory').style.display = 'none';
+  restoreState();
+  loadQuestion();
+  document.getElementById('question').style.display = 'block';
+  document.getElementById('word-bank').style.display = 'flex';
+  document.getElementById('answer').style.display = 'flex';
+  document.querySelector('button[onclick="submitAnswer()"]')?.style.display = 'inline-block';
+  document.getElementById('feedback').style.display = 'block';
+  document.getElementById('countdown').style.display = 'block';
+  document.getElementById('timer-bar').style.display = 'block';
+}
+</script>
 </body>
 </html>
