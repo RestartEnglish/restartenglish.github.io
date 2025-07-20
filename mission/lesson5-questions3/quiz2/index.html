@@ -249,8 +249,8 @@
 
     function handleIncorrect() {
       const correct = quizData[currentIndex].en;
-      alert(`❌ 오답! 정답: ${correct}`);
       tts(correct);
+      alert(`❌ 오답! 정답: ${correct}`);
       resetState();
       loadQuestion();
     }
