@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>문장 정렬 퀴즈 게임</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f4f4f4;
+      padding: 40px;
+    }
+
+    #question {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    #word-bank {
+      margin: 20px auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .word {
+      background: #fff;
+      padding: 10px 15px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: all 0.2s;
+    }
+
+    .word:hover {
+      background: #e0f7fa;
+    }
+
+    #answer {
+      margin: 20px;
+      min-height: 40px;
+    }
+
+    #timer-bar {
+      height: 20px;
+      background: green;
+      width: 100%;
+      transition: width 1s linear;
+    }
+
+    #countdown {
+      font-size: 48px;
+      font-weight: bold;
+      color: red;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.5); }
+    }
+
+    #score {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="question">문제가 여기에 표시됩니다</div>
+  <div id="timer-bar"></div>
+  <div id="countdown"></div>
+
+  <div id="word-bank"></div>
+  <div id="answer"></div>
+
+  <button onclick="submitAnswer()">제출</button>
+  <div id="score">점수: 0</div>
+
+  <script>
+    let quizData = [];
+    let currentIndex = 0;
+    let timer;
+    let timeLeft = 10;
+    const STORAGE_KEY = 'quiz-state';
+    let score = 0;
+    let pointPerQuestion = 0;
+
+    async function loadQuestionsFromFile() {
+      const response = await fetch('questions.txt');
+      const text = await response.text();
+      const lines = text.trim().split('\n');
+      quizData = lines.map(line => {
+        const [kr, en] = line.split('::');
+        return { kr: kr.trim(), en: en.trim() };
+      });
+      pointPerQuestion = 100 / quizData.length;
+      restoreState();
+      loadQuestion();
+    }
+
+    function shuffle(array) {
+      return array.sort(() => Math.random() - 0.5);
+    }
+
+    function restoreState() {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        const state = JSON.parse(saved);
+        currentIndex = state.currentIndex || 0;
+        score = state.score || 0;
+        updateScore();
+      } else {
+        resetState();
+      }
+    }
+
+    function saveState() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        currentIndex,
+        score
+      }));
+    }
+
+    function resetState() {
+      currentIndex = 0;
+      score = 0;
+      saveState();
+      updateScore();
+    }
+
+    function loadQuestion() {
+      document.getElementById('answer').innerHTML = '';
+      document.getElementById('countdown').innerHTML = '';
+      timeLeft = 10;
+
+      const q = quizData[currentIndex];
+      document.getElementById('question').innerText = q.kr;
+
+      const words = shuffle(q.en.replace("?", "").split(" "));
+      const wordBank = document.getElementById('word-bank');
+      wordBank.innerHTML = '';
+
+      words.forEach(word => {
+        const el = document.createElement('div');
+        el.className = 'word';
+        el.innerText = word;
+        el.onclick = () => {
+          document.getElementById('answer').appendChild(el);
+        };
+        wordBank.appendChild(el);
+      });
+
+      startTimer();
+    }
+
+    function startTimer() {
+      clearInterval(timer);
+      const bar = document.getElementById('timer-bar');
+      timer = setInterval(() => {
+        timeLeft--;
+        bar.style.width = (timeLeft * 10) + '%';
+
+        const count = document.getElementById('countdown');
+        if (timeLeft <= 3 && timeLeft > 0) {
+          count.innerText = timeLeft;
+          count.style.animation = 'pulse 0.5s infinite';
+        } else {
+          count.innerText = '';
+          count.style.animation = 'none';
+        }
+
+        if (timeLeft <= 0) {
+          clearInterval(timer);
+          handleIncorrect();
+        }
+      }, 1000);
+    }
+
+    function getUserAnswer() {
+      const words = [...document.getElementById('answer').children];
+      return words.map(el => el.innerText).join(' ') + "?";
+    }
+
+    function submitAnswer() {
+      clearInterval(timer);
+      const userAns = getUserAnswer();
+      const correct = quizData[currentIndex].en;
+
+      if (userAns === correct) {
+        score += pointPerQuestion;
+        alert(`✅ 정답: ${correct}`);
+        tts(correct);
+      } else {
+        handleIncorrect();
+        return;
+      }
+
+      if (Math.round(score) >= 100) {
+        alert('🎉 모든 문제를 맞췄습니다! 게임 클리어!');
+        resetState();
+      } else {
+        nextQuestion();
+      }
+    }
+
+    function handleIncorrect() {
+      const correct = quizData[currentIndex].en;
+      alert(`❌ 오답! 정답: ${correct}`);
+      tts(correct);
+      resetState();
+      loadQuestion();
+    }
+
+    function updateScore() {
+      document.getElementById('score').innerText = `점수: ${Math.round(score)}`;
+    }
+
+    function nextQuestion() {
+      currentIndex = (currentIndex + 1) % quizData.length;
+      saveState();
+      updateScore();
+      loadQuestion();
+    }
+
+    function tts(text) {
+      console.log(`[TTS 호출]: ${text}`);
+      // 사용자가 별도로 구현할 함수 자리
+    }
+
+    window.onload = loadQuestionsFromFile;
+  </script>
+</body>
+</html>
