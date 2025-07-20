@@ -229,14 +229,14 @@
       document.getElementById('score').innerText = `점수: ${Math.round(score)}`;
     }
     function nextQuestion() {
-  if (Math.round(score) >= 100) {
-    showVictoryScreen();
-    return;
-  }
-  currentIndex = (currentIndex + 1) % quizData.length;
-  updateScore();
-  loadQuestion();
-}
+      if (Math.round(score) >= 100) {
+        showVictoryScreen();
+        return;
+      }
+      currentIndex = (currentIndex + 1) % quizData.length;
+      updateScore();
+      loadQuestion();
+    }
     function resetAnswer() {
       const answer = document.getElementById('answer');
       const wordBank = document.getElementById('word-bank');
