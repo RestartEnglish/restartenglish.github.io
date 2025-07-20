@@ -12,13 +12,11 @@
       padding: 20px;
       margin: 0;
     }
-
     #question {
       font-size: 20px;
       margin-bottom: 15px;
       padding: 0 10px;
     }
-
     #word-bank {
       display: flex;
       flex-wrap: wrap;
@@ -26,7 +24,6 @@
       gap: 8px;
       padding: 10px;
     }
-
     .word {
       background: #fff;
       padding: 8px 12px;
@@ -36,19 +33,20 @@
       font-size: 16px;
       transition: all 0.2s;
     }
-
     .word:hover {
       background: #e0f7fa;
     }
-
     #answer {
       margin: 10px;
       min-height: 40px;
       padding: 10px;
       background: #ffffff;
       border-radius: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
     }
-
     #timer-bar {
       height: 16px;
       background: green;
@@ -56,34 +54,31 @@
       max-width: 100%;
       transition: width 1s linear;
     }
-
     #countdown {
       font-size: 36px;
       font-weight: bold;
       color: red;
     }
-
     #feedback {
       margin-top: 15px;
       font-size: 18px;
       color: #333;
     }
-
     #next-btn {
       display: none;
       margin-top: 10px;
     }
-
+    #reset-btn {
+      margin-top: 10px;
+    }
     @keyframes pulse {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.5); }
     }
-
     #score {
       font-size: 18px;
       margin-top: 15px;
     }
-
     button {
       padding: 10px 16px;
       font-size: 16px;
@@ -94,25 +89,20 @@
       background-color: #007bff;
       color: white;
     }
-
     button:hover {
       background-color: #0056b3;
     }
-
     @media (max-width: 480px) {
       #question {
         font-size: 18px;
       }
-
       .word {
         font-size: 14px;
         padding: 6px 10px;
       }
-
       #countdown {
         font-size: 28px;
       }
-
       button {
         font-size: 14px;
         padding: 8px 12px;
@@ -124,26 +114,21 @@
   <div id="question">문제가 여기에 표시됩니다</div>
   <div id="timer-bar"></div>
   <div id="countdown"></div>
-
   <div id="word-bank"></div>
   <div id="answer"></div>
-
   <button onclick="submitAnswer()">제출</button>
+  <button id="reset-btn" onclick="resetAnswer()">🔁 재배치</button>
   <div id="feedback"></div>
   <button id="next-btn" onclick="nextQuestion()">다음</button>
-
   <div id="score">점수: 0</div>
-
   <script>
     let quizData = [];
     let currentIndex = 0;
     let timer;
     let timeLeft = 30;
-    const STORAGE_KEY = 'quiz-state';
     let score = 0;
     let pointPerQuestion = 0;
     let answered = false;
-
     async function loadQuestionsFromFile() {
       const response = await fetch('questions.txt');
       const text = await response.text();
@@ -156,37 +141,14 @@
       restoreState();
       loadQuestion();
     }
-
+    function restoreState() {
+      currentIndex = 0;
+      score = 0;
+      updateScore();
+    }
     function shuffle(array) {
       return array.sort(() => Math.random() - 0.5);
     }
-
-    function restoreState() {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const state = JSON.parse(saved);
-        currentIndex = state.currentIndex || 0;
-        score = state.score || 0;
-        updateScore();
-      } else {
-        resetState();
-      }
-    }
-
-    function saveState() {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({
-        currentIndex,
-        score
-      }));
-    }
-
-    function resetState() {
-      currentIndex = 0;
-      score = 0;
-      saveState();
-      updateScore();
-    }
-
     function loadQuestion() {
       document.getElementById('answer').innerHTML = '';
       document.getElementById('countdown').innerHTML = '';
@@ -194,14 +156,11 @@
       document.getElementById('next-btn').style.display = 'none';
       timeLeft = 30;
       answered = false;
-
       const q = quizData[currentIndex];
       document.getElementById('question').innerText = q.kr;
-
       const words = shuffle(q.en.replace("?", "").split(" "));
       const wordBank = document.getElementById('word-bank');
       wordBank.innerHTML = '';
-
       words.forEach(word => {
         const el = document.createElement('div');
         el.className = 'word';
@@ -211,17 +170,14 @@
         };
         wordBank.appendChild(el);
       });
-
       startTimer();
     }
-
     function startTimer() {
       clearInterval(timer);
       const bar = document.getElementById('timer-bar');
       timer = setInterval(() => {
         timeLeft--;
         bar.style.width = (timeLeft / 30 * 100) + '%';
-
         const count = document.getElementById('countdown');
         if (timeLeft <= 3 && timeLeft > 0) {
           count.innerText = timeLeft;
@@ -230,19 +186,16 @@
           count.innerText = '';
           count.style.animation = 'none';
         }
-
         if (timeLeft <= 0 && !answered) {
           clearInterval(timer);
           handleIncorrect();
         }
       }, 1000);
     }
-
     function getUserAnswer() {
       const words = [...document.getElementById('answer').children];
       return words.map(el => el.innerText).join(' ') + "?";
     }
-
     function submitAnswer() {
       if (answered) return;
       clearInterval(timer);
@@ -250,7 +203,6 @@
       const userAns = getUserAnswer();
       const correct = quizData[currentIndex].en;
       const feedback = document.getElementById('feedback');
-
       if (userAns === correct) {
         score += pointPerQuestion;
         feedback.innerHTML = `<span class="speak" onclick="tts('${correct}')">✅ 정답: ${correct}</span>`;
@@ -258,46 +210,44 @@
       } else {
         feedback.innerHTML = `<span class="speak" onclick="tts('${correct}')">❌ 오답! 정답: ${correct}</span>`;
         tts(correct);
-        resetState();
+        restoreState();
       }
-
       updateScore();
       document.getElementById('next-btn').style.display = 'inline-block';
     }
-
     function handleIncorrect() {
       if (answered) return;
       answered = true;
       const correct = quizData[currentIndex].en;
       document.getElementById('feedback').innerHTML = `<span class="speak" onclick="tts('${correct}')">⏱ 시간 초과! 정답: ${correct}</span>`;
       tts(correct);
-      resetState();
+      restoreState();
       updateScore();
       document.getElementById('next-btn').style.display = 'inline-block';
     }
-
     function updateScore() {
       document.getElementById('score').innerText = `점수: ${Math.round(score)}`;
     }
-
     function nextQuestion() {
       currentIndex = (currentIndex + 1) % quizData.length;
-      saveState();
       updateScore();
       loadQuestion();
     }
-
+    function resetAnswer() {
+      const answer = document.getElementById('answer');
+      const wordBank = document.getElementById('word-bank');
+      const words = [...answer.children];
+      words.forEach(word => wordBank.appendChild(word));
+    }
     let currentAudio = null;
     async function tts(text, lang = 'en-US', voiceName = 'en-US-Wavenet-F') {
       const apiKey = 'AIzaSyC4tLuk2F7VyrtiDrARfOSpbt9lZ5UPsLg';
       const url = `https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`;
-
       if (currentAudio) {
         currentAudio.pause();
         currentAudio.currentTime = 0;
         currentAudio = null;
       }
-
       const requestBody = {
         input: { text },
         voice: {
@@ -308,15 +258,12 @@
           audioEncoding: 'MP3'
         }
       };
-
       const res = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(requestBody)
       });
-
       const data = await res.json();
-
       if (data.audioContent) {
         const audio = new Audio("data:audio/mp3;base64," + data.audioContent);
         currentAudio = audio;
@@ -325,7 +272,6 @@
         console.error('TTS error:', data);
       }
     }
-
     window.onload = loadQuestionsFromFile;
   </script>
 </body>
