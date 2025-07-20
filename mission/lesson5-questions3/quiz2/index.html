@@ -53,6 +53,7 @@
       height: 16px;
       background: green;
       width: 100%;
+      max-width: 100%;
       transition: width 1s linear;
     }
 
@@ -60,6 +61,17 @@
       font-size: 36px;
       font-weight: bold;
       color: red;
+    }
+
+    #feedback {
+      margin-top: 15px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    #next-btn {
+      display: none;
+      margin-top: 10px;
     }
 
     @keyframes pulse {
@@ -109,7 +121,6 @@
   </style>
 </head>
 <body>
-
   <div id="question">문제가 여기에 표시됩니다</div>
   <div id="timer-bar"></div>
   <div id="countdown"></div>
@@ -118,6 +129,9 @@
   <div id="answer"></div>
 
   <button onclick="submitAnswer()">제출</button>
+  <div id="feedback"></div>
+  <button id="next-btn" onclick="nextQuestion()">다음</button>
+
   <div id="score">점수: 0</div>
 
   <script>
@@ -128,6 +142,7 @@
     const STORAGE_KEY = 'quiz-state';
     let score = 0;
     let pointPerQuestion = 0;
+    let answered = false;
 
     async function loadQuestionsFromFile() {
       const response = await fetch('questions.txt');
@@ -175,7 +190,10 @@
     function loadQuestion() {
       document.getElementById('answer').innerHTML = '';
       document.getElementById('countdown').innerHTML = '';
+      document.getElementById('feedback').innerText = '';
+      document.getElementById('next-btn').style.display = 'none';
       timeLeft = 15;
+      answered = false;
 
       const q = quizData[currentIndex];
       document.getElementById('question').innerText = q.kr;
@@ -202,7 +220,7 @@
       const bar = document.getElementById('timer-bar');
       timer = setInterval(() => {
         timeLeft--;
-        bar.style.width = (timeLeft * 10) + '%';
+        bar.style.width = (timeLeft / 15 * 100) + '%';
 
         const count = document.getElementById('countdown');
         if (timeLeft <= 3 && timeLeft > 0) {
@@ -213,7 +231,7 @@
           count.style.animation = 'none';
         }
 
-        if (timeLeft <= 0) {
+        if (timeLeft <= 0 && !answered) {
           clearInterval(timer);
           handleIncorrect();
         }
@@ -226,33 +244,36 @@
     }
 
     function submitAnswer() {
+      if (answered) return;
       clearInterval(timer);
+      answered = true;
       const userAns = getUserAnswer();
       const correct = quizData[currentIndex].en;
+      const feedback = document.getElementById('feedback');
 
       if (userAns === correct) {
         score += pointPerQuestion;
-        alert(`✅ 정답: ${correct}`);
+        feedback.innerHTML = `<span class="speak" onclick="tts(\"${correct}\")">✅ 정답: ${correct}</span>`;
         tts(correct);
       } else {
-        handleIncorrect();
-        return;
+        feedback.innerHTML = `<span class="speak" onclick="tts(\"${correct}\")">❌ 오답! 정답: ${correct}</span>`;
+        tts(correct);
+        resetState();
       }
 
-      if (Math.round(score) >= 100) {
-        alert('🎉 모든 문제를 맞췄습니다! 게임 클리어!');
-        resetState();
-      } else {
-        nextQuestion();
-      }
+      updateScore();
+      document.getElementById('next-btn').style.display = 'inline-block';
     }
 
     function handleIncorrect() {
+      if (answered) return;
+      answered = true;
       const correct = quizData[currentIndex].en;
+      document.getElementById('feedback').innerHTML = `<span class=\"speak\" onclick=\"tts(\"${correct}\")\">⏱ 시간 초과! 정답: ${correct}</span>`;
       tts(correct);
-      alert(`❌ 오답! 정답: ${correct}`);
       resetState();
-      loadQuestion();
+      updateScore();
+      document.getElementById('next-btn').style.display = 'inline-block';
     }
 
     function updateScore() {
@@ -266,44 +287,45 @@
       loadQuestion();
     }
 
-    let currentAudio = null; // 전역 상태로 현재 재생 중인 오디오 추적
+    let currentAudio = null;
     async function tts(text, lang = 'en-US', voiceName = 'en-US-Wavenet-F') {
-        const apiKey = 'AIzaSyC4tLuk2F7VyrtiDrARfOSpbt9lZ5UPsLg';
-        const url = `https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`;
+      const apiKey = 'AIzaSyC4tLuk2F7VyrtiDrARfOSpbt9lZ5UPsLg';
+      const url = `https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`;
 
-        if (currentAudio) {
-            currentAudio.pause();
-            currentAudio.currentTime = 0;
-            currentAudio = null;
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+        currentAudio = null;
+      }
+
+      const requestBody = {
+        input: { text },
+        voice: {
+          languageCode: lang,
+          name: voiceName
+        },
+        audioConfig: {
+          audioEncoding: 'MP3'
         }
-        
-        const requestBody = {
-            input: { text },
-            voice: {
-                languageCode: lang,
-                name: voiceName
-            },
-            audioConfig: {
-                audioEncoding: 'MP3'
-            }
-        };
-    
-        const res = await fetch(url, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(requestBody)
-        });
-    
-        const data = await res.json();
-    
-        if (data.audioContent) {
-            const audio = new Audio("data:audio/mp3;base64," + data.audioContent);
-            currentAudio = audio;
-            audio.play();
-        } else {
-            console.error('TTS error:', data);
-        }
+      };
+
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(requestBody)
+      });
+
+      const data = await res.json();
+
+      if (data.audioContent) {
+        const audio = new Audio("data:audio/mp3;base64," + data.audioContent);
+        currentAudio = audio;
+        audio.play();
+      } else {
+        console.error('TTS error:', data);
+      }
     }
+
     window.onload = loadQuestionsFromFile;
   </script>
 </body>
