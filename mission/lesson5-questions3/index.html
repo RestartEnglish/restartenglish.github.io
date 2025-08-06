@@ -90,7 +90,7 @@
 </head>
 <body>
     <div id="roulette">
-        <div id="question" onclick="speakText(this.textContent)">준비가 되었으면, 버튼을 눌러 주세요</div>
+        <div id="question" onclick="tts(this.textContent)">준비가 되었으면, 버튼을 눌러 주세요</div>
     </div>
     <button onclick="startRoulette()">🎰 질문 뽑기</button>
     <div class="timer-container">
@@ -115,12 +115,38 @@
                 .catch(error => console.error('질문을 불러오는 중 오류 발생:', error));
         }
 
-        function speakText(text) {
-            if (!text || text.trim() === "") return;
-            speechSynthesis.cancel();
-            let utterance = new SpeechSynthesisUtterance(text);
-            utterance.lang = 'ko-KR';
-            speechSynthesis.speak(utterance);
+        let currentAudio = null;
+        async function tts(text, lang='ko-KR', voiceName='ko-KR-Wavenet-A') {
+            const apiKey = 'AIzaSyC4tLuk2F7VyrtiDrARfOSpbt9lZ5UPsLg';
+            const url = `https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`;
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+                currentAudio = null;
+            }
+            const requestBody = {
+                input: { text },
+                voice: {
+                languageCode: lang,
+                name: voiceName
+                },
+                audioConfig: {
+                audioEncoding: 'MP3'
+                }
+            };
+            const res = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(requestBody)
+            });
+            const data = await res.json();
+            if (data.audioContent) {
+                const audio = new Audio("data:audio/mp3;base64," + data.audioContent);
+                currentAudio = audio;
+                audio.play();
+            } else {
+                console.error('TTS error:', data);
+            }
         }
 
         function startRoulette() {
@@ -145,7 +171,7 @@
                 questionDiv.textContent = questions[finalIndex];
                 questionDiv.classList.remove("rolling");
                 questionDiv.classList.add("big-text");
-                speakText(questions[finalIndex]);
+                tts(questions[finalIndex]);
                 setTimeout(() => { if (soundEnabled) playBeep(); }, 2000);
                 resetTimer();
             }, rollingTime);
