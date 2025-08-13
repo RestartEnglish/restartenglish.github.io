@@ -1,10 +1,10 @@
-그는 사과를 먹니?::Does he eat apples?
+그는 사과를 먹니?::Does he eat an apple?
 그는 사과를 먹고 있니?::Is he eating an apple?
 그는 사과를 먹었니?::Did he eat an apple?
 그는 사과를 먹고 있었니?::Was he eating an apple?
 그는 사과를 먹을 거니?::Will he eat an apple?
 그는 사과를 먹고 있을 거니?::Will he be eating an apple?
-그녀는 책을 읽니?::Does she read books?
+그녀는 책을 읽니?::Does she read a book?
 그녀는 책을 읽고 있니?::Is she reading a book?
 그녀는 책을 읽었니?::Did she read a book?
 그녀는 책을 읽고 있었니?::Was she reading a book?
@@ -40,31 +40,31 @@
 그들은 빵을 먹었니?::Did they eat bread?
 그들은 빵을 먹고 있었니?::Were they eating bread?
 그들은 빵을 먹을 거니?::Will they eat bread?
-그는 집에서 무엇을 요리하고 있니?::What is he cooking at home?
+그는 집에서 뭘 요리하고 있니?::What is he cooking at home?
 그녀는 얼마나 자주 도서관에 가니?::How often does she go to the library?
 그는 어느 학교에 다니니?::Which school does he go to?
 그녀는 언제 친구들을 만나니?::When does she meet her friends?
-그는 어디서 장을 보니?::Where does he shop for groceries?
-그녀는 왜 피아노 수업을 받니?::Why does she take piano lessons?
+그는 어디에서 장을 보니?::Where does he shop for groceries?
+그녀는 왜 피아노를 배우니?::Why does she take piano lessons?
 누가 그의 숙제를 도와주니?::Who helps him with his homework?
 그녀는 지금 기분이 어때?::How is she feeling now?
 그들은 쌀을 얼마나 먹니?::How much rice do they eat?
 그는 오늘 몇 번 전화했니?::How many times did he call today?
 그녀는 언제 역에 도착했니?::When did she arrive at the station?
 그들은 지난 주말에 어디 갔니?::Where did they go last weekend?
-그는 점심 시간에 일기에 무엇을 썼니?::What did he write in his journal?
-왜 그녀는 일찍 떠났니?::Why did she leave early?
+그는 일기에 뭘 썼니?::What did he write in his journal?
+그녀는 왜 일찍 떠났니?::Why did she leave early?
 그들은 누구를 파티에 초대했니?::Who did they invite to the party?
 그는 어제 어떻게 운전했니?::How did he drive yesterday?
 그녀는 케이크에 설탕을 얼마나 넣었니?::How much sugar did she put in the cake?
 그는 오늘 이메일을 몇 통 보냈니?::How many emails did he send today?
 그녀는 언제 보고서를 쓰고 있었니?::When was she writing the report?
 그들은 여행 중에 어디에 머물렀니?::Where did they stay during their trip?
-그들은 점심 시간에 무엇에 대해 이야기했니?::What did they talk about during lunch?
+그들은 점심에 무슨 이야기를 했니?::What did they talk about during lunch?
 그들은 왜 그렇게 웃고 있었니?::Why were they laughing like that?
 그는 전화로 누구와 이야기하고 있었니?::Who was he talking to on the phone?
 그녀는 그 문제를 어떻게 해결했니?::How did she solve the problem?
-그는 돈을 얼마 썼니?::How much money did he spend?
+그는 얼마를 썼니?::How much money did he spend?
 그들은 어제 몇 시간 일했니?::How many hours did they work yesterday?
 그는 언제 다시 전화할 거니?::When will he call again?
 그녀는 어디에서 선생님을 만날 거니?::Where will she meet the teacher?
@@ -72,11 +72,11 @@
 그는 내일 왜 늦을 거니?::Why will he be late tomorrow?
 오늘 저녁은 누가 요리할 거니?::Who will cook dinner tonight?
 그녀는 어떻게 부산에 갈 거니?::How will she go to Busan?
-그들은 물을 얼마나 필요로 할까?::How much water will they need?
-그 콘서트에 몇 명이 올까?::How many people will come to the concert?
+그들은 물이 얼마나 필요할까?::How much water will they need?
+그 콘서트에는 몇 명이 올까?::How many people will come to the concert?
 그는 언제 공항으로 떠날 거니?::When will he leave for the airport?
 그녀는 이번 주에 어디에 머물 거니?::Where will she stay this week?
-그는 오늘 무엇을 읽고 있니?::What is he reading today?
+그는 오늘 뭘 읽고 있니?::What is he reading today?
 그녀는 왜 울고 있니?::Why is she crying?
 누가 그 노래를 부르고 있니?::Who is singing that song?
 그는 어떻게 영어를 배우고 있니?::How is he learning English?
@@ -84,7 +84,7 @@
 그녀는 어제 몇 페이지를 읽었니?::How many pages did she read yesterday?
 그는 언제 프로젝트를 끝냈니?::When did he finish the project?
 그녀는 열쇠를 어디에 두었니?::Where did she put the keys?
-그는 가게에서 무엇을 샀니?::What did he buy at the store?
+그는 가게에서 뭘 샀니?::What did he buy at the store?
 그들은 왜 회의를 취소했니?::Why did they cancel the meeting?
 누가 그 꽃병을 깼니?::Who broke the vase?
 그녀는 어떻게 춤을 배웠니?::How did she learn to dance?
@@ -92,7 +92,7 @@
 그는 몇 장을 사용했니?::How many sheets did he use?
 그들은 언제 서울로 이사했니?::When did they move to Seoul?
 그녀는 선물을 어디에 숨겼니?::Where did she hide the gift?
-그는 떠나기 전에 무엇을 했니?::What did he do before leaving?
+그는 떠나기 전에 뭘 했니?::What did he do before leaving?
 그녀는 왜 노래를 멈췄니?::Why did she stop singing?
 누가 그의 책을 빌렸니?::Who borrowed his book?
 그는 오늘 케이크를 얼마나 먹을 거니?::How much cake will he eat today?
@@ -141,7 +141,7 @@
 그녀는 점심 전에 자전거를 얼마나 탔니?::How far did she ride her bike before lunch?
 그 영화는 얼마나 길어?::How long is the movie?
 그는 얼마나 머물 거니?::How long will he stay?
-그녀는 버스를 얼마나 기다렸니?::How long did she wait for the bus?
+그녀는 버스를 얼마나 오래 기다렸니?::How long did she wait for the bus?
 그 회의는 얼마나 걸릴 거니?::How long will the meeting take?
 그는 그만두기 전에 얼마나 일했니?::How long did he work before quitting?
 그녀는 우리 집에 얼마나 머물 거니?::How long will she stay at our house?
