@@ -5,7 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>문장 정렬 퀴즈 게임</title>
   <style>
+    :root{
+      --brand:#007bff;
+      --brand-dark:#0056b3;
+    }
     body { font-family: Arial, sans-serif; text-align: center; background: #f4f4f4; padding: 20px; margin: 0; }
+    /* 상단 경과 타이머 바 */
+    #elapsed-wrap{
+      position: sticky; top: 0; z-index: 999;
+      background: linear-gradient(135deg,#111827,#1f2937);
+      color:#fff; padding: 10px 16px; margin:0 0 14px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      border-bottom: 2px solid rgba(255,255,255,0.06);
+    }
+    #elapsed-title{ font-size:14px; letter-spacing:.5px; opacity:.8; margin-bottom:4px;}
+    #elapsed{ font-variant-numeric: tabular-nums; font-size: 28px; font-weight: 700; }
     #question { font-size: 20px; margin-bottom: 15px; padding: 0 10px; }
     #word-bank { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; padding: 10px; }
     .word { background: #fff; padding: 8px 12px; border: 2px solid #ccc; border-radius: 8px; cursor: pointer; font-size: 16px; transition: all 0.2s; }
@@ -18,17 +32,24 @@
     #reset-btn { margin-top: 10px; }
     @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.5); } }
     #score { font-size: 18px; margin-top: 15px; }
-    button { padding: 10px 16px; font-size: 16px; margin-top: 15px; cursor: pointer; border-radius: 6px; border: none; background-color: #007bff; color: white; }
-    button:hover { background-color: #0056b3; }
+    button { padding: 10px 16px; font-size: 16px; margin-top: 15px; cursor: pointer; border-radius: 6px; border: none; background-color: var(--brand); color: white; }
+    button:hover { background-color: var(--brand-dark); }
     @media (max-width: 480px) {
       #question { font-size: 18px; }
       .word { font-size: 14px; padding: 6px 10px; }
       #countdown { font-size: 28px; }
       button { font-size: 14px; padding: 8px 12px; }
+      #elapsed{ font-size:22px; }
     }
   </style>
 </head>
 <body>
+  <!-- 전체 경과 타이머 -->
+  <div id="elapsed-wrap">
+    <div id="elapsed-title">전체 경과 시간</div>
+    <div id="elapsed">00:00:00</div>
+  </div>
+
   <div id="question">문제가 여기에 표시됩니다</div>
   <div id="timer-bar"></div>
   <div id="countdown"></div>
@@ -60,6 +81,28 @@
     /* NEW: 출제 진행 카운터 */
     let questionsServed = 0;
 
+    /* ====== NEW: 페이지 전체 경과 타이머 ====== */
+    let elapsedInterval = null;
+    let startTs = null; // performance.now() 기준
+
+    function startElapsedTimer(){
+      startTs = performance.now();
+      const el = document.getElementById('elapsed');
+      // 10ms(=센티초) 단위 업데이트
+      elapsedInterval = setInterval(()=>{
+        const now = performance.now();
+        const diffMs = now - startTs;
+        // 분:초:센티초(00:00:00)
+        const totalCentis = Math.floor(diffMs / 10); // 1센티초 = 10ms
+        const minutes = Math.floor(totalCentis / 6000); // 6000센티초 = 60초
+        const seconds = Math.floor((totalCentis % 6000) / 100);
+        const centis  = totalCentis % 100;
+        el.textContent = `${pad2(minutes)}:${pad2(seconds)}:${pad2(centis)}`;
+      }, 10);
+    }
+    function pad2(n){ return n.toString().padStart(2,'0'); }
+    /* ======================================= */
+
     async function loadQuestionsFromFile() {
       const response = await fetch('questions.txt');
       const text = await response.text();
@@ -69,7 +112,7 @@
         return { kr: kr.trim(), en: en.trim() };
       });
 
-      // NEW: 셔플 후 10문제만 선택
+      // NEW: 셔플 후 최대 MAX_QUESTIONS 선택
       quizData = shuffle(all).slice(0, Math.min(MAX_QUESTIONS, all.length));
 
       pointPerQuestion = 100 / quizData.length;
@@ -280,7 +323,11 @@
       document.getElementById('timer-bar').style.display = 'block';
     }
 
-    window.onload = loadQuestionsFromFile;
+    // 기존 onload를 덮어쓰지 않도록 이벤트 리스너로 통합
+    window.addEventListener('load', () => {
+      startElapsedTimer();     // 전체 경과 타이머 시작
+      loadQuestionsFromFile(); // 문제 로드
+    });
   </script>
 </body>
 </html>
