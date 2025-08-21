@@ -12,14 +12,21 @@
     body { font-family: Arial, sans-serif; text-align: center; background: #f4f4f4; padding: 20px; margin: 0; }
     /* 상단 경과 타이머 바 */
     #elapsed-wrap{
-      position: sticky; top: 0; z-index: 999;
-      background: linear-gradient(135deg,#111827,#1f2937);
-      color:#fff; padding: 10px 16px; margin:0 0 14px 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      border-bottom: 2px solid rgba(255,255,255,0.06);
+      margin: 0 0 14px 0;
+      padding: 10px 0;
+      color:#000;  /* 글씨 흰색 */
     }
-    #elapsed-title{ font-size:14px; letter-spacing:.5px; opacity:.8; margin-bottom:4px;}
-    #elapsed{ font-variant-numeric: tabular-nums; font-size: 28px; font-weight: 700; }
+    #elapsed-title{ 
+      font-size:14px; 
+      letter-spacing:.5px; 
+      opacity:.8; 
+      margin-bottom:4px;
+    }
+    #elapsed{ 
+      font-variant-numeric: tabular-nums; 
+      font-size: 28px; 
+      font-weight: 700; 
+    }
     #question { font-size: 20px; margin-bottom: 15px; padding: 0 10px; }
     #word-bank { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; padding: 10px; }
     .word { background: #fff; padding: 8px 12px; border: 2px solid #ccc; border-radius: 8px; cursor: pointer; font-size: 16px; transition: all 0.2s; }
