@@ -1,0 +1,150 @@
+그는 사과를 먹니?::Does he eat an apple?
+그는 사과를 먹고 있니?::Is he eating an apple?
+그는 사과를 먹었니?::Did he eat an apple?
+그는 사과를 먹고 있었니?::Was he eating an apple?
+그는 사과를 먹을 거니?::Will he eat an apple?
+그는 사과를 먹고 있을 거니?::Will he be eating an apple?
+그녀는 책을 읽니?::Does she read a book?
+그녀는 책을 읽고 있니?::Is she reading a book?
+그녀는 책을 읽었니?::Did she read a book?
+그녀는 책을 읽고 있었니?::Was she reading a book?
+그녀는 책을 읽을 거니?::Will she read a book?
+그녀는 책을 읽고 있을 거니?::Will she be reading a book?
+그는 축구를 하니?::Does he play soccer?
+그는 축구를 하고 있니?::Is he playing soccer?
+그는 축구를 했니?::Did he play soccer?
+그는 축구를 하고 있었니?::Was he playing soccer?
+그는 축구를 할 거니?::Will he play soccer?
+그는 축구를 하고 있을 거니?::Will he be playing soccer?
+그녀는 학교에 가니?::Does she go to school?
+그녀는 학교에 가고 있니?::Is she going to school?
+그녀는 학교에 갔니?::Did she go to school?
+그녀는 학교에 가고 있었니?::Was she going to school?
+그녀는 학교에 갈 거니?::Will she go to school?
+그녀는 학교에 가고 있을 거니?::Will she be going to school?
+그는 우유를 마시니?::Does he drink milk?
+그는 우유를 마시고 있니?::Is he drinking milk?
+그는 우유를 마셨니?::Did he drink milk?
+그는 우유를 마시고 있었니?::Was he drinking milk?
+그는 우유를 마실 거니?::Will he drink milk?
+그는 우유를 마시고 있을 거니?::Will he be drinking milk?
+그녀는 TV를 보니?::Does she watch TV?
+그녀는 TV를 보고 있니?::Is she watching TV?
+그녀는 TV를 봤니?::Did she watch TV?
+그녀는 지금 컴퓨터를 사용하고 있니?::Is she using the computer now?
+그녀는 내일 할머니를 방문할 거니?::Will she visit her grandmother tomorrow?
+그녀는 내일 책을 읽고 있을 거니?::Will she be reading a book tomorrow?
+그녀는 어제 피아노를 쳤니?::Did she play the piano yesterday?
+그녀는 어제 책을 읽고 있었니?::Was she reading a book yesterday?
+그들은 빵을 먹고 있니?::Are they eating bread?
+그들은 빵을 먹었니?::Did they eat bread?
+그들은 빵을 먹고 있었니?::Were they eating bread?
+그들은 빵을 먹을 거니?::Will they eat bread?
+그는 집에서 뭘 요리하고 있니?::What is he cooking at home?
+그녀는 얼마나 자주 도서관에 가니?::How often does she go to the library?
+그는 어느 학교에 다니니?::Which school does he go to?
+그녀는 언제 친구들을 만나니?::When does she meet her friends?
+그는 어디에서 장을 보니?::Where does he shop for groceries?
+그녀는 왜 피아노를 배우니?::Why does she take piano lessons?
+누가 그의 숙제를 도와주니?::Who helps him with his homework?
+그녀는 지금 기분이 어때?::How is she feeling now?
+그들은 쌀을 얼마나 먹니?::How much rice do they eat?
+그는 오늘 몇 번 전화했니?::How many times did he call today?
+그녀는 언제 역에 도착했니?::When did she arrive at the station?
+그들은 지난 주말에 어디 갔니?::Where did they go last weekend?
+그는 일기에 뭘 썼니?::What did he write in his journal?
+그녀는 왜 일찍 떠났니?::Why did she leave early?
+그들은 누구를 파티에 초대했니?::Who did they invite to the party?
+그는 어제 어떻게 운전했니?::How did he drive yesterday?
+그녀는 케이크에 설탕을 얼마나 넣었니?::How much sugar did she put in the cake?
+그는 오늘 이메일을 몇 통 보냈니?::How many emails did he send today?
+그녀는 언제 보고서를 쓰고 있었니?::When was she writing the report?
+그들은 여행 중에 어디에 머물렀니?::Where did they stay during their trip?
+그들은 점심에 무슨 이야기를 했니?::What did they talk about during lunch?
+그들은 왜 그렇게 웃고 있었니?::Why were they laughing like that?
+그는 전화로 누구와 이야기하고 있었니?::Who was he talking to on the phone?
+그녀는 그 문제를 어떻게 해결했니?::How did she solve the problem?
+그는 얼마를 썼니?::How much money did he spend?
+그들은 어제 몇 시간 일했니?::How many hours did they work yesterday?
+그는 언제 다시 전화할 거니?::When will he call again?
+그녀는 어디에서 선생님을 만날 거니?::Where will she meet the teacher?
+그들은 소풍에 무엇을 가져갈 거니?::What will they bring on the picnic?
+그는 내일 왜 늦을 거니?::Why will he be late tomorrow?
+오늘 저녁은 누가 요리할 거니?::Who will cook dinner tonight?
+그녀는 어떻게 부산에 갈 거니?::How will she go to Busan?
+그들은 물이 얼마나 필요할까?::How much water will they need?
+그 콘서트에는 몇 명이 올까?::How many people will come to the concert?
+그는 언제 공항으로 떠날 거니?::When will he leave for the airport?
+그녀는 이번 주에 어디에 머물 거니?::Where will she stay this week?
+그는 오늘 뭘 읽고 있니?::What is he reading today?
+그녀는 왜 울고 있니?::Why is she crying?
+누가 그 노래를 부르고 있니?::Who is singing that song?
+그는 어떻게 영어를 배우고 있니?::How is he learning English?
+얼마나 시간이 남았니?::How much time is left?
+그녀는 어제 몇 페이지를 읽었니?::How many pages did she read yesterday?
+그는 언제 프로젝트를 끝냈니?::When did he finish the project?
+그녀는 열쇠를 어디에 두었니?::Where did she put the keys?
+그는 가게에서 뭘 샀니?::What did he buy at the store?
+그들은 왜 회의를 취소했니?::Why did they cancel the meeting?
+누가 그 꽃병을 깼니?::Who broke the vase?
+그녀는 어떻게 춤을 배웠니?::How did she learn to dance?
+그는 지난달에 가스를 얼마나 사용했니?::How much gas did he use last month?
+그는 몇 장을 사용했니?::How many sheets did he use?
+그들은 언제 서울로 이사했니?::When did they move to Seoul?
+그녀는 선물을 어디에 숨겼니?::Where did she hide the gift?
+그는 떠나기 전에 뭘 했니?::What did he do before leaving?
+그녀는 왜 노래를 멈췄니?::Why did she stop singing?
+누가 그의 책을 빌렸니?::Who borrowed his book?
+그는 오늘 케이크를 얼마나 먹을 거니?::How much cake will he eat today?
+그들은 이번 주에 몇 곡을 배울 거니?::How many songs will they learn this week?
+그녀는 숙제를 언제 끝낼 거니?::When will she finish her homework?
+그는 차를 어디에 주차할 거니?::Where will he park his car?
+그들은 무엇을 지을 거니?::What will they build?
+그녀는 왜 일찍 떠날 거니?::Why will she leave early?
+누가 그 퍼즐을 풀 거니?::Who will solve the puzzle?
+그는 얼마나 자주 바이올린을 연습하니?::How often does he practice the violin?
+그녀는 얼마나 자주 헬스장에 가니?::How often does she go to the gym?
+그들은 얼마나 자주 조부모님을 방문하니?::How often do they visit their grandparents?
+너는 작년에 얼마나 자주 늦었니?::How often were you late last year?
+그녀는 이번 겨울에 얼마나 자주 스키를 탈 거니?::How often will she ski this winter?
+그는 어떤 종류의 일자리에 지원했니?::What kind of job did he apply for?
+너는 어떤 종류의 휴대폰을 살 거니?::What kind of phone will you buy?
+그녀는 내일 어떤 드레스를 입을 거니?::What kind of dress will she wear tomorrow?
+그들은 점심에 어떤 게임을 했니?::What kind of game did they play at lunch?
+그는 지금 어떤 쇼를 보고 있니?::What kind of show is he watching now?
+그녀는 손님을 위해 어떤 요리를 만들었니?::What kind of dish did she make for the guests?
+그들은 다음에 어떤 시험을 볼 거니?::What kind of test will they take next?
+너는 무슨 노래를 부르고 있니?::What song are you singing?
+그는 어떤 팀을 응원하니?::What team does he support?
+그들은 어떤 언어를 배우고 있니?::What language are they learning?
+그들은 어떤 박물관을 방문할 거니?::What museum will they visit?
+그녀는 어떤 영화를 추천했니?::What movie did she recommend?
+그는 어떤 장소를 추천했니?::What place did he recommend?
+그들은 어떤 주제를 토론할 거니?::What topic will they discuss?
+그는 어떤 프로젝트를 하고 있니?::What project is he working on?
+그녀는 어떤 친구에게 전화했니?::What friend did she call?
+그들은 어떤 운동을 하고 있니?::What exercise are they doing?
+너는 어떤 선물을 줄 거니?::What gift will you give?
+그는 어떤 수업을 마쳤니?::What class did he finish?
+그녀는 어떤 앱을 사용하고 있니?::What app is she using?
+그들은 어떤 수업을 선택했니?::What class did they choose?
+너는 무슨 과목을 공부하고 있었니?::What subject were you studying?
+그들은 어떤 도시를 방문했니?::What city did they visit?
+그는 어떤 도구를 가져왔니?::What tool did he bring?
+그녀는 어떤 번호를 눌렀니?::What number did she dial?
+그들은 어떤 계획을 따를 거니?::What plan will they follow?
+그들은 어떤 그림을 그리고 있니?::What picture are they drawing?
+그녀는 매일 아침 얼마나 멀리 달리니?::How far does she run every morning?
+여기서 역까지 얼마나 멀어?::How far is it from here to the station?
+너는 오늘 얼마나 걸었니?::How far did you walk today?
+그들은 이번 여름에 얼마나 멀리 여행할 거니?::How far will they travel this summer?
+그녀는 점심 전에 자전거를 얼마나 탔니?::How far did she ride her bike before lunch?
+그 영화는 얼마나 길어?::How long is the movie?
+그는 얼마나 머물 거니?::How long will he stay?
+그녀는 버스를 얼마나 오래 기다렸니?::How long did she wait for the bus?
+그 회의는 얼마나 걸릴 거니?::How long will the meeting take?
+그는 그만두기 전에 얼마나 일했니?::How long did he work before quitting?
+그녀는 우리 집에 얼마나 머물 거니?::How long will she stay at our house?
+그 콘서트는 어제 얼마나 길었니?::How long was the concert yesterday?
+이 길은 얼마나 길어?::How long is this road?
+그는 자기 전에 얼마나 읽었니?::How long did he read before bed?
