@@ -104,3 +104,17 @@
 그들은 한국어 배우기를 시작했어.::They started learning Korean.
 늦게까지 일하면 나는 피곤해져.::Working late makes me tired.
 음악을 들으면 나는 기분이 좋아져.::Listening to music cheers me up.
+너는 영어로 책 읽는 것을 즐기니?::Do you enjoy reading books in English?
+그는 밤에 늦게까지 게임하는 것을 싫어하니?::Does he dislike playing games late at night?
+너는 새로운 언어를 배우는 것에 흥미가 있니?::Are you interested in learning a new language?
+그녀는 기타 치는 것을 잘하니?::Is she good at playing the guitar?
+이것이 네가 어제 말했던 영화니?::Is this the movie that you mentioned yesterday?
+네가 가장 존경하는 사람이 그 선생님이니?::Is that teacher the person whom you respect the most?
+네가 읽고 있는 책이 재미있니?::Is the book that you are reading interesting?
+네가 친구에게 빌려준 컴퓨터가 고장이 났니?::Did the computer that you lent to your friend break?
+여기 있는 사람이 너를 도와준 그 남자니?::Is the man who is standing here the one who helped you?
+여기가 네가 어제 저녁을 먹은 식당이니?::Is this the restaurant where you had dinner yesterday?
+네가 태어난 날이 기억나니?::Do you remember the day when you were born?
+저것이 네가 어렸을 때 살던 집이니?::Is that the house where you lived when you were a child?
+네가 시험에 떨어졌을 때가 작년이니?::Was it last year when you failed the exam?
+네가 그녀를 처음 만난 순간이 특별했니?::Was the moment when you first met her special?
