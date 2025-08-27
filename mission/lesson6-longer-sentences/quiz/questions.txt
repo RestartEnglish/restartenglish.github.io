@@ -1,0 +1,106 @@
+수영은 내가 가장 좋아하는 취미야.::Swimming is my favorite hobby.
+너무 많이 먹는 것은 네 건강에 좋지 않아.::Eating too much is not good for you.
+책을 읽는 것은 내가 배우는 데 도움이 돼.::Reading books helps you learn.
+텔레비전을 너무 오래 보는 것은 내 눈에 좋지 않아.::Watching TV for too long is bad for your eyes.
+여행은 내가 가진 열정이야.::Traveling is my passion.
+나는 기타 치는 것을 좋아해.::I like playing the guitar.
+그는 아침에 달리기를 즐겨 해.::He enjoys running in the morning.
+그녀는 비를 맞으면서 춤추는 것을 사랑해.::She loves dancing in the rain.
+나는 새로운 것을 배우는 게 재미있어.::Learning new things is fun.
+매일 연습하는 것은 내 실력을 향상시켜.::Practicing every day improves skills.
+글쓰기는 나에게 치유가 될 수 있어.::Writing can be therapeutic.
+요리는 인내와 집중을 필요로 해.::Cooking requires patience and focus.
+그의 취미는 풍경화를 그리는 것이야.::His hobby is painting landscapes.
+조깅은 좋은 운동이야.::Jogging is a good form of exercise.
+케이크를 굽는 것은 그녀의 열정이야.::Baking cakes is her passion.
+그들은 지난주에 프랑스어 공부를 시작했어.::They started learning French last week.
+그는 정크 푸드를 먹는 것을 피해.::He avoids eating junk food.
+나는 음악 듣는 것을 즐겨.::I enjoy listening to music.
+바다에서 수영하는 것은 편안해.::Swimming in the ocean is relaxing.
+밤에 책을 읽는 것은 내가 잠드는 데 도움이 돼.::Reading at night helps me sleep.
+그리기는 그녀가 자신을 표현하는 방법이야.::Drawing is how she expresses herself.
+체스를 두는 것은 그의 취미야.::Playing chess is his hobby.
+해외 유학은 내 꿈이야.::Studying abroad is my dream.
+노래는 내 강점이 아니야.::Singing is not my strong point.
+집에서 일하는 것은 어려울 수 있어.::Working from home can be difficult.
+정원 가꾸기는 매우 편안해.::Gardening is very relaxing.
+낚시는 내가 사랑하는 거야.::Fishing is something I love.
+나는 TV 보는 것보다 책 읽는 것을 더 좋아해.::I prefer reading to watching TV.
+그는 새로운 기술을 배우는 것을 즐겨.::He enjoys learning new skills.
+요가는 내가 몸과 마음을 이완하는 데 도움이 돼.::Doing yoga helps me relax.
+그들은 산에서 하이킹하는 것을 좋아해.::They love hiking in the mountains.
+집 청소는 나를 피곤하게 해.::Cleaning the house is tiring.
+디자인은 그녀의 일의 일부야.::Designing is part of her job.
+노래하고 있는 소녀는 내 여동생이야.::The girl who is singing is my sister.
+네가 준 책은 훌륭해.::The book that you gave me is great.
+나는 다섯 개 언어를 말할 수 있는 남자를 만났어.::I met a man who can speak five languages.
+밖에 주차된 차는 내 것이야.::The car which is parked outside is mine.
+이 학생은 상을 받은 학생이야.::This is the student who won the prize.
+그녀는 모두가 사랑하는 선생님이야.::She is the teacher that everyone loves.
+네가 잃어버린 가방은 비쌌어.::The bag which you lost was expensive.
+나는 너를 도와준 소녀를 알아.::I know the girl who helped you.
+밤새 짖는 개는 저 개야.::That is the dog that barks all night.
+그는 이 그림을 그린 화가야.::He’s the artist who drew this.
+옆집에 사는 남자는 친절해.::The man who lives next door is nice.
+나는 우리가 본 영화를 좋아하지 않았어.::I didn’t like the movie that we saw.
+그녀가 산 노트북은 새 거야.::The laptop which she bought is new.
+그는 항상 나를 도와주는 친구야.::He is a friend who always helps me.
+수학을 가르치는 선생님은 엄격해.::The teacher who teaches math is strict.
+서울로 가는 버스는 늦게 와.::The bus that goes to Seoul is late.
+울던 아이는 배고팠어.::The kid who cried was hungry.
+이것은 잭이 지은 집이야.::That is the house that Jack built.
+나는 자전거를 훔친 남자를 봤어.::I saw the guy who stole the bike.
+이것은 내가 잃어버린 시계야.::This is the watch that I lost.
+책상 위에 있는 책은 내 것이야.::The book which is on the table is mine.
+그는 모든 것을 아는 사람이야.::He’s the person who knows everything.
+우리가 했던 게임은 재미있었어.::The game that we played was fun.
+울고 있는 소년은 도움이 필요해.::The boy who is crying needs help.
+실종됐던 고양이는 돌아왔어.::The cat that was missing has returned.
+전화를 건 사람은 그녀야.::She is the one who called you.
+나는 나를 도와줄 수 있는 누군가가 필요해.::I need someone who can help me.
+나에게 이걸 판 여자는 친절했어.::The lady who sold me this is nice.
+너는 노래할 수 있는 사람을 아니?::Do you know anyone who can sing?
+저 사람은 복권에 당첨된 남자야.::That’s the guy who won the lottery.
+이것은 길을 잃었던 아이야.::This is the child who was lost.
+네가 찾은 짐은 내 것이야.::The luggage that you found is mine.
+나는 이 노래를 부르는 가수를 좋아해.::I like the singer who sings this song.
+여기는 내가 그녀를 만난 장소야.::This is the place where I met her.
+나는 우리가 처음 만난 날을 기억해.::I remember the day when we first met.
+그것은 내가 아팠던 때였어.::That was the time when I was sick.
+우리가 커피 마셨던 카페는 괜찮았어.::The cafe where we had coffee was nice.
+너는 비가 왔던 날을 기억해?::Do you remember the day when it rained?
+우리가 저녁을 먹었던 식당이야.::That is the restaurant where we ate dinner.
+나는 네가 떠난 날을 절대 잊지 않을 거야.::I will never forget the day when you left.
+여기는 우리가 축구했던 공원이야.::This is the park where we played soccer.
+이곳은 내가 공부하는 방이야.::That is the room where I study.
+그녀는 내가 예전에 살던 집에 살아.::She lives in a house where I used to live.
+내가 떠난 이유는 개인적인 것이야.::The reason why I left is personal.
+그것은 모든 것이 변한 순간이야.::That’s the moment when everything changed.
+너는 그가 일하는 장소를 아니?::Do you know the place where he works?
+이것은 내가 샀던 가게야.::This is the shop where I bought it.
+그것은 내가 혼자였던 밤이야.::It was the night when I was alone.
+내가 전화하지 않은 이유가 있어.::There is a reason why I didn’t call.
+그녀가 떠난 이유는 분명해.::The reason why she left is clear.
+그것은 내가 사랑에 빠졌던 계절이야.::That was the season when I fell in love.
+너는 우리가 춤췄던 장소를 기억해?::Do you remember the place where we danced?
+그녀는 자라난 집을 나에게 보여줬어.::She showed me the house where she grew up.
+그것은 내가 바빴던 때야.::That is the time when I was busy.
+여기는 내가 다녔던 학교야.::This is the school where I studied.
+그는 고용됐던 날을 잊었어.::He forgot the day when he was hired.
+이것은 내가 울었던 이유야.::That is the reason why I cried.
+나는 우리가 해질녘을 봤던 곳을 사랑해.::I love the spot where we watched the sunset.
+사고가 났던 코너는 폐쇄됐어.::The corner where the accident happened is closed.
+꽃이 피는 때야.::It’s the time when flowers bloom.
+너는 걱정할 이유가 없어.::There’s no reason why you should worry.
+우리가 과일을 샀던 시장은 붐볐어.::The market where we bought fruit was busy.
+이것은 네가 쉬어야 할 때야.::This is the time when you need rest.
+외식은 가끔 재미있어.::Eating out is fun sometimes.
+나는 새로운 곳으로 여행하는 것을 좋아해.::I love traveling to new places.
+그는 정치 이야기를 꺼리는 편이야.::He avoids talking about politics.
+그녀는 바다에서 수영하는 것을 즐겨.::She enjoys swimming in the sea.
+책을 읽으면 나는 편안해져.::Reading helps me relax.
+나는 기다리는 것을 신경 쓰지 않아.::I don’t mind waiting.
+영화 보는 것은 내 취미야.::Watching movies is my hobby.
+그들은 한국어 배우기를 시작했어.::They started learning Korean.
+늦게까지 일하면 나는 피곤해져.::Working late makes me tired.
+음악을 들으면 나는 기분이 좋아져.::Listening to music cheers me up.
