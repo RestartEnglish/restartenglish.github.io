@@ -148,7 +148,7 @@
       const q = quizData[currentIndex];
       document.getElementById('question').innerText = q.kr;
 
-      const words = shuffle(q.en.replace("?", "").split(" "));
+      const words = shuffle(q.en.replace(".", "").split(" "));
       const wordBank = document.getElementById('word-bank');
       wordBank.innerHTML = '';
       words.forEach(word => {
@@ -188,7 +188,7 @@
 
     function getUserAnswer() {
       const words = [...document.getElementById('answer').children];
-      return words.map(el => el.innerText).join(' ') + "?";
+      return words.map(el => el.innerText).join(' ') + ".";
     }
 
     function submitAnswer() {
