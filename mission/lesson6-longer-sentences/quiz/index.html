@@ -148,7 +148,7 @@
       const q = quizData[currentIndex];
       document.getElementById('question').innerText = q.kr;
 
-      const words = shuffle(q.en.replace(".", "").split(" "));
+      const words = shuffle(q.en.replace(/[.,!?]/g, "").split(" "));
       const wordBank = document.getElementById('word-bank');
       wordBank.innerHTML = '';
       words.forEach(word => {
@@ -188,24 +188,26 @@
 
     function getUserAnswer() {
       const words = [...document.getElementById('answer').children];
-      return words.map(el => el.innerText).join(' ') + ".";
+      return words.map(el => el.innerText).join(' ');
     }
 
     function submitAnswer() {
       if (answered) return;
       clearInterval(timer);
       answered = true;
+
       const userAns = getUserAnswer();
       const correct = quizData[currentIndex].en;
       const feedback = document.getElementById('feedback');
-      if (userAns === correct) {
+
+      if (normalize(userAns) === normalize(correct)) {
         score += pointPerQuestion;
         feedback.innerHTML = `<span class="speak" onclick="tts('${correct}')">✅ 정답: ${correct}</span>`;
         tts(correct);
       } else {
         feedback.innerHTML = `<span class="speak" onclick="tts('${correct}')">❌ 오답! 정답: ${correct}</span>`;
         tts(correct);
-        restoreState(); // 기존 로직 유지(오답 시 점수 초기화)
+        restoreState();
       }
       updateScore();
       document.getElementById('next-btn').style.display = 'inline-block';
@@ -327,6 +329,14 @@
       document.getElementById('feedback').style.display = 'block';
       document.getElementById('countdown').style.display = 'block';
       document.getElementById('timer-bar').style.display = 'block';
+    }
+
+    function normalize(s) {
+      return s
+        .replace(/[.,!?'"“”‘’]/g, "")  // 문장부호 제거
+        .replace(/\s+/g, " ")           // 공백 정리
+        .trim()
+        .toLowerCase();                 // 대소문자 무시
     }
 
     // 기존 onload를 덮어쓰지 않도록 이벤트 리스너로 통합
